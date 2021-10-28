@@ -6,6 +6,8 @@ target 'setScheduleTest' do
   use_frameworks!
 
   # Pods for setScheduleTest
+  pod 'RxSwift', '6.2.0'
+  pod 'RxCocoa', '6.2.0'
 
   target 'setScheduleTestTests' do
     inherit! :search_paths
