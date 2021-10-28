@@ -13,7 +13,7 @@ public class QueueManager {
     public lazy var queue: OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 1
-        return queue;
+        return queue
     }()
     
     public init(){
