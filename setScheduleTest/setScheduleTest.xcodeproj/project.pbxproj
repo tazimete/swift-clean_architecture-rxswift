@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		003F35F0EEFE52FC89A3C17E /* Pods_setScheduleTest_setScheduleTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FC2E37ED5474F4AA4EEC25 /* Pods_setScheduleTest_setScheduleTestUITests.framework */; };
+		168D0E9E271CA5F9347BF2B5 /* Pods_setScheduleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E842BCE35B501C401445756D /* Pods_setScheduleTest.framework */; };
+		29C22FC1272B435100E67AAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC0272B435100E67AAE /* AppDelegate.swift */; };
+		29C22FC3272B435100E67AAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC2272B435100E67AAE /* SceneDelegate.swift */; };
+		29C22FC5272B435100E67AAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* ViewController.swift */; };
+		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
+		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
+		29C22FCD272B435100E67AAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FCC272B435100E67AAE /* Assets.xcassets */; };
+		29C22FD0272B435100E67AAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FCE272B435100E67AAE /* LaunchScreen.storyboard */; };
+		29C22FDB272B435100E67AAE /* setScheduleTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FDA272B435100E67AAE /* setScheduleTestTests.swift */; };
+		29C22FE6272B435100E67AAE /* setScheduleTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FE5272B435100E67AAE /* setScheduleTestUITests.swift */; };
+		3C405E9A6A3EA241367D87BA /* Pods_setScheduleTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10416E3B6DF1904F0E5BAB1D /* Pods_setScheduleTestTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29C22FD7272B435100E67AAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29C22FB5272B435100E67AAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29C22FBC272B435100E67AAE;
+			remoteInfo = setScheduleTest;
+		};
+		29C22FE2272B435100E67AAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29C22FB5272B435100E67AAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29C22FBC272B435100E67AAE;
+			remoteInfo = setScheduleTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10416E3B6DF1904F0E5BAB1D /* Pods_setScheduleTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_setScheduleTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2161461E633BC0F3142E5000 /* Pods-setScheduleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-setScheduleTest.debug.xcconfig"; path = "Target Support Files/Pods-setScheduleTest/Pods-setScheduleTest.debug.xcconfig"; sourceTree = "<group>"; };
+		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C22FC0272B435100E67AAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		29C22FC2272B435100E67AAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		29C22FC4272B435100E67AAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		29C22FCA272B435100E67AAE /* setScheduleTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = setScheduleTest.xcdatamodel; sourceTree = "<group>"; };
+		29C22FCC272B435100E67AAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		29C22FCF272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		29C22FD1272B435100E67AAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29C22FD6272B435100E67AAE /* setScheduleTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = setScheduleTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C22FDA272B435100E67AAE /* setScheduleTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setScheduleTestTests.swift; sourceTree = "<group>"; };
+		29C22FDC272B435100E67AAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29C22FE1272B435100E67AAE /* setScheduleTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = setScheduleTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C22FE5272B435100E67AAE /* setScheduleTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setScheduleTestUITests.swift; sourceTree = "<group>"; };
+		29C22FE7272B435100E67AAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36FC2E37ED5474F4AA4EEC25 /* Pods_setScheduleTest_setScheduleTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_setScheduleTest_setScheduleTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6567F10E1245DF5250FB5745 /* Pods-setScheduleTest-setScheduleTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-setScheduleTest-setScheduleTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-setScheduleTest-setScheduleTestUITests/Pods-setScheduleTest-setScheduleTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7EDCD31618ABDA6ACB66FA8C /* Pods-setScheduleTest-setScheduleTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-setScheduleTest-setScheduleTestUITests.release.xcconfig"; path = "Target Support Files/Pods-setScheduleTest-setScheduleTestUITests/Pods-setScheduleTest-setScheduleTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AFF7BA3EB63ECA4BE5E8CDF7 /* Pods-setScheduleTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-setScheduleTest.release.xcconfig"; path = "Target Support Files/Pods-setScheduleTest/Pods-setScheduleTest.release.xcconfig"; sourceTree = "<group>"; };
+		CEBBC5A3ED7D2FD3F61BEAD1 /* Pods-setScheduleTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-setScheduleTestTests.debug.xcconfig"; path = "Target Support Files/Pods-setScheduleTestTests/Pods-setScheduleTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E30554721A056D3A2ADD4747 /* Pods-setScheduleTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-setScheduleTestTests.release.xcconfig"; path = "Target Support Files/Pods-setScheduleTestTests/Pods-setScheduleTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		E842BCE35B501C401445756D /* Pods_setScheduleTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_setScheduleTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29C22FBA272B435100E67AAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				168D0E9E271CA5F9347BF2B5 /* Pods_setScheduleTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C22FD3272B435100E67AAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C405E9A6A3EA241367D87BA /* Pods_setScheduleTestTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C22FDE272B435100E67AAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003F35F0EEFE52FC89A3C17E /* Pods_setScheduleTest_setScheduleTestUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		29C22FB4272B435100E67AAE = {
+			isa = PBXGroup;
+			children = (
+				29C22FBF272B435100E67AAE /* setScheduleTest */,
+				29C22FD9272B435100E67AAE /* setScheduleTestTests */,
+				29C22FE4272B435100E67AAE /* setScheduleTestUITests */,
+				29C22FBE272B435100E67AAE /* Products */,
+				811A5AD43A2852EB0F968338 /* Pods */,
+				B97E5E9E518A88794758B78E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		29C22FBE272B435100E67AAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29C22FBD272B435100E67AAE /* setScheduleTest.app */,
+				29C22FD6272B435100E67AAE /* setScheduleTestTests.xctest */,
+				29C22FE1272B435100E67AAE /* setScheduleTestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29C22FBF272B435100E67AAE /* setScheduleTest */ = {
+			isa = PBXGroup;
+			children = (
+				29C22FC0272B435100E67AAE /* AppDelegate.swift */,
+				29C22FC2272B435100E67AAE /* SceneDelegate.swift */,
+				29C22FC4272B435100E67AAE /* ViewController.swift */,
+				29C22FC6272B435100E67AAE /* Main.storyboard */,
+				29C22FCC272B435100E67AAE /* Assets.xcassets */,
+				29C22FCE272B435100E67AAE /* LaunchScreen.storyboard */,
+				29C22FD1272B435100E67AAE /* Info.plist */,
+				29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */,
+			);
+			path = setScheduleTest;
+			sourceTree = "<group>";
+		};
+		29C22FD9272B435100E67AAE /* setScheduleTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				29C22FDA272B435100E67AAE /* setScheduleTestTests.swift */,
+				29C22FDC272B435100E67AAE /* Info.plist */,
+			);
+			path = setScheduleTestTests;
+			sourceTree = "<group>";
+		};
+		29C22FE4272B435100E67AAE /* setScheduleTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				29C22FE5272B435100E67AAE /* setScheduleTestUITests.swift */,
+				29C22FE7272B435100E67AAE /* Info.plist */,
+			);
+			path = setScheduleTestUITests;
+			sourceTree = "<group>";
+		};
+		811A5AD43A2852EB0F968338 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2161461E633BC0F3142E5000 /* Pods-setScheduleTest.debug.xcconfig */,
+				AFF7BA3EB63ECA4BE5E8CDF7 /* Pods-setScheduleTest.release.xcconfig */,
+				6567F10E1245DF5250FB5745 /* Pods-setScheduleTest-setScheduleTestUITests.debug.xcconfig */,
+				7EDCD31618ABDA6ACB66FA8C /* Pods-setScheduleTest-setScheduleTestUITests.release.xcconfig */,
+				CEBBC5A3ED7D2FD3F61BEAD1 /* Pods-setScheduleTestTests.debug.xcconfig */,
+				E30554721A056D3A2ADD4747 /* Pods-setScheduleTestTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B97E5E9E518A88794758B78E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E842BCE35B501C401445756D /* Pods_setScheduleTest.framework */,
+				36FC2E37ED5474F4AA4EEC25 /* Pods_setScheduleTest_setScheduleTestUITests.framework */,
+				10416E3B6DF1904F0E5BAB1D /* Pods_setScheduleTestTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		29C22FBC272B435100E67AAE /* setScheduleTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29C22FEA272B435100E67AAE /* Build configuration list for PBXNativeTarget "setScheduleTest" */;
+			buildPhases = (
+				EF226A57D0B193577A20E71D /* [CP] Check Pods Manifest.lock */,
+				29C22FB9272B435100E67AAE /* Sources */,
+				29C22FBA272B435100E67AAE /* Frameworks */,
+				29C22FBB272B435100E67AAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = setScheduleTest;
+			productName = setScheduleTest;
+			productReference = 29C22FBD272B435100E67AAE /* setScheduleTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		29C22FD5272B435100E67AAE /* setScheduleTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29C22FED272B435100E67AAE /* Build configuration list for PBXNativeTarget "setScheduleTestTests" */;
+			buildPhases = (
+				96E09DB63BA137E9FA898DFF /* [CP] Check Pods Manifest.lock */,
+				29C22FD2272B435100E67AAE /* Sources */,
+				29C22FD3272B435100E67AAE /* Frameworks */,
+				29C22FD4272B435100E67AAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29C22FD8272B435100E67AAE /* PBXTargetDependency */,
+			);
+			name = setScheduleTestTests;
+			productName = setScheduleTestTests;
+			productReference = 29C22FD6272B435100E67AAE /* setScheduleTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		29C22FE0272B435100E67AAE /* setScheduleTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29C22FF0272B435100E67AAE /* Build configuration list for PBXNativeTarget "setScheduleTestUITests" */;
+			buildPhases = (
+				6F1989155574508BEC171E7C /* [CP] Check Pods Manifest.lock */,
+				29C22FDD272B435100E67AAE /* Sources */,
+				29C22FDE272B435100E67AAE /* Frameworks */,
+				29C22FDF272B435100E67AAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29C22FE3272B435100E67AAE /* PBXTargetDependency */,
+			);
+			name = setScheduleTestUITests;
+			productName = setScheduleTestUITests;
+			productReference = 29C22FE1272B435100E67AAE /* setScheduleTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29C22FB5272B435100E67AAE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					29C22FBC272B435100E67AAE = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					29C22FD5272B435100E67AAE = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 29C22FBC272B435100E67AAE;
+					};
+					29C22FE0272B435100E67AAE = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 29C22FBC272B435100E67AAE;
+					};
+				};
+			};
+			buildConfigurationList = 29C22FB8272B435100E67AAE /* Build configuration list for PBXProject "setScheduleTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 29C22FB4272B435100E67AAE;
+			productRefGroup = 29C22FBE272B435100E67AAE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29C22FBC272B435100E67AAE /* setScheduleTest */,
+				29C22FD5272B435100E67AAE /* setScheduleTestTests */,
+				29C22FE0272B435100E67AAE /* setScheduleTestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		29C22FBB272B435100E67AAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C22FD0272B435100E67AAE /* LaunchScreen.storyboard in Resources */,
+				29C22FCD272B435100E67AAE /* Assets.xcassets in Resources */,
+				29C22FC8272B435100E67AAE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C22FD4272B435100E67AAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C22FDF272B435100E67AAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F1989155574508BEC171E7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-setScheduleTest-setScheduleTestUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96E09DB63BA137E9FA898DFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-setScheduleTestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF226A57D0B193577A20E71D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-setScheduleTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29C22FB9272B435100E67AAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C22FC5272B435100E67AAE /* ViewController.swift in Sources */,
+				29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */,
+				29C22FC1272B435100E67AAE /* AppDelegate.swift in Sources */,
+				29C22FC3272B435100E67AAE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C22FD2272B435100E67AAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C22FDB272B435100E67AAE /* setScheduleTestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C22FDD272B435100E67AAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C22FE6272B435100E67AAE /* setScheduleTestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29C22FD8272B435100E67AAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29C22FBC272B435100E67AAE /* setScheduleTest */;
+			targetProxy = 29C22FD7272B435100E67AAE /* PBXContainerItemProxy */;
+		};
+		29C22FE3272B435100E67AAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29C22FBC272B435100E67AAE /* setScheduleTest */;
+			targetProxy = 29C22FE2272B435100E67AAE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		29C22FC6272B435100E67AAE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29C22FC7272B435100E67AAE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		29C22FCE272B435100E67AAE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29C22FCF272B435100E67AAE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		29C22FE8272B435100E67AAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		29C22FE9272B435100E67AAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		29C22FEB272B435100E67AAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2161461E633BC0F3142E5000 /* Pods-setScheduleTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = setScheduleTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmtazim.setScheduleTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29C22FEC272B435100E67AAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFF7BA3EB63ECA4BE5E8CDF7 /* Pods-setScheduleTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = setScheduleTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmtazim.setScheduleTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		29C22FEE272B435100E67AAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEBBC5A3ED7D2FD3F61BEAD1 /* Pods-setScheduleTestTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = setScheduleTestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmtazim.setScheduleTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/setScheduleTest.app/setScheduleTest";
+			};
+			name = Debug;
+		};
+		29C22FEF272B435100E67AAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E30554721A056D3A2ADD4747 /* Pods-setScheduleTestTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = setScheduleTestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmtazim.setScheduleTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/setScheduleTest.app/setScheduleTest";
+			};
+			name = Release;
+		};
+		29C22FF1272B435100E67AAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6567F10E1245DF5250FB5745 /* Pods-setScheduleTest-setScheduleTestUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = setScheduleTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmtazim.setScheduleTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = setScheduleTest;
+			};
+			name = Debug;
+		};
+		29C22FF2272B435100E67AAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EDCD31618ABDA6ACB66FA8C /* Pods-setScheduleTest-setScheduleTestUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = setScheduleTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmtazim.setScheduleTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = setScheduleTest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29C22FB8272B435100E67AAE /* Build configuration list for PBXProject "setScheduleTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29C22FE8272B435100E67AAE /* Debug */,
+				29C22FE9272B435100E67AAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29C22FEA272B435100E67AAE /* Build configuration list for PBXNativeTarget "setScheduleTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29C22FEB272B435100E67AAE /* Debug */,
+				29C22FEC272B435100E67AAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29C22FED272B435100E67AAE /* Build configuration list for PBXNativeTarget "setScheduleTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29C22FEE272B435100E67AAE /* Debug */,
+				29C22FEF272B435100E67AAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29C22FF0272B435100E67AAE /* Build configuration list for PBXNativeTarget "setScheduleTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29C22FF1272B435100E67AAE /* Debug */,
+				29C22FF2272B435100E67AAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				29C22FCA272B435100E67AAE /* setScheduleTest.xcdatamodel */,
+			);
+			currentVersion = 29C22FCA272B435100E67AAE /* setScheduleTest.xcdatamodel */;
+			path = setScheduleTest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 29C22FB5272B435100E67AAE /* Project object */;
+}
