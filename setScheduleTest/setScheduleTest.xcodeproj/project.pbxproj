@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -304,7 +304,7 @@
 				29C23019272B45D000E67AAE /* Helper */,
 				29C22FF9272B45D000E67AAE /* Extension */,
 				29C22FF3272B45D000E67AAE /* Route */,
-				29C23001272B45D000E67AAE /* Network */,
+				29C2316B272B54E200E67AAE /* Client */,
 				29C23162272B506F00E67AAE /* Domain */,
 				29C23161272B506300E67AAE /* Data */,
 				29C23160272B505900E67AAE /* Presentation */,
@@ -378,15 +378,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		29C23001272B45D000E67AAE /* Network */ = {
+		29C23001272B45D000E67AAE /* NetworkClient */ = {
 			isa = PBXGroup;
 			children = (
 				29C23002272B45D000E67AAE /* ApiClient */,
 				29C2300B272B45D000E67AAE /* Downloader */,
 				29C23012272B45D000E67AAE /* ImageDownloader */,
-				29C23014272B45D000E67AAE /* Request */,
 			);
-			path = Network;
+			path = NetworkClient;
 			sourceTree = "<group>";
 		};
 		29C23002272B45D000E67AAE /* ApiClient */ = {
@@ -395,9 +394,9 @@
 				29C23003272B45D000E67AAE /* ApiClient.swift */,
 				29C23004272B45D000E67AAE /* Parameterizable.swift */,
 				29C23005272B45D000E67AAE /* StubResponseProvider.swift */,
-				29C23006272B45D000E67AAE /* Queue */,
 				29C23009272B45D000E67AAE /* ApiRequest.swift */,
 				29C2300A272B45D000E67AAE /* AbstractApiClient.swift */,
+				29C23006272B45D000E67AAE /* Queue */,
 			);
 			path = ApiClient;
 			sourceTree = "<group>";
@@ -712,9 +711,7 @@
 		29C23161272B506300E67AAE /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				29C23036272B464A00E67AAE /* Model */,
-				29C23169272B514900E67AAE /* Usecase */,
-				29C23166272B512200E67AAE /* Repository */,
+				29C2316A272B549400E67AAE /* Remote */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -778,6 +775,25 @@
 			children = (
 			);
 			path = Usecase;
+			sourceTree = "<group>";
+		};
+		29C2316A272B549400E67AAE /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				29C23014272B45D000E67AAE /* Request */,
+				29C23036272B464A00E67AAE /* Model */,
+				29C23169272B514900E67AAE /* Usecase */,
+				29C23166272B512200E67AAE /* Repository */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		29C2316B272B54E200E67AAE /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				29C23001272B45D000E67AAE /* NetworkClient */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 		811A5AD43A2852EB0F968338 /* Pods */ = {
