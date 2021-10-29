@@ -5,7 +5,7 @@
 //  Created by JMC on 3/8/21.
 //
 
-import UIKit
+import Foundation
 
 public typealias NetworkCompletionHandler<T: Codable> = (Result<T, NetworkError>) -> Void
 

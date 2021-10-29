@@ -36,19 +36,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    private func initRootViewController() {
-        guard let _window = window else {
-            return
-        }
-        
-        let navController = UINavigationController()
-        coordinator = GithubCoordinator(navigationController: navController)
-        // tell the coordinator show its controller 
-        coordinator?.start()
-        
-        _window.rootViewController = navController
-        _window.makeKeyAndVisible()
-    }
+//    private func initRootViewController() {
+//        guard let _window = window else {
+//            return
+//        }
+//
+//        let navController = UINavigationController()
+//        coordinator = GithubCoordinator(navigationController: navController)
+//        // tell the coordinator show its controller
+//        coordinator?.start()
+//
+//        _window.rootViewController = navController
+//        _window.makeKeyAndVisible()
+//    }
 
 }
 

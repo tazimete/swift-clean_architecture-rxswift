@@ -31,48 +31,43 @@ public class APIClient: AbstractApiClient{
         queueManager.enqueue(operation)
     }
     
-    func send<T: Codable>(apiRequest: APIRequest, type: T.Type) -> Observable<Result<T.Type, NetworkError>> {
-        var observableResult: Observable<Result<T.Type, NetworkError>>!
+    func send<T: Codable>(apiRequest: APIRequest, type: T.Type) -> Observable<Result<Observable<T>, NetworkError>> {
         let request = apiRequest.request(with: apiRequest.baseURL)
-        
-//        return URLSession.shared.rx.data(request: request)
-//            .map { data in
-//                let response = try JSONDecoder().decode(T.self, from: data) as! T.Type
-//                observableResult = Observable.just(.success(response))
-//                return observableResult
-//            }.observe(on: MainScheduler.asyncInstance)
-        
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
         config.urlCache = nil
 
         let session = URLSession(configuration: config)
 
-        session.dataTask(with: request) { [weak self] data, response, error in
-            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                observableResult = Observable.just(.failure(.serverError))
-                return
-            }
+        return Observable.create { observer -> Disposable in
+            session.dataTask(with: request) { [weak self] data, response, error in
+                guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                    observer.onNext(.failure(.serverError))
+                    return
+                }
+                
+                guard let mime = response.mimeType, mime == "application/json" else {
+                    observer.onNext(.failure(.wrongMimeTypeError))
+                    return
+                }
 
-            guard let mime = response.mimeType, mime == "application/json" else {
-                observableResult = Observable.just(.failure(.wrongMimeTypeError))
-                return
-            }
-
-            guard let responseData = data else{
-                observableResult = Observable.just(.failure(.noDataError))
-                return
-            }
-             
-             let resultData = try? JSONDecoder().decode(T.self, from: responseData)
+                guard let responseData = data else{
+                    observer.onNext(.failure(.noDataError))
+                    return
+                }
+                 
+                 let resultData = try? JSONDecoder().decode(T.self, from: responseData)
+                
+                 if let result = resultData{
+                    observer.onNext(.success(Observable.just(result)))
+                 }else{
+                    observer.onNext(.failure(.decodingError))
+                 }
+                
+                observer.onCompleted()
+            }.resume()
             
-             if let result = resultData{
-                observableResult = Observable.just(.success(result as! T.Type))
-             }else{
-                observableResult = Observable.just(.failure(.decodingError))
-             }
-       }
-        
-        return observableResult
+            return Disposables.create()
+        }
     }
 }
