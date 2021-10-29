@@ -21,7 +21,7 @@ class ViewController: UIViewController {
                 case .success(let data):
                     data.subscribe(onNext: {
                         response in
-                        print("response = \(response)")
+                        print("response = \(response.count)")
                     })
                     
                 case .failure(let error): break
