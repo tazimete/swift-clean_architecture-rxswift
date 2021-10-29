@@ -9,25 +9,25 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         APIClient.shared.send(apiRequest: GithubApiRequest.fetchUserList(params: FetchGithubUserParam(since: 0)), type: [GithubUser].self).observe(on: MainScheduler.asyncInstance).subscribe(onNext: {
-            result in
+            response in
             
-            switch (result) {
-                case .success(let data):
-                    data.subscribe(onNext: {
-                        response in
-                        print("response = \(response.count)")
-                    })
-                    
-                case .failure(let error): break
+            print("response = \(response.count)")
+            
+        } , onError: {
+            error in
+            
+            guard let networkError = error as? NetworkError else {
+                return
             }
             
-        } , onError: nil, onCompleted: nil, onDisposed: nil)
+            print("Error = \(networkError.errorMessage)")
+        }, onCompleted: nil, onDisposed: nil)
     }
 
 

@@ -9,10 +9,40 @@ import RxSwift
 import RxCocoa
 
 public enum NetworkError: Error {
-    case serverError
-    case decodingError
-    case wrongMimeTypeError
-    case noDataError
+    case serverError(code: Int, message: String)
+    case decodingError(code: Int, message: String)
+    case wrongMimeTypeError(code: Int, message: String)
+    case noDataError(code: Int, message: String)
+    
+    public var errorMessage: String {
+        switch self {
+        case .serverError(let code, let message):
+            return message
+        case .decodingError(let code, let message):
+            return message
+        case .wrongMimeTypeError(let code, let message):
+            return message
+        case .noDataError(let code, let message):
+            return message
+        default:
+            return ""
+        }
+    }
+    
+    public var errorCode: Int {
+        switch self {
+        case .serverError(let code, let message):
+            return code
+        case .decodingError(let code, let message):
+            return code
+        case .wrongMimeTypeError(let code, let message):
+            return code
+        case .noDataError(let code, let message):
+            return code
+        default:
+            return -1
+        }
+    }
 }
 
 
@@ -31,7 +61,7 @@ public class APIClient: AbstractApiClient{
         queueManager.enqueue(operation)
     }
     
-    func send<T: Codable>(apiRequest: APIRequest, type: T.Type) -> Observable<Result<Observable<T>, NetworkError>> {
+    func send<T: Codable>(apiRequest: APIRequest, type: T.Type) -> Observable<T> {
         let request = apiRequest.request(with: apiRequest.baseURL)
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
@@ -42,26 +72,26 @@ public class APIClient: AbstractApiClient{
         return Observable.create { observer -> Disposable in
             session.dataTask(with: request) { [weak self] data, response, error in
                 guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                    observer.onNext(.failure(.serverError))
+                    observer.onError(NetworkError.serverError(code: (response as? HTTPURLResponse)?.statusCode ?? 101, message: "Request failed"))
                     return
                 }
                 
                 guard let mime = response.mimeType, mime == "application/json" else {
-                    observer.onNext(.failure(.wrongMimeTypeError))
+                    observer.onError(NetworkError.wrongMimeTypeError(code: response.statusCode, message: "Wrong mimetype"))
                     return
                 }
 
                 guard let responseData = data else{
-                    observer.onNext(.failure(.noDataError))
+                    observer.onError(NetworkError.noDataError(code: response.statusCode, message: "No data found in response"))
                     return
                 }
                  
                  let resultData = try? JSONDecoder().decode(T.self, from: responseData)
                 
                  if let result = resultData{
-                    observer.onNext(.success(Observable.just(result)))
+                    observer.onNext(result)
                  }else{
-                    observer.onNext(.failure(.decodingError))
+                    observer.onError(NetworkError.decodingError(code: response.statusCode, message: "Decoding error, Wrong response type"))
                  }
                 
                 observer.onCompleted()

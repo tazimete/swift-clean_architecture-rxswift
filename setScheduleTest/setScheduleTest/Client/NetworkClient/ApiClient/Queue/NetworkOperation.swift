@@ -52,19 +52,19 @@ public class NetworkOperation: Operation {
         task = session.dataTask(with: request) { [weak self] data, response, error in
             DispatchQueue.main.async {
                 guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                     completionHandler(.failure(.serverError))
+                    completionHandler(.failure(.serverError(code: (response as? HTTPURLResponse)?.statusCode ?? 101, message: "Request failed")))
                      self?.state = .finished
                      return
                 }
 
                 guard let mime = response.mimeType, mime == "application/json" else {
-                     completionHandler(.failure(.wrongMimeTypeError))
+                    completionHandler(.failure(.wrongMimeTypeError(code: response.statusCode, message: "Wrong mimetype")))
                      self?.state = .finished
                      return
                 }
 
                 guard let responseData = data else{
-                     completionHandler(.failure(.noDataError))
+                     completionHandler(.failure(.noDataError(code: response.statusCode, message: "No data found in response")))
                      self?.state = .finished
                      return
                 }
@@ -74,7 +74,7 @@ public class NetworkOperation: Operation {
                  if let result = resultData{
                      completionHandler(.success(result))
                  }else{
-                     completionHandler(.failure(.decodingError))
+                     completionHandler(.failure(.decodingError(code: response.statusCode, message: "Decoding error, Wrong response type")))
                  }
                 
                  self?.state = .finished
@@ -92,13 +92,13 @@ public class NetworkOperation: Operation {
         task = session.dataTask(with: downloadTaskURL) { [weak self] (data, response, error) in
             if let _ = error {
                 DispatchQueue.main.async {
-                    completionHandler(.failure(.serverError))
+                    completionHandler(.failure(.serverError(code: (response as? HTTPURLResponse)?.statusCode ?? 101, message: "Request failed")))
                 }
                 return
             }
             
             guard let data = data else {
-                completionHandler(.failure(.noDataError))
+                completionHandler(.failure(.noDataError(code: (response as? HTTPURLResponse)?.statusCode ?? 500, message: "Wrong mimetype")))
                 return
             }
             
@@ -132,16 +132,16 @@ public class NetworkOperation: Operation {
     
     public func getStubbResponse<T: Codable>(type: T.Type, completionHandler: @escaping (NetworkCompletionHandler<T>)){
         guard let response = ((StubResponseProvider.get(type: type)[0])["response"]) else {
-            completionHandler(.failure(.noDataError))
+            completionHandler(.failure(.noDataError(code: 401, message: "No data found in response")))
             return
         }
         guard let data = try? JSONSerialization.data(withJSONObject: response, options: .prettyPrinted) else {
-            completionHandler(.failure(.noDataError))
+            completionHandler(.failure(.noDataError(code: 401, message: "No data found in response")))
             return
         }
         
         guard let resultData = try? JSONDecoder().decode(T.self, from: data) else {
-            completionHandler(.failure(.decodingError))
+            completionHandler(.failure(.decodingError(code: 401, message: "No data found in response")))
             return
         }
         
