@@ -347,6 +347,13 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		29C032F5272CAB2700597B66 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		29C22FB4272B435100E67AAE = {
 			isa = PBXGroup;
 			children = (
@@ -464,11 +471,11 @@
 		29C23002272B45D000E67AAE /* ApiClient */ = {
 			isa = PBXGroup;
 			children = (
+				29C2300A272B45D000E67AAE /* AbstractApiClient.swift */,
 				29C23003272B45D000E67AAE /* ApiClient.swift */,
 				29C23004272B45D000E67AAE /* Parameterizable.swift */,
 				29C23005272B45D000E67AAE /* StubResponseProvider.swift */,
 				29C23009272B45D000E67AAE /* ApiRequest.swift */,
-				29C2300A272B45D000E67AAE /* AbstractApiClient.swift */,
 				29C23006272B45D000E67AAE /* Queue */,
 			);
 			path = ApiClient;
@@ -785,6 +792,7 @@
 			isa = PBXGroup;
 			children = (
 				29C2316A272B549400E67AAE /* Remote */,
+				29C032F5272CAB2700597B66 /* Local */,
 			);
 			path = Data;
 			sourceTree = "<group>";

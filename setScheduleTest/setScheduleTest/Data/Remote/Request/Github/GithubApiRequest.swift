@@ -18,6 +18,8 @@ extension GithubApiRequest: APIRequest {
         return URL(string: url)!
     }
     
+    public typealias ResponseType = [GithubUser]
+    
     public var method: RequestType {
         switch self {
             case .fetchUserList: return .GET

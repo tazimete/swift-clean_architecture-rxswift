@@ -6,8 +6,8 @@
 //
 
 import Foundation
-
+import RxSwift
 
 public protocol AbstractSearchUsecase: AbstractUsecase {
-    
+    func search() -> Observable<GithubApiRequest.ResponseType>
 }

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public protocol AbstractRepository: AnyObject {
     var apiClient: AbstractApiClient {get}
 }

@@ -57,7 +57,7 @@ public class APIClient: AbstractApiClient{
         queueManager.enqueue(operation)
     }
     
-    func send<T: Codable>(apiRequest: APIRequest, type: T.Type) -> Observable<T> {
+    public func send<T: Codable>(apiRequest: APIRequest, type: T.Type) -> Observable<T> {
         let request = apiRequest.request(with: apiRequest.baseURL)
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalCacheData

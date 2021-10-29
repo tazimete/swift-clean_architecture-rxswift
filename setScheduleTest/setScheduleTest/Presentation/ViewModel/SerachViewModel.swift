@@ -6,18 +6,17 @@
 //
 
 import Foundation
-
+import RxSwift
 
 public protocol AbstarctSearchViewModel: AbstractViewModel {
-    
+    func searchData() -> Observable<GithubApiRequest.ResponseType>
 }
-
 
 public class SearchViewModel: AbstarctSearchViewModel {
     public var usecase: AbstractUsecase
     
     public init() {
-        usecase = SearchUsecase() 
+        usecase = SearchUsecase()
     }
     
     public struct Input {
@@ -30,5 +29,9 @@ public class SearchViewModel: AbstarctSearchViewModel {
     
     public func getSearchOutput() -> Output {
         return Output()
+    }
+    
+    public func searchData() -> Observable<GithubApiRequest.ResponseType> {
+        return (usecase as! AbstractSearchUsecase).search()
     }
 }
