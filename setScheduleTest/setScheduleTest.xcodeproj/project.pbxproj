@@ -10,6 +10,14 @@
 		003F35F0EEFE52FC89A3C17E /* Pods_setScheduleTest_setScheduleTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FC2E37ED5474F4AA4EEC25 /* Pods_setScheduleTest_setScheduleTestUITests.framework */; };
 		168D0E9E271CA5F9347BF2B5 /* Pods_setScheduleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E842BCE35B501C401445756D /* Pods_setScheduleTest.framework */; };
 		29C032DE272C299200597B66 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032DD272C299200597B66 /* BaseViewController.swift */; };
+		29C032E0272C8F4E00597B66 /* AbstractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032DF272C8F4E00597B66 /* AbstractViewModel.swift */; };
+		29C032E3272C9B2D00597B66 /* SerachViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032E2272C9B2D00597B66 /* SerachViewModel.swift */; };
+		29C032E6272CA5A500597B66 /* AbstractUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032E5272CA5A500597B66 /* AbstractUsecase.swift */; };
+		29C032E9272CA5D900597B66 /* AbstractSearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032E8272CA5D900597B66 /* AbstractSearchUsecase.swift */; };
+		29C032EB272CA62700597B66 /* AbstractRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032EA272CA62700597B66 /* AbstractRepository.swift */; };
+		29C032EE272CA65600597B66 /* AbstractSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032ED272CA65600597B66 /* AbstractSearchRepository.swift */; };
+		29C032F2272CA6AF00597B66 /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F1272CA6AF00597B66 /* SearchUsecase.swift */; };
+		29C032F4272CA6BE00597B66 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F3272CA6BE00597B66 /* SearchRepository.swift */; };
 		29C22FC5272B435100E67AAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* ViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -133,6 +141,14 @@
 		10416E3B6DF1904F0E5BAB1D /* Pods_setScheduleTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_setScheduleTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2161461E633BC0F3142E5000 /* Pods-setScheduleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-setScheduleTest.debug.xcconfig"; path = "Target Support Files/Pods-setScheduleTest/Pods-setScheduleTest.debug.xcconfig"; sourceTree = "<group>"; };
 		29C032DD272C299200597B66 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		29C032DF272C8F4E00597B66 /* AbstractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewModel.swift; sourceTree = "<group>"; };
+		29C032E2272C9B2D00597B66 /* SerachViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerachViewModel.swift; sourceTree = "<group>"; };
+		29C032E5272CA5A500597B66 /* AbstractUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractUsecase.swift; sourceTree = "<group>"; };
+		29C032E8272CA5D900597B66 /* AbstractSearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractSearchUsecase.swift; sourceTree = "<group>"; };
+		29C032EA272CA62700597B66 /* AbstractRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRepository.swift; sourceTree = "<group>"; };
+		29C032ED272CA65600597B66 /* AbstractSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractSearchRepository.swift; sourceTree = "<group>"; };
+		29C032F1272CA6AF00597B66 /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
+		29C032F3272CA6BE00597B66 /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -284,6 +300,53 @@
 			path = Abstraction;
 			sourceTree = "<group>";
 		};
+		29C032E1272C8F5500597B66 /* Abstarction */ = {
+			isa = PBXGroup;
+			children = (
+				29C032DF272C8F4E00597B66 /* AbstractViewModel.swift */,
+			);
+			path = Abstarction;
+			sourceTree = "<group>";
+		};
+		29C032E4272CA57700597B66 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		29C032E7272CA5BA00597B66 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				29C032E8272CA5D900597B66 /* AbstractSearchUsecase.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		29C032EC272CA63A00597B66 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				29C032ED272CA65600597B66 /* AbstractSearchRepository.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		29C032EF272CA69700597B66 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				29C032F1272CA6AF00597B66 /* SearchUsecase.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		29C032F0272CA69E00597B66 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				29C032F3272CA6BE00597B66 /* SearchRepository.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		29C22FB4272B435100E67AAE = {
 			isa = PBXGroup;
 			children = (
@@ -313,8 +376,8 @@
 				29C23040272B46D800E67AAE /* Library */,
 				29C23019272B45D000E67AAE /* Helper */,
 				29C22FF9272B45D000E67AAE /* Extension */,
-				29C22FF3272B45D000E67AAE /* Route */,
 				29C2316B272B54E200E67AAE /* Client */,
+				29C22FF3272B45D000E67AAE /* Route */,
 				29C23162272B506F00E67AAE /* Domain */,
 				29C23161272B506300E67AAE /* Data */,
 				29C23160272B505900E67AAE /* Presentation */,
@@ -711,9 +774,9 @@
 		29C23160272B505900E67AAE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				29C23165272B50C900E67AAE /* Storyboard */,
 				29C23164272B50C400E67AAE /* View */,
 				29C23163272B50BC00E67AAE /* ViewModel */,
+				29C23165272B50C900E67AAE /* Storyboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -729,6 +792,7 @@
 		29C23162272B506F00E67AAE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				29C032E4272CA57700597B66 /* Entity */,
 				29C23168272B513200E67AAE /* Usecase */,
 				29C23167272B512B00E67AAE /* Repository */,
 			);
@@ -738,6 +802,8 @@
 		29C23163272B50BC00E67AAE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				29C032E1272C8F5500597B66 /* Abstarction */,
+				29C032E2272C9B2D00597B66 /* SerachViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -763,6 +829,7 @@
 		29C23166272B512200E67AAE /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				29C032F0272CA69E00597B66 /* Search */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -770,6 +837,8 @@
 		29C23167272B512B00E67AAE /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				29C032EA272CA62700597B66 /* AbstractRepository.swift */,
+				29C032EC272CA63A00597B66 /* Search */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -777,6 +846,8 @@
 		29C23168272B513200E67AAE /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				29C032E5272CA5A500597B66 /* AbstractUsecase.swift */,
+				29C032E7272CA5BA00597B66 /* Search */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -784,6 +855,7 @@
 		29C23169272B514900E67AAE /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				29C032EF272CA69700597B66 /* Search */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -1075,6 +1147,7 @@
 				29C23028272B45D000E67AAE /* QueueManager.swift in Sources */,
 				29C2311A272B46D800E67AAE /* SkeletonConfig.swift in Sources */,
 				29C2314F272B46D800E67AAE /* IQUIScrollView+Additions.swift in Sources */,
+				29C032EB272CA62700597B66 /* AbstractRepository.swift in Sources */,
 				29C23025272B45D000E67AAE /* Parameterizable.swift in Sources */,
 				29C23033272B45D000E67AAE /* FetchUserProfileParam.swift in Sources */,
 				29C23030272B45D000E67AAE /* ImageDownloader.swift in Sources */,
@@ -1082,13 +1155,17 @@
 				29C2312D272B46D800E67AAE /* SkeletonReusableCell.swift in Sources */,
 				29C23147272B46D800E67AAE /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				29C23151272B46D800E67AAE /* IQUITextFieldView+Additions.swift in Sources */,
+				29C032E3272C9B2D00597B66 /* SerachViewModel.swift in Sources */,
 				29C2312A272B46D800E67AAE /* SkeletonAnimationBuilder.swift in Sources */,
 				29C23026272B45D000E67AAE /* StubResponseProvider.swift in Sources */,
+				29C032E6272CA5A500597B66 /* AbstractUsecase.swift in Sources */,
 				29C23024272B45D000E67AAE /* ApiClient.swift in Sources */,
+				29C032E9272CA5D900597B66 /* AbstractSearchUsecase.swift in Sources */,
 				29C23130272B46D800E67AAE /* CollectionSkeletonProtocol.swift in Sources */,
 				29C23144272B46D800E67AAE /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				29C2314A272B46D800E67AAE /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				29C23124272B46D800E67AAE /* CALayer+Extensions.swift in Sources */,
+				29C032EE272CA65600597B66 /* AbstractSearchRepository.swift in Sources */,
 				29C2313C272B46D800E67AAE /* SkeletonDebug.swift in Sources */,
 				29C2303E272B464A00E67AAE /* AbstractDataModel.swift in Sources */,
 				29C23140272B46D800E67AAE /* IQPreviousNextView.swift in Sources */,
@@ -1122,6 +1199,7 @@
 				29C23141272B46D800E67AAE /* IQTitleBarButtonItem.swift in Sources */,
 				29C23143272B46D800E67AAE /* IQToolbar.swift in Sources */,
 				29C23138272B46D800E67AAE /* Swizzling.swift in Sources */,
+				29C032F2272CA6AF00597B66 /* SearchUsecase.swift in Sources */,
 				29C23023272B45D000E67AAE /* SceneDelegate.swift in Sources */,
 				29C23142272B46D800E67AAE /* IQBarButtonItem.swift in Sources */,
 				29C2314E272B46D800E67AAE /* IQKeyboardManager+Toolbar.swift in Sources */,
@@ -1132,6 +1210,7 @@
 				29C2302E272B45D000E67AAE /* DownloaderClient.swift in Sources */,
 				29C2301D272B45D000E67AAE /* GithubCoordinator.swift in Sources */,
 				29C2302C272B45D000E67AAE /* DownloadDataParser.swift in Sources */,
+				29C032F4272CA6BE00597B66 /* SearchRepository.swift in Sources */,
 				29C2312C272B46D800E67AAE /* UIView+Transitions.swift in Sources */,
 				29C2313E272B46D800E67AAE /* IQTextView.swift in Sources */,
 				29C23125272B46D800E67AAE /* UITableView+VisibleSections.swift in Sources */,
@@ -1150,6 +1229,7 @@
 				29C23139272B46D800E67AAE /* AssociationPolicy.swift in Sources */,
 				29C032DE272C299200597B66 /* BaseViewController.swift in Sources */,
 				29C2312F272B46D800E67AAE /* SkeletonCollectionDataSource.swift in Sources */,
+				29C032E0272C8F4E00597B66 /* AbstractViewModel.swift in Sources */,
 				29C23122272B46D800E67AAE /* UIColor+Skeleton.swift in Sources */,
 				29C23116272B46D800E67AAE /* SkeletonLayerBuilder.swift in Sources */,
 				29C23134272B46D800E67AAE /* UIView+CollectionSkeleton.swift in Sources */,

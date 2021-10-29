@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ViewController: BaseViewController {
+class SearchViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

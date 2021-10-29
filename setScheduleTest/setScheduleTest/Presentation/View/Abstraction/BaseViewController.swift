@@ -7,22 +7,22 @@
 
 import UIKit
 
-class BaseViewController: UIViewController, UIScrollViewDelegate {
+public class BaseViewController: UIViewController, UIScrollViewDelegate {
     public let TAG = description()
-//    public var viewModel: ViewModel<S, D, T>!
+    public var viewModel: AbstractViewModel!
     public var isShimmerNeeded: Bool = false
     public var isPaginationEnabled: Bool = true
     
-//    public init(viewModel: ViewModel<S, D, T>) {
-//        super.init(nibName: nil, bundle: nil)
-//        self.viewModel = viewModel
-//    }
+    public init(viewModel: AbstractViewModel) {
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
+    }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
@@ -56,7 +56,7 @@ class BaseViewController: UIViewController, UIScrollViewDelegate {
     }
     
     //when theme change, we can also define dark mode color option in color asset
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
         switch (traitCollection.userInterfaceStyle) {
@@ -98,7 +98,7 @@ class BaseViewController: UIViewController, UIScrollViewDelegate {
     
     
     // MARK: Pagination
-    enum ScrollDirection : Int {
+    public enum ScrollDirection : Int {
         case none
         case right
         case left
