@@ -16,31 +16,27 @@ public enum NetworkError: Error {
     
     public var errorMessage: String {
         switch self {
-        case .serverError(let code, let message):
+        case .serverError(_, let message):
             return message
-        case .decodingError(let code, let message):
+        case .decodingError(_, let message):
             return message
-        case .wrongMimeTypeError(let code, let message):
+        case .wrongMimeTypeError(_, let message):
             return message
-        case .noDataError(let code, let message):
+        case .noDataError(_, let message):
             return message
-        default:
-            return ""
         }
     }
     
     public var errorCode: Int {
         switch self {
-        case .serverError(let code, let message):
+        case .serverError(let code, _):
             return code
-        case .decodingError(let code, let message):
+        case .decodingError(let code, _):
             return code
-        case .wrongMimeTypeError(let code, let message):
+        case .wrongMimeTypeError(let code, _):
             return code
-        case .noDataError(let code, let message):
+        case .noDataError(let code, _):
             return code
-        default:
-            return -1
         }
     }
 }
@@ -72,7 +68,7 @@ public class APIClient: AbstractApiClient{
         return Observable.create { observer -> Disposable in
             session.dataTask(with: request) { [weak self] data, response, error in
                 guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                    observer.onError(NetworkError.serverError(code: (response as? HTTPURLResponse)?.statusCode ?? 101, message: "Request failed"))
+                    observer.onError(NetworkError.serverError(code: (response as? HTTPURLResponse)?.statusCode ?? 401, message: "Request failed"))
                     return
                 }
                 
