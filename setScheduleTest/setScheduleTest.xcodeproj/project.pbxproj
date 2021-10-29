@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		003F35F0EEFE52FC89A3C17E /* Pods_setScheduleTest_setScheduleTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FC2E37ED5474F4AA4EEC25 /* Pods_setScheduleTest_setScheduleTestUITests.framework */; };
 		168D0E9E271CA5F9347BF2B5 /* Pods_setScheduleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E842BCE35B501C401445756D /* Pods_setScheduleTest.framework */; };
+		29C032DE272C299200597B66 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032DD272C299200597B66 /* BaseViewController.swift */; };
 		29C22FC5272B435100E67AAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* ViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -131,6 +132,7 @@
 /* Begin PBXFileReference section */
 		10416E3B6DF1904F0E5BAB1D /* Pods_setScheduleTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_setScheduleTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2161461E633BC0F3142E5000 /* Pods-setScheduleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-setScheduleTest.debug.xcconfig"; path = "Target Support Files/Pods-setScheduleTest/Pods-setScheduleTest.debug.xcconfig"; sourceTree = "<group>"; };
+		29C032DD272C299200597B66 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -274,6 +276,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29C032DC272C297D00597B66 /* Abstraction */ = {
+			isa = PBXGroup;
+			children = (
+				29C032DD272C299200597B66 /* BaseViewController.swift */,
+			);
+			path = Abstraction;
+			sourceTree = "<group>";
+		};
 		29C22FB4272B435100E67AAE = {
 			isa = PBXGroup;
 			children = (
@@ -735,6 +745,7 @@
 		29C23164272B50C400E67AAE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				29C032DC272C297D00597B66 /* Abstraction */,
 				29C22FC4272B435100E67AAE /* ViewController.swift */,
 			);
 			path = View;
@@ -1137,6 +1148,7 @@
 				29C23153272B46D800E67AAE /* IQNSArray+Sort.swift in Sources */,
 				29C2311D272B46D800E67AAE /* Int+Whitespaces.swift in Sources */,
 				29C23139272B46D800E67AAE /* AssociationPolicy.swift in Sources */,
+				29C032DE272C299200597B66 /* BaseViewController.swift in Sources */,
 				29C2312F272B46D800E67AAE /* SkeletonCollectionDataSource.swift in Sources */,
 				29C23122272B46D800E67AAE /* UIColor+Skeleton.swift in Sources */,
 				29C23116272B46D800E67AAE /* SkeletonLayerBuilder.swift in Sources */,
