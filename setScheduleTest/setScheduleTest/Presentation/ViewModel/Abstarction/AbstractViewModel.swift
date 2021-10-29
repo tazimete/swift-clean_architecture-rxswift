@@ -9,5 +9,5 @@ import Foundation
 
 
 public protocol AbstractViewModel: AnyObject {
-    
+    var usecase: AbstractUsecase {get}
 }

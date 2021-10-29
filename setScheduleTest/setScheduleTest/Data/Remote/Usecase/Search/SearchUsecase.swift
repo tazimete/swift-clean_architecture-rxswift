@@ -8,5 +8,9 @@
 import Foundation
 
 public class SearchUsecase: AbstractSearchUsecase {
+    public var repository: AbstractRepository
     
+    public init() {
+        repository = SearchRepository()
+    }
 }

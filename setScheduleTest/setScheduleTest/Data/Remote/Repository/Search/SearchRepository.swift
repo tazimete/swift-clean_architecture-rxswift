@@ -9,5 +9,11 @@ import Foundation
 
 
 public class SearchRepository: AbstractSearchRepository {
+    public var apiClient: AbstractApiClient
+    
+    public init() {
+        apiClient = APIClient.shared
+    }
+    
     
 }

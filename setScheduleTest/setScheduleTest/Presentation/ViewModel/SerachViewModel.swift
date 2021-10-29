@@ -14,6 +14,12 @@ public protocol AbstarctSearchViewModel: AbstractViewModel {
 
 
 public class SearchViewModel: AbstarctSearchViewModel {
+    public var usecase: AbstractUsecase
+    
+    public init() {
+        usecase = SearchUsecase() 
+    }
+    
     public struct Input {
         
     }

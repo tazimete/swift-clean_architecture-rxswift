@@ -9,5 +9,5 @@ import Foundation
 
 
 public protocol AbstractUsecase: AnyObject {
-    
+    var repository: AbstractRepository {get}
 }
