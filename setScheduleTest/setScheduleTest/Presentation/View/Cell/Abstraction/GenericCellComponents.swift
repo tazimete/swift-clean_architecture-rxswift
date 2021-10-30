@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol AbstractGithubCell: AnyObject{
+public protocol AbstractSearchCell: AnyObject{
     var viewModel: AbstractCellViewModel? {get}
     static var cellReuseIdentifier: String {set get}
     

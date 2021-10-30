@@ -21,7 +21,7 @@
 		29C032F8272D39ED00597B66 /* SearchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F7272D39ED00597B66 /* SearchItemCell.swift */; };
 		29C032FA272D3A4D00597B66 /* ShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F9272D3A4D00597B66 /* ShimmerCell.swift */; };
 		29C032FC272D3A9100597B66 /* CellConfiguratorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032FB272D3A9100597B66 /* CellConfiguratorFactory.swift */; };
-		29C032FE272D3B0500597B66 /* GenericCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032FD272D3B0500597B66 /* GenericCell.swift */; };
+		29C032FE272D3B0500597B66 /* GenericCellComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032FD272D3B0500597B66 /* GenericCellComponents.swift */; };
 		29C22FC5272B435100E67AAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* ViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -156,7 +156,7 @@
 		29C032F7272D39ED00597B66 /* SearchItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemCell.swift; sourceTree = "<group>"; };
 		29C032F9272D3A4D00597B66 /* ShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerCell.swift; sourceTree = "<group>"; };
 		29C032FB272D3A9100597B66 /* CellConfiguratorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfiguratorFactory.swift; sourceTree = "<group>"; };
-		29C032FD272D3B0500597B66 /* GenericCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCell.swift; sourceTree = "<group>"; };
+		29C032FD272D3B0500597B66 /* GenericCellComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCellComponents.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -365,12 +365,20 @@
 		29C032F6272D39DD00597B66 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				29C032FF272D3E6200597B66 /* Abstraction */,
 				29C032F7272D39ED00597B66 /* SearchItemCell.swift */,
 				29C032F9272D3A4D00597B66 /* ShimmerCell.swift */,
-				29C032FB272D3A9100597B66 /* CellConfiguratorFactory.swift */,
-				29C032FD272D3B0500597B66 /* GenericCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		29C032FF272D3E6200597B66 /* Abstraction */ = {
+			isa = PBXGroup;
+			children = (
+				29C032FD272D3B0500597B66 /* GenericCellComponents.swift */,
+				29C032FB272D3A9100597B66 /* CellConfiguratorFactory.swift */,
+			);
+			path = Abstraction;
 			sourceTree = "<group>";
 		};
 		29C22FB4272B435100E67AAE = {
@@ -1224,7 +1232,7 @@
 				29C032F8272D39ED00597B66 /* SearchItemCell.swift in Sources */,
 				29C23022272B45D000E67AAE /* AppDelegate.swift in Sources */,
 				29C23132272B46D800E67AAE /* UITableView+CollectionSkeleton.swift in Sources */,
-				29C032FE272D3B0500597B66 /* GenericCell.swift in Sources */,
+				29C032FE272D3B0500597B66 /* GenericCellComponents.swift in Sources */,
 				29C2313F272B46D800E67AAE /* IQKeyboardManager+Internal.swift in Sources */,
 				29C22FC5272B435100E67AAE /* ViewController.swift in Sources */,
 				29C23141272B46D800E67AAE /* IQTitleBarButtonItem.swift in Sources */,

@@ -10,6 +10,8 @@ import RxSwift
 import RxCocoa
 
 class SearchViewController: BaseViewController {
+    private let disposeBag = DisposeBag()
+    private let searchTrigger = PublishSubject<Void>()
     private let tableView = UITableView()
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -75,23 +77,28 @@ class SearchViewController: BaseViewController {
     }
     
     override func bindViewModel() {
+        
         let viewModel = SearchViewModel()
-        viewModel
-            .searchData()
-            .observe(on: MainScheduler.asyncInstance).subscribe(onNext: {
-                        response in
+        let searchInput = SearchViewModel.SearchInput(searchItemListTrigger: searchTrigger)
+        let searchOutput = viewModel.getSearchOutput(input: searchInput)
+        
+        searchOutput.searchItems.subscribe(onNext: { [weak self] response in
+            guard let weakSelf = self else {
+                return
+            }
             
-                        print("response = \(response.count)")
+            debugPrint(response)
             
-                    } , onError: {
-                        error in
-            
-                        guard let networkError = error as? NetworkError else {
-                            return
-                        }
-            
-                        print("Error = \(networkError.errorMessage)")
-                    }, onCompleted: nil, onDisposed: nil)
+        }, onError: {[weak self] error in
+            guard let weakSelf = self, let networkError = error as? NetworkError else {
+                return
+            }
+
+            print("\(weakSelf.TAG) bindViewModel() -- Error = \(networkError.errorMessage)")
+        }).disposed(by: disposeBag)
+        
+        //fire search event
+        searchTrigger.onNext(())
     }
 
 }
