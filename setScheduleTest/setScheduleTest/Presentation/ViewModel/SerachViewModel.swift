@@ -10,7 +10,8 @@ import RxSwift
 import RxCocoa
 
 public protocol AbstarctSearchViewModel: AbstractViewModel {
-    func searchData() -> Observable<GithubApiRequest.ResponseType>
+    func getSearchOutput(input: SearchViewModel.SearchInput) -> SearchViewModel.SearchOutput
+    func searchData() -> Observable<SearchApiRequest.ResponseType>
 }
 
 public class SearchViewModel: AbstarctSearchViewModel {
@@ -19,31 +20,31 @@ public class SearchViewModel: AbstarctSearchViewModel {
         usecase = SearchUsecase()
     }
     
-    struct SearchInput {
+    public struct SearchInput {
         let searchItemListTrigger: Observable<Void>
     }
     
-    struct SearchOutput {
-        let searchItems: BehaviorRelay<GithubApiRequest.ResponseType>
+    public struct SearchOutput {
+        let searchItems: BehaviorRelay<[SearchApiRequest.ItemType]>
     }
     
     public var usecase: AbstractUsecase
     
-    func getSearchOutput(input: SearchInput) -> SearchOutput {
-        let searchListResponse = BehaviorRelay<GithubApiRequest.ResponseType>(value: GithubApiRequest.ResponseType([]))
+    public func getSearchOutput(input: SearchInput) -> SearchOutput {
+        let searchListResponse = BehaviorRelay<[SearchApiRequest.ItemType]>(value: [])
 
-        input.searchItemListTrigger.flatMapLatest({ () -> Observable<GithubApiRequest.ResponseType> in
+        input.searchItemListTrigger.flatMapLatest({ () -> Observable<SearchApiRequest.ResponseType> in
             self.searchData()
         }).subscribe(onNext: {
             response in
             
-            searchListResponse.accept(response)
+            searchListResponse.accept(response.results ?? [])
         }, onError: nil, onCompleted: nil, onDisposed: nil)
         
         return SearchOutput.init(searchItems: searchListResponse)
     }
     
-    public func searchData() -> Observable<GithubApiRequest.ResponseType> {
+    public func searchData() -> Observable<SearchApiRequest.ResponseType> {
         return (usecase as! AbstractSearchUsecase).search()
     }
 }

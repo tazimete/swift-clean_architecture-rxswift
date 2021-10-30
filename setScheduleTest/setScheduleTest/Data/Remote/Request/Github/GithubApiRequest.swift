@@ -7,18 +7,19 @@
 
 import Foundation
 
-public enum GithubApiRequest {
+public enum SearchApiRequest {
     case fetchUserList(params: Parameterizable)
     case fetchUserProfile(params: Parameterizable)
 }
 
-extension GithubApiRequest: APIRequest {
+extension SearchApiRequest: APIRequest {
     public var baseURL: URL {
-        let url =  "https://api.github.com"
+        let url =  "https://api.themoviedb.org/3/"
         return URL(string: url)!
     }
     
-    public typealias ResponseType = [GithubUser]
+    public typealias ItemType = Movie
+    public typealias ResponseType = Entity<ItemType>
     
     public var method: RequestType {
         switch self {
@@ -29,7 +30,7 @@ extension GithubApiRequest: APIRequest {
     
     public var path: String {
         switch self {
-            case .fetchUserList: return "users"
+            case .fetchUserList: return "search/movie"
             case .fetchUserProfile: return "users/\(parameters["username"] as! String)"
         }
     }

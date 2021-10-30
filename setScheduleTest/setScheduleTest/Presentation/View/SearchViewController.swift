@@ -81,7 +81,7 @@ class SearchViewController: BaseViewController {
                 guard let cell = cell as? SearchItemCell else {
                     return
                 }
-            cell.lblUsername.text = "\(model.username ?? "") from \(model.id ?? 0)"
+            cell.lblUsername.text = "\(model.title ?? "") from \(model.originalTitle ?? "")"
         }.disposed(by: disposeBag)
         
         //fire search event

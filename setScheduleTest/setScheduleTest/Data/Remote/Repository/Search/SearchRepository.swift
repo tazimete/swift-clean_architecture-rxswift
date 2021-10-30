@@ -15,7 +15,7 @@ public class SearchRepository: AbstractSearchRepository {
         apiClient = APIClient.shared
     }
     
-    public func get() -> Observable<GithubApiRequest.ResponseType> {
-        return apiClient.send(apiRequest: GithubApiRequest.fetchUserList(params: FetchGithubUserParam(since: 0)), type: GithubApiRequest.ResponseType.self)
+    public func get() -> Observable<SearchApiRequest.ResponseType> {
+        return apiClient.send(apiRequest: SearchApiRequest.fetchUserList(params: MoviewSearchParams(query: "the", year: 2000)), type: SearchApiRequest.ResponseType.self)
     }
 }

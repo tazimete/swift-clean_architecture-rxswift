@@ -11,11 +11,11 @@ public struct Movie: Codable {
     public let id: Int?
     public let originalTitle: String?
     public let overview: String?
-    public let popularity: Int?
+    public let popularity: Float?
     public let posterPath: String?
     public let releaseDate: String?
     public let title: String?
-    public let voteAverage: Int?
+    public let voteAverage: Float?
     public let voteCount: Int?
     
     public enum CodingKeys: String, CodingKey {

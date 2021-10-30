@@ -15,7 +15,7 @@ public class SearchUsecase: AbstractSearchUsecase {
         repository = SearchRepository()
     }
     
-    public func search() -> Observable<GithubApiRequest.ResponseType> {
+    public func search() -> Observable<SearchApiRequest.ResponseType> {
         return (repository as! AbstractSearchRepository).get()
     }
 }
