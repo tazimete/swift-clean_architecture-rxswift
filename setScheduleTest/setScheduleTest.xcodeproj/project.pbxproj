@@ -53,7 +53,7 @@
 		29C2302F272B45D000E67AAE /* AbstractDownloaderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C23011272B45D000E67AAE /* AbstractDownloaderClient.swift */; };
 		29C23030272B45D000E67AAE /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C23013272B45D000E67AAE /* ImageDownloader.swift */; };
 		29C23031272B45D000E67AAE /* MoviewSearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C23016272B45D000E67AAE /* MoviewSearchParams.swift */; };
-		29C23032272B45D000E67AAE /* GithubApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C23017272B45D000E67AAE /* GithubApiRequest.swift */; };
+		29C23032272B45D000E67AAE /* SearchApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C23017272B45D000E67AAE /* SearchApiRequest.swift */; };
 		29C23033272B45D000E67AAE /* FetchUserProfileParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C23018272B45D000E67AAE /* FetchUserProfileParam.swift */; };
 		29C23034272B45D000E67AAE /* ShimmerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2301A272B45D000E67AAE /* ShimmerHelper.swift */; };
 		29C2303D272B464A00E67AAE /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C23039272B464A00E67AAE /* GithubUser.swift */; };
@@ -196,7 +196,7 @@
 		29C23011272B45D000E67AAE /* AbstractDownloaderClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDownloaderClient.swift; sourceTree = "<group>"; };
 		29C23013272B45D000E67AAE /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		29C23016272B45D000E67AAE /* MoviewSearchParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviewSearchParams.swift; sourceTree = "<group>"; };
-		29C23017272B45D000E67AAE /* GithubApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubApiRequest.swift; sourceTree = "<group>"; };
+		29C23017272B45D000E67AAE /* SearchApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchApiRequest.swift; sourceTree = "<group>"; };
 		29C23018272B45D000E67AAE /* FetchUserProfileParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchUserProfileParam.swift; sourceTree = "<group>"; };
 		29C2301A272B45D000E67AAE /* ShimmerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimmerHelper.swift; sourceTree = "<group>"; };
 		29C23039272B464A00E67AAE /* GithubUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
@@ -571,7 +571,7 @@
 			isa = PBXGroup;
 			children = (
 				29C23016272B45D000E67AAE /* MoviewSearchParams.swift */,
-				29C23017272B45D000E67AAE /* GithubApiRequest.swift */,
+				29C23017272B45D000E67AAE /* SearchApiRequest.swift */,
 				29C23018272B45D000E67AAE /* FetchUserProfileParam.swift */,
 			);
 			path = Github;
@@ -1233,7 +1233,7 @@
 				29C23154272B46D800E67AAE /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */,
 				29C032FC272D3A9100597B66 /* CellConfiguratorFactory.swift in Sources */,
 				29C23115272B46D800E67AAE /* SkeletonMultilineLayerBuilder.swift in Sources */,
-				29C23032272B45D000E67AAE /* GithubApiRequest.swift in Sources */,
+				29C23032272B45D000E67AAE /* SearchApiRequest.swift in Sources */,
 				29C23149272B46D800E67AAE /* IQKeyboardManager+Position.swift in Sources */,
 				29C23020272B45D000E67AAE /* UIImage+Extension.swift in Sources */,
 				29C23034272B45D000E67AAE /* ShimmerHelper.swift in Sources */,

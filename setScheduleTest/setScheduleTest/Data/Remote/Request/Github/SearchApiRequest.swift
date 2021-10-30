@@ -8,7 +8,7 @@
 import Foundation
 
 public enum SearchApiRequest {
-    case fetchUserList(params: Parameterizable)
+    case searchMovie(params: Parameterizable)
     case fetchUserProfile(params: Parameterizable)
 }
 
@@ -23,14 +23,14 @@ extension SearchApiRequest: APIRequest {
     
     public var method: RequestType {
         switch self {
-            case .fetchUserList: return .GET
+            case .searchMovie: return .GET
             case .fetchUserProfile: return .GET
         }
     }
     
     public var path: String {
         switch self {
-            case .fetchUserList: return "search/movie"
+            case .searchMovie: return "search/movie"
             case .fetchUserProfile: return "users/\(parameters["username"] as! String)"
         }
     }
@@ -39,7 +39,7 @@ extension SearchApiRequest: APIRequest {
         var parameter: [String: Any] = [:]
         
         switch self {
-            case .fetchUserList (let params):
+            case .searchMovie (let params):
                 parameter = params.asRequestParam
                 
             case .fetchUserProfile (let params):
