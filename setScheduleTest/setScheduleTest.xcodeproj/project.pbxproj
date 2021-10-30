@@ -22,7 +22,7 @@
 		29C032FA272D3A4D00597B66 /* ShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F9272D3A4D00597B66 /* ShimmerCell.swift */; };
 		29C032FC272D3A9100597B66 /* CellConfiguratorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032FB272D3A9100597B66 /* CellConfiguratorFactory.swift */; };
 		29C032FE272D3B0500597B66 /* GenericCellComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032FD272D3B0500597B66 /* GenericCellComponents.swift */; };
-		29C03301272DDEAE00597B66 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03300272DDEAE00597B66 /* Entity.swift */; };
+		29C03301272DDEAE00597B66 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03300272DDEAE00597B66 /* Response.swift */; };
 		29C03304272DE17300597B66 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03303272DE17300597B66 /* Movie.swift */; };
 		29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* SearchViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
@@ -159,7 +159,7 @@
 		29C032F9272D3A4D00597B66 /* ShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerCell.swift; sourceTree = "<group>"; };
 		29C032FB272D3A9100597B66 /* CellConfiguratorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfiguratorFactory.swift; sourceTree = "<group>"; };
 		29C032FD272D3B0500597B66 /* GenericCellComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCellComponents.swift; sourceTree = "<group>"; };
-		29C03300272DDEAE00597B66 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		29C03300272DDEAE00597B66 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		29C03303272DE17300597B66 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 		29C032E4272CA57700597B66 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				29C03300272DDEAE00597B66 /* Entity.swift */,
+				29C03300272DDEAE00597B66 /* Response.swift */,
 				29C03302272DE16600597B66 /* Search */,
 			);
 			path = Entity;
@@ -1295,7 +1295,7 @@
 				29C2311F272B46D800E67AAE /* UIView+Autolayout.swift in Sources */,
 				29C23131272B46D800E67AAE /* SkeletonCollectionDelegate.swift in Sources */,
 				29C2301C272B45D000E67AAE /* Coordinator.swift in Sources */,
-				29C03301272DDEAE00597B66 /* Entity.swift in Sources */,
+				29C03301272DDEAE00597B66 /* Response.swift in Sources */,
 				29C2312B272B46D800E67AAE /* SkeletonTransitionStyle.swift in Sources */,
 				29C23152272B46D800E67AAE /* IQUIView+Hierarchy.swift in Sources */,
 				29C2311C272B46D800E67AAE /* RecoverableViewState.swift in Sources */,

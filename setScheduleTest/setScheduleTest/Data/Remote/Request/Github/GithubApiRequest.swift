@@ -19,7 +19,7 @@ extension SearchApiRequest: APIRequest {
     }
     
     public typealias ItemType = Movie
-    public typealias ResponseType = Entity<ItemType>
+    public typealias ResponseType = Response<ItemType>
     
     public var method: RequestType {
         switch self {
