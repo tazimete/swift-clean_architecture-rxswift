@@ -43,10 +43,6 @@ class SearchViewController: BaseViewController {
         tableView.showsHorizontalScrollIndicator = false
         tableView.showsVerticalScrollIndicator = false
         
-        // tableview delegate
-//        tableView.delegate = self
-//        tableView.dataSource = self
-        
         //cell registration
         tableView.register(SearchItemCell.self, forCellReuseIdentifier: SearchItemCellConfig.reuseId)
         
@@ -96,7 +92,7 @@ class SearchViewController: BaseViewController {
 //MARK: UISeacrController Delegate
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let text = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+//        let text = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         
 //        githubViewModel.searchUser(searchText: searchText)
 //        tableView.reloadData()
