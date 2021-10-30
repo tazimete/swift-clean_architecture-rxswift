@@ -82,20 +82,25 @@ class SearchViewController: BaseViewController {
         let searchInput = SearchViewModel.SearchInput(searchItemListTrigger: searchTrigger)
         let searchOutput = viewModel.getSearchOutput(input: searchInput)
         
-        searchOutput.searchItems.subscribe(onNext: { [weak self] response in
-            guard let weakSelf = self else {
-                return
+        searchOutput.searchItems
+            .bind(to: tableView.rx.items(cellIdentifier: SearchItemCellConfig.reuseId)) { row, model, cell in
+                cell.textLabel?.text = "\(model.username) from \(model.company)"
             }
-            
-            debugPrint(response)
-            
-        }, onError: {[weak self] error in
-            guard let weakSelf = self, let networkError = error as? NetworkError else {
-                return
-            }
-
-            print("\(weakSelf.TAG) bindViewModel() -- Error = \(networkError.errorMessage)")
-        }).disposed(by: disposeBag)
+//            .subscribe(onNext: { [weak self] response in
+//            guard let weakSelf = self else {
+//                return
+//            }
+//
+//            debugPrint(response)
+//
+//        }, onError: {[weak self] error in
+//            guard let weakSelf = self, let networkError = error as? NetworkError else {
+//                return
+//            }
+//
+//            print("\(weakSelf.TAG) bindViewModel() -- Error = \(networkError.errorMessage)")
+//        })
+            .disposed(by: disposeBag)
         
         //fire search event
         searchTrigger.onNext(())
