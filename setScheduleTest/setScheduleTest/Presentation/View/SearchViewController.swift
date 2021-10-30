@@ -77,35 +77,20 @@ class SearchViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        
         let viewModel = SearchViewModel()
         let searchInput = SearchViewModel.SearchInput(searchItemListTrigger: searchTrigger)
         let searchOutput = viewModel.getSearchOutput(input: searchInput)
         
-        searchOutput.searchItems
-            .bind(to: tableView.rx.items(cellIdentifier: SearchItemCellConfig.reuseId)) { row, model, cell in
-                cell.textLabel?.text = "\(model.username) from \(model.company)"
-            }
-//            .subscribe(onNext: { [weak self] response in
-//            guard let weakSelf = self else {
-//                return
-//            }
-//
-//            debugPrint(response)
-//
-//        }, onError: {[weak self] error in
-//            guard let weakSelf = self, let networkError = error as? NetworkError else {
-//                return
-//            }
-//
-//            print("\(weakSelf.TAG) bindViewModel() -- Error = \(networkError.errorMessage)")
-//        })
-            .disposed(by: disposeBag)
+        searchOutput.searchItems.bind(to: tableView.rx.items(cellIdentifier: SearchItemCellConfig.reuseId)) { row, model, cell in
+                guard let cell = cell as? SearchItemCell else {
+                    return
+                }
+            cell.lblUsername.text = "\(model.username ?? "") from \(model.id ?? 0)"
+        }.disposed(by: disposeBag)
         
         //fire search event
         searchTrigger.onNext(())
     }
-
 }
 
 //MARK: UISeacrController Delegate
