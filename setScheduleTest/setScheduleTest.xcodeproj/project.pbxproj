@@ -18,6 +18,10 @@
 		29C032EE272CA65600597B66 /* AbstractSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032ED272CA65600597B66 /* AbstractSearchRepository.swift */; };
 		29C032F2272CA6AF00597B66 /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F1272CA6AF00597B66 /* SearchUsecase.swift */; };
 		29C032F4272CA6BE00597B66 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F3272CA6BE00597B66 /* SearchRepository.swift */; };
+		29C032F8272D39ED00597B66 /* SearchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F7272D39ED00597B66 /* SearchItemCell.swift */; };
+		29C032FA272D3A4D00597B66 /* ShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F9272D3A4D00597B66 /* ShimmerCell.swift */; };
+		29C032FC272D3A9100597B66 /* CellConfiguratorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032FB272D3A9100597B66 /* CellConfiguratorFactory.swift */; };
+		29C032FE272D3B0500597B66 /* GenericCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032FD272D3B0500597B66 /* GenericCell.swift */; };
 		29C22FC5272B435100E67AAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* ViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -149,6 +153,10 @@
 		29C032ED272CA65600597B66 /* AbstractSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractSearchRepository.swift; sourceTree = "<group>"; };
 		29C032F1272CA6AF00597B66 /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
 		29C032F3272CA6BE00597B66 /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
+		29C032F7272D39ED00597B66 /* SearchItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemCell.swift; sourceTree = "<group>"; };
+		29C032F9272D3A4D00597B66 /* ShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerCell.swift; sourceTree = "<group>"; };
+		29C032FB272D3A9100597B66 /* CellConfiguratorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfiguratorFactory.swift; sourceTree = "<group>"; };
+		29C032FD272D3B0500597B66 /* GenericCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCell.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -352,6 +360,17 @@
 			children = (
 			);
 			path = Local;
+			sourceTree = "<group>";
+		};
+		29C032F6272D39DD00597B66 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				29C032F7272D39ED00597B66 /* SearchItemCell.swift */,
+				29C032F9272D3A4D00597B66 /* ShimmerCell.swift */,
+				29C032FB272D3A9100597B66 /* CellConfiguratorFactory.swift */,
+				29C032FD272D3B0500597B66 /* GenericCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		29C22FB4272B435100E67AAE = {
@@ -819,6 +838,7 @@
 		29C23164272B50C400E67AAE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				29C032F6272D39DD00597B66 /* Cell */,
 				29C032DC272C297D00597B66 /* Abstraction */,
 				29C22FC4272B435100E67AAE /* ViewController.swift */,
 			);
@@ -1189,6 +1209,7 @@
 				29C2301F272B45D000E67AAE /* UIView+Extensions.swift in Sources */,
 				29C23121272B46D800E67AAE /* UIView+Frame.swift in Sources */,
 				29C23154272B46D800E67AAE /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */,
+				29C032FC272D3A9100597B66 /* CellConfiguratorFactory.swift in Sources */,
 				29C23115272B46D800E67AAE /* SkeletonMultilineLayerBuilder.swift in Sources */,
 				29C23032272B45D000E67AAE /* GithubApiRequest.swift in Sources */,
 				29C23149272B46D800E67AAE /* IQKeyboardManager+Position.swift in Sources */,
@@ -1200,8 +1221,10 @@
 				29C23113272B46D800E67AAE /* SkeletonGradient.swift in Sources */,
 				29C2312E272B46D800E67AAE /* GenericCollectionView.swift in Sources */,
 				29C23123272B46D800E67AAE /* UIView+UIApplicationDelegate.swift in Sources */,
+				29C032F8272D39ED00597B66 /* SearchItemCell.swift in Sources */,
 				29C23022272B45D000E67AAE /* AppDelegate.swift in Sources */,
 				29C23132272B46D800E67AAE /* UITableView+CollectionSkeleton.swift in Sources */,
+				29C032FE272D3B0500597B66 /* GenericCell.swift in Sources */,
 				29C2313F272B46D800E67AAE /* IQKeyboardManager+Internal.swift in Sources */,
 				29C22FC5272B435100E67AAE /* ViewController.swift in Sources */,
 				29C23141272B46D800E67AAE /* IQTitleBarButtonItem.swift in Sources */,
@@ -1221,6 +1244,7 @@
 				29C032F4272CA6BE00597B66 /* SearchRepository.swift in Sources */,
 				29C2312C272B46D800E67AAE /* UIView+Transitions.swift in Sources */,
 				29C2313E272B46D800E67AAE /* IQTextView.swift in Sources */,
+				29C032FA272D3A4D00597B66 /* ShimmerCell.swift in Sources */,
 				29C23125272B46D800E67AAE /* UITableView+VisibleSections.swift in Sources */,
 				29C23150272B46D800E67AAE /* IQUIViewController+Additions.swift in Sources */,
 				29C2302B272B45D000E67AAE /* Downloader.swift in Sources */,
