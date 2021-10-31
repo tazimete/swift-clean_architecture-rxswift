@@ -10,10 +10,20 @@ import RxSwift
 import RxCocoa
 
 class SearchViewController: BaseViewController {
-    
     private let disposeBag = DisposeBag()
     private let searchTrigger = PublishSubject<Void>()
-    private let tableView = UITableView()
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
+        tableView.separatorInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = false
+        
+        //cell registration
+        tableView.register(SearchItemCell.self, forCellReuseIdentifier: SearchItemCellConfig.reuseId)
+        return tableView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +33,7 @@ class SearchViewController: BaseViewController {
         super.initView()
         //setup tableview
         view.addSubview(tableView)
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 0, enableInsets: true)
-        
-        tableView.separatorStyle = .none
-        tableView.separatorInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        tableView.showsHorizontalScrollIndicator = false
-        tableView.showsVerticalScrollIndicator = false
-        
-        //cell registration
-        tableView.register(SearchItemCell.self, forCellReuseIdentifier: SearchItemCellConfig.reuseId)
     }
     
     override func initNavigationBar() {
@@ -63,7 +63,7 @@ class SearchViewController: BaseViewController {
                 return 
             }
             
-            print("\(weakSelf.TAG) -- bindViewModel() -- error  -- code = \(error.errorCode), message = \(error.errorMessage)")
+            print("\(String(describing: weakSelf.TAG)) -- bindViewModel() -- error  -- code = \(error.errorCode), message = \(error.errorMessage)")
         }).disposed(by: disposeBag)
     }
     
@@ -79,8 +79,8 @@ class SearchViewController: BaseViewController {
         }
         
         let saveAction = UIAlertAction(title: "Search", style: UIAlertAction.Style.default, handler: { [weak self] alert -> Void in
-            let name = (alertController.textFields?[0] as? UITextField)?.text ?? ""
-            let year = (alertController.textFields?[1] as? UITextField)?.text ?? ""
+            let name = (alertController.textFields?[0])?.text ?? ""
+            let year = (alertController.textFields?[1])?.text ?? ""
             
             if !name.isEmpty && !year.isEmpty {
                 self?.searchMovie(name: name, year: Int(year) ?? 00)
