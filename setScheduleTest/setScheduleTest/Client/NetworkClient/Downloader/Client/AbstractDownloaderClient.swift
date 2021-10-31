@@ -26,4 +26,5 @@ public class DownloaderResponse {
 public protocol AbstractDownloaderClient: AnyObject {
     var queueManager: QueueManager {get set}
     func enqueue(session: URLSession, downloadTaskURL: URL, completionHandler: @escaping DownloadResultHandler)
+    func download(session: URLSession, downloadTaskURL: URL, completionHandler: @escaping DownloadResultHandler)
 }

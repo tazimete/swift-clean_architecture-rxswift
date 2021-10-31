@@ -23,4 +23,27 @@ public class DownloaderClient: AbstractDownloaderClient {
         operation.qualityOfService = .utility
         queueManager.enqueue(operation)
     }
+    
+    public func download(session: URLSession, downloadTaskURL: URL, completionHandler: @escaping DownloadResultHandler) {
+        let imageUrlString = downloadTaskURL.absoluteString
+                
+        session.dataTask(with: downloadTaskURL) { [weak self] (data, response, error) in
+            if let _ = error {
+                DispatchQueue.main.async {
+                    completionHandler(.failure(.serverError(code: (response as? HTTPURLResponse)?.statusCode ?? 101, message: "Request failed")))
+                }
+                return
+            }
+            
+            guard let data = data else {
+                completionHandler(.failure(.noDataError(code: (response as? HTTPURLResponse)?.statusCode ?? 500, message: "Wrong mimetype")))
+                return
+            }
+            
+            // Always execute completion handler explicitly on main thread
+            DispatchQueue.main.async {
+                completionHandler(.success(.init(url: imageUrlString, data: data, isCached: false)))
+            }
+        }.resume()
+    }
 }

@@ -61,13 +61,16 @@ class SearchViewController: BaseViewController {
         searchOutput.searchItems
             .bind(to: tableView.rx.items) { tableView, row, model in
                 // Movie title cant be nil after receiving response from api call 
-                if model.title == nil {
+                if model.id == nil {
                     let cell = tableView.dequeueReusableCell(withIdentifier: ShimmerItemCellConfig.reuseId, for: IndexPath(row: row, section: 0)) as! SearchShimmerCell
                     cell.configure()
                     return cell
                 }else {
                     let cell = tableView.dequeueReusableCell(withIdentifier: SearchItemCellConfig.reuseId, for: IndexPath(row: row, section: 0)) as! SearchItemCell
                     cell.lblTitle.text = model.title
+                    cell.ivPoster.loadImage(from: "\(AppConfig.shared.getServerConfig().getMediaBaseUrl())/\(model.posterPath ?? "" )", completionHandler: { url,image,isFinished  in
+                        cell.ivPoster.image = image
+                    })
                     return cell
                 }
             }.disposed(by: disposeBag)

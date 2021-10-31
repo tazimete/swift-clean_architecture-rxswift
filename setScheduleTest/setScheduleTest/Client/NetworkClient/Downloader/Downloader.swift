@@ -50,7 +50,7 @@ public class Downloader<T>: AbstractDownloader {
             config.urlCache = cache
             let session = URLSession(configuration: config)
             
-            downloaderClient.enqueue(session: session, downloadTaskURL: url, completionHandler: {
+            downloaderClient.download(session: session, downloadTaskURL: url, completionHandler: {
                 [weak self] result in
                 
                 //handle result
