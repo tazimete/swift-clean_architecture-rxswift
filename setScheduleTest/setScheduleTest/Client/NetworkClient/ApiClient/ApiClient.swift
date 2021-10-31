@@ -13,6 +13,7 @@ public enum NetworkError: Error {
     case decodingError(code: Int, message: String)
     case wrongMimeTypeError(code: Int, message: String)
     case noDataError(code: Int, message: String)
+    case none
     
     public var errorMessage: String {
         switch self {
@@ -24,6 +25,8 @@ public enum NetworkError: Error {
             return message
         case .noDataError(_, let message):
             return message
+        case .none:
+            return ""
         }
     }
     
@@ -37,6 +40,8 @@ public enum NetworkError: Error {
             return code
         case .noDataError(let code, _):
             return code
+        case .none: 
+            return 0
         }
     }
 }

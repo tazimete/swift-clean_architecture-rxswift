@@ -8,7 +8,9 @@
 import UIKit
 
 public class BaseViewController: UIViewController, UIScrollViewDelegate {
-    public let TAG = description()
+    public lazy var TAG = {
+        return self.description
+    }
     public var viewModel: AbstractViewModel!
     public var isShimmerNeeded: Bool = false
     public var isPaginationEnabled: Bool = true

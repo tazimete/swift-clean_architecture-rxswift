@@ -10,21 +10,10 @@ import RxSwift
 import RxCocoa
 
 class SearchViewController: BaseViewController {
+    
     private let disposeBag = DisposeBag()
     private let searchTrigger = PublishSubject<Void>()
     private let tableView = UITableView()
-    private lazy var searchController: UISearchController = {
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.delegate = self
-        searchController.searchBar.sizeToFit()
-        searchController.searchBar.tintColor = .brown
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.automaticallyShowsCancelButton = true
-        self.definesPresentationContext = true
-        
-        return searchController
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,46 +34,68 @@ class SearchViewController: BaseViewController {
         
         //cell registration
         tableView.register(SearchItemCell.self, forCellReuseIdentifier: SearchItemCellConfig.reuseId)
-        
-        //add serch controller
-        self.navigationItem.titleView = self.searchController.searchBar
     }
     
-    //when theme change, we can also define dark mode color option in color asset
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        
-        switch (traitCollection.userInterfaceStyle) {
-            case .dark:
-                searchController.searchBar.backgroundColor = .black
-                tableView.backgroundColor = .black
-                break
-                
-            case .light:
-                searchController.searchBar.backgroundColor = .white
-                tableView.backgroundColor = .white
-                break
-                
-            default:
-                break
-        }
-        
-        tableView.reloadData()
+    override func initNavigationBar() {
+        self.navigationItem.title = "Search"
+        let btnSearch = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearchButton))
+        self.navigationItem.rightBarButtonItem = btnSearch
     }
     
     override func bindViewModel() {
-        let viewModel = SearchViewModel()
+        let searchViewModel = (viewModel as? AbstarctSearchViewModel) ?? SearchViewModel()
         let searchInput = SearchViewModel.SearchInput(searchItemListTrigger: searchTrigger)
-        let searchOutput = viewModel.getSearchOutput(input: searchInput)
+        let searchOutput = searchViewModel.getSearchOutput(input: searchInput)
         
-        searchOutput.searchItems.bind(to: tableView.rx.items(cellIdentifier: SearchItemCellConfig.reuseId)) { row, model, cell in
+        searchOutput.searchItems
+            .bind(to: tableView.rx.items(cellIdentifier: SearchItemCellConfig.reuseId)) { row, model, cell in
                 guard let cell = cell as? SearchItemCell else {
                     return
                 }
             cell.lblUsername.text = "\(model.title ?? "") from \(model.originalTitle ?? "")"
         }.disposed(by: disposeBag)
         
-        //fire search event
+        searchOutput.errorTracker.subscribe(onNext: {
+            [weak self] error in
+            
+            guard let error = (error as? NetworkError) else {
+                return 
+            }
+            
+            print("\(self?.TAG) -- bindViewModel() -- error  -- code = \(error.errorCode), message = \(error.errorMessage)")
+        }).disposed(by: disposeBag)
+    }
+    
+    @objc func didTapSearchButton(sender : AnyObject){
+        let alertController = UIAlertController(title: "Search movie", message: "", preferredStyle: UIAlertController.Style.alert)
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Movie name"
+        }
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Releasing year"
+        }
+        
+        let saveAction = UIAlertAction(title: "Search", style: UIAlertAction.Style.default, handler: { [weak self] alert -> Void in
+            let name = (alertController.textFields?[0] as? UITextField)?.text ?? ""
+            let year = (alertController.textFields?[1] as? UITextField)?.text ?? ""
+            
+            if !name.isEmpty && !year.isEmpty {
+                self?.searchMovie(name: name, year: Int(year) ?? 00)
+            }
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
+            (action : UIAlertAction!) -> Void in })
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func searchMovie(name: String, year: Int) {
         searchTrigger.onNext(())
     }
 }

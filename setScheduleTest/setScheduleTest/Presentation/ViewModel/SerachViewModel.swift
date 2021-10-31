@@ -9,11 +9,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-public protocol AbstarctSearchViewModel: AbstractViewModel {
-    func getSearchOutput(input: SearchViewModel.SearchInput) -> SearchViewModel.SearchOutput
-    func searchData() -> Observable<SearchApiRequest.ResponseType>
-}
-
 public class SearchViewModel: AbstarctSearchViewModel {
     
     public init() {
@@ -26,22 +21,30 @@ public class SearchViewModel: AbstarctSearchViewModel {
     
     public struct SearchOutput {
         let searchItems: BehaviorRelay<[SearchApiRequest.ItemType]>
+        let errorTracker: BehaviorRelay<NetworkError?>
     }
     
     public var usecase: AbstractUsecase
     
     public func getSearchOutput(input: SearchInput) -> SearchOutput {
         let searchListResponse = BehaviorRelay<[SearchApiRequest.ItemType]>(value: [])
+        let errorResponse = BehaviorRelay<NetworkError?>(value: nil)
 
-        input.searchItemListTrigger.flatMapLatest({ () -> Observable<SearchApiRequest.ResponseType> in
-            self.searchData()
+        input.searchItemListTrigger.flatMapLatest({ [weak self] () -> Observable<SearchApiRequest.ResponseType> in
+            guard let weakSelf = self else {
+                return Observable.just(SearchApiRequest.ResponseType())
+            }
+            
+            return weakSelf.searchData()
         }).subscribe(onNext: {
             response in
             
             searchListResponse.accept(response.results ?? [])
-        }, onError: nil, onCompleted: nil, onDisposed: nil)
+        }, onError: { [weak self] error in
+            errorResponse.accept(error as? NetworkError)
+        }, onCompleted: nil, onDisposed: nil)
         
-        return SearchOutput.init(searchItems: searchListResponse)
+        return SearchOutput.init(searchItems: searchListResponse, errorTracker: errorResponse)
     }
     
     public func searchData() -> Observable<SearchApiRequest.ResponseType> {

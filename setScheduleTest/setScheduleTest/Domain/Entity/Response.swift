@@ -13,6 +13,13 @@ public struct Response<T: Codable>: Codable {
     public let totalPages: Int?
     public let totalResults: Int?
     
+    public init(page: Int? = nil, results: [T]? = nil, totalPages: Int? = nil, totalResults: Int? = nil) {
+        self.page = page
+        self.results = results
+        self.totalPages = totalPages
+        self.totalResults = totalResults
+    }
+    
     public enum CodingKeys: String, CodingKey {
         case page = "page"
         case results = "results"

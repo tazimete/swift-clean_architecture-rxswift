@@ -24,6 +24,7 @@
 		29C032FE272D3B0500597B66 /* GenericCellComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032FD272D3B0500597B66 /* GenericCellComponents.swift */; };
 		29C03301272DDEAE00597B66 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03300272DDEAE00597B66 /* Response.swift */; };
 		29C03304272DE17300597B66 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03303272DE17300597B66 /* Movie.swift */; };
+		29C03308272E882F00597B66 /* AbstarctSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03307272E882F00597B66 /* AbstarctSearchViewModel.swift */; };
 		29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* SearchViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -161,6 +162,7 @@
 		29C032FD272D3B0500597B66 /* GenericCellComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCellComponents.swift; sourceTree = "<group>"; };
 		29C03300272DDEAE00597B66 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		29C03303272DE17300597B66 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		29C03307272E882F00597B66 /* AbstarctSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstarctSearchViewModel.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -391,6 +393,22 @@
 			isa = PBXGroup;
 			children = (
 				29C03303272DE17300597B66 /* Movie.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		29C03305272E880300597B66 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				29C03306272E881A00597B66 /* Search */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		29C03306272E881A00597B66 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				29C03307272E882F00597B66 /* AbstarctSearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -844,6 +862,7 @@
 				29C032E4272CA57700597B66 /* Entity */,
 				29C23168272B513200E67AAE /* Usecase */,
 				29C23167272B512B00E67AAE /* Repository */,
+				29C03305272E880300597B66 /* ViewModel */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -860,8 +879,8 @@
 		29C23164272B50C400E67AAE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				29C032F6272D39DD00597B66 /* Cell */,
 				29C032DC272C297D00597B66 /* Abstraction */,
+				29C032F6272D39DD00597B66 /* Cell */,
 				29C22FC4272B435100E67AAE /* SearchViewController.swift */,
 			);
 			path = View;
@@ -1256,6 +1275,7 @@
 				29C23023272B45D000E67AAE /* SceneDelegate.swift in Sources */,
 				29C23142272B46D800E67AAE /* IQBarButtonItem.swift in Sources */,
 				29C2314E272B46D800E67AAE /* IQKeyboardManager+Toolbar.swift in Sources */,
+				29C03308272E882F00597B66 /* AbstarctSearchViewModel.swift in Sources */,
 				29C23021272B45D000E67AAE /* Codable+Extension.swift in Sources */,
 				29C23145272B46D800E67AAE /* IQInvocation.swift in Sources */,
 				29C23118272B46D800E67AAE /* SkeletonAppearance.swift in Sources */,
