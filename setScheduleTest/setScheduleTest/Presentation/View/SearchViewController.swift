@@ -39,6 +39,7 @@ class SearchViewController: BaseViewController {
     override func initNavigationBar() {
         self.navigationItem.title = "Search"
         let btnSearch = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearchButton))
+        btnSearch.tintColor = .black
         self.navigationItem.rightBarButtonItem = btnSearch
     }
     
@@ -58,11 +59,11 @@ class SearchViewController: BaseViewController {
         searchOutput.errorTracker.subscribe(onNext: {
             [weak self] error in
             
-            guard let error = (error as? NetworkError) else {
+            guard let weakSelf = self, let error = error else {
                 return 
             }
             
-            print("\(self?.TAG) -- bindViewModel() -- error  -- code = \(error.errorCode), message = \(error.errorMessage)")
+            print("\(weakSelf.TAG) -- bindViewModel() -- error  -- code = \(error.errorCode), message = \(error.errorMessage)")
         }).disposed(by: disposeBag)
     }
     
