@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
+        
+        //build app configuration
+        buildAppConfig()
+        
         return true
     }
     
@@ -36,19 +40,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-//    private func initRootViewController() {
-//        guard let _window = window else {
-//            return
-//        }
-//
-//        let navController = UINavigationController()
-//        coordinator = GithubCoordinator(navigationController: navController)
-//        // tell the coordinator show its controller
-//        coordinator?.start()
-//
-//        _window.rootViewController = navController
-//        _window.makeKeyAndVisible()
-//    }
+    private func buildAppConfig() -> Void {
+        //builder, build -> return theme
+        let theme = AppTheme.Builder()
+            .addColors(colors: Colors())
+            .addFonts(fonts: Fonts())
+            .build()
+
+        //server/api config builder
+        let serverConfig = ServerConfig.Builder()
+            .addBaseUrl(baseUrl: "")
+            .addApiVersion(apiVersion: "3")
+            .addAuthCredential(credential: AuthCredential())
+            .addBuildType(buildType: .DEVELOP)
+            .build()
+
+        //Singleton with builder, commit-> no return
+        AppConfig.Builder()
+            .setServerConfig(serverConfig: serverConfig)
+            .setThemeType(themeType: .DARK)
+            .setNormalTheme(theme: theme)
+            .setDarkTheme(theme: theme)
+            .setLocale(local: "en")
+            .commit()
+    }
 
 }
 

@@ -25,6 +25,10 @@
 		29C03301272DDEAE00597B66 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03300272DDEAE00597B66 /* Response.swift */; };
 		29C03304272DE17300597B66 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03303272DE17300597B66 /* Movie.swift */; };
 		29C03308272E882F00597B66 /* AbstarctSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03307272E882F00597B66 /* AbstarctSearchViewModel.swift */; };
+		29C0330A272F12A400597B66 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03309272F12A400597B66 /* AppConfig.swift */; };
+		29C0330C272F141200597B66 /* ConfigComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0330B272F141200597B66 /* ConfigComponents.swift */; };
+		29C0330E272F161800597B66 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0330D272F161800597B66 /* AppTheme.swift */; };
+		29C03311272F163F00597B66 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03310272F163F00597B66 /* ServerConfig.swift */; };
 		29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* SearchViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -163,6 +167,10 @@
 		29C03300272DDEAE00597B66 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		29C03303272DE17300597B66 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		29C03307272E882F00597B66 /* AbstarctSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstarctSearchViewModel.swift; sourceTree = "<group>"; };
+		29C03309272F12A400597B66 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		29C0330B272F141200597B66 /* ConfigComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigComponents.swift; sourceTree = "<group>"; };
+		29C0330D272F161800597B66 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		29C03310272F163F00597B66 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -406,6 +414,17 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		29C0330F272F161E00597B66 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				29C03309272F12A400597B66 /* AppConfig.swift */,
+				29C0330D272F161800597B66 /* AppTheme.swift */,
+				29C0330B272F141200597B66 /* ConfigComponents.swift */,
+				29C03310272F163F00597B66 /* ServerConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		29C22FB4272B435100E67AAE = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +453,7 @@
 				29C22FFE272B45D000E67AAE /* Application */,
 				29C23040272B46D800E67AAE /* Library */,
 				29C23019272B45D000E67AAE /* Helper */,
+				29C0330F272F161E00597B66 /* Config */,
 				29C22FF9272B45D000E67AAE /* Extension */,
 				29C2316B272B54E200E67AAE /* Client */,
 				29C22FF3272B45D000E67AAE /* Route */,
@@ -1262,6 +1282,7 @@
 				29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */,
 				29C23141272B46D800E67AAE /* IQTitleBarButtonItem.swift in Sources */,
 				29C23143272B46D800E67AAE /* IQToolbar.swift in Sources */,
+				29C0330C272F141200597B66 /* ConfigComponents.swift in Sources */,
 				29C23138272B46D800E67AAE /* Swizzling.swift in Sources */,
 				29C032F2272CA6AF00597B66 /* SearchUsecase.swift in Sources */,
 				29C23023272B45D000E67AAE /* SceneDelegate.swift in Sources */,
@@ -1290,6 +1311,7 @@
 				29C2314D272B46D800E67AAE /* IQKeyboardManager+OrientationNotification.swift in Sources */,
 				29C23128272B46D800E67AAE /* ContainsMultilineText.swift in Sources */,
 				29C23135272B46D800E67AAE /* UICollectionView+CollectionSkeleton.swift in Sources */,
+				29C0330E272F161800597B66 /* AppTheme.swift in Sources */,
 				29C23146272B46D800E67AAE /* IQKeyboardManager+UIKeyboardNotification.swift in Sources */,
 				29C23153272B46D800E67AAE /* IQNSArray+Sort.swift in Sources */,
 				29C2311D272B46D800E67AAE /* Int+Whitespaces.swift in Sources */,
@@ -1300,10 +1322,12 @@
 				29C23122272B46D800E67AAE /* UIColor+Skeleton.swift in Sources */,
 				29C23116272B46D800E67AAE /* SkeletonLayerBuilder.swift in Sources */,
 				29C23134272B46D800E67AAE /* UIView+CollectionSkeleton.swift in Sources */,
+				29C0330A272F12A400597B66 /* AppConfig.swift in Sources */,
 				29C23126272B46D800E67AAE /* UIView+IBInspectable.swift in Sources */,
 				29C2313B272B46D800E67AAE /* RecursiveProtocol.swift in Sources */,
 				29C23133272B46D800E67AAE /* SkeletonTableViewProtocols.swift in Sources */,
 				29C23129272B46D800E67AAE /* UITextView+Multiline.swift in Sources */,
+				29C03311272F163F00597B66 /* ServerConfig.swift in Sources */,
 				29C2311F272B46D800E67AAE /* UIView+Autolayout.swift in Sources */,
 				29C23131272B46D800E67AAE /* SkeletonCollectionDelegate.swift in Sources */,
 				29C2301C272B45D000E67AAE /* Coordinator.swift in Sources */,

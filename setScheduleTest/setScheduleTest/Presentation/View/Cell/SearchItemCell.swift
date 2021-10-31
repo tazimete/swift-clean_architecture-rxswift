@@ -17,6 +17,8 @@ class SearchItemCell : UITableViewCell, ConfigurableCell {
         let view = UIView()
         view.backgroundColor = .white
         view.isSkeletonable = true
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
     
@@ -62,9 +64,6 @@ class SearchItemCell : UITableViewCell, ConfigurableCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        containerView.layer.borderWidth = 1
-        containerView.layer.borderColor = UIColor.black.cgColor
         
         addSubview(containerView)
         containerView.addSubview(ivAvatar)
