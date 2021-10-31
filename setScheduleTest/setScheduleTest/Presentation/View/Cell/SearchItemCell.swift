@@ -104,6 +104,17 @@ class SearchItemCell : UITableViewCell, ConfigurableCell {
         applyTheme()
     }
     
+    public func bind(model: Movie) {
+        lblTitle.text = model.title
+        lblOverview.text = model.overview
+        
+        let posterUrl = "\(AppConfig.shared.getServerConfig().getMediaBaseUrl())/\(model.posterPath ?? "" )"
+        imageUrlAtCurrentIndex = posterUrl
+        ivPoster.loadImage(from: posterUrl, completionHandler: { [weak self] url,image,isFinished  in
+            self?.ivPoster.image = image
+        })
+    }
+    
     // when theme change
     public func applyTheme() {
         switch (traitCollection.userInterfaceStyle) {

@@ -568,18 +568,18 @@
 				29C2300C272B45D000E67AAE /* Downloader.swift */,
 				29C2300D272B45D000E67AAE /* DownloadDataParser.swift */,
 				29C2300E272B45D000E67AAE /* AbstractDownloader.swift */,
-				29C2300F272B45D000E67AAE /* Client */,
+				29C2300F272B45D000E67AAE /* DownloaderClient */,
 			);
 			path = Downloader;
 			sourceTree = "<group>";
 		};
-		29C2300F272B45D000E67AAE /* Client */ = {
+		29C2300F272B45D000E67AAE /* DownloaderClient */ = {
 			isa = PBXGroup;
 			children = (
 				29C23010272B45D000E67AAE /* DownloaderClient.swift */,
 				29C23011272B45D000E67AAE /* AbstractDownloaderClient.swift */,
 			);
-			path = Client;
+			path = DownloaderClient;
 			sourceTree = "<group>";
 		};
 		29C23012272B45D000E67AAE /* ImageDownloader */ = {

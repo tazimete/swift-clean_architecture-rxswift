@@ -29,7 +29,7 @@ class SearchShimmerCell: SearchItemCell {
         ivPoster.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
     }
     
-    func configure() {
+    func startShimmering() {
         containerView.layer.borderWidth = 0
         containerView.layer.borderColor = UIColor.clear.cgColor
         
