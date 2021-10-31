@@ -19,7 +19,7 @@
 		29C032F2272CA6AF00597B66 /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F1272CA6AF00597B66 /* SearchUsecase.swift */; };
 		29C032F4272CA6BE00597B66 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F3272CA6BE00597B66 /* SearchRepository.swift */; };
 		29C032F8272D39ED00597B66 /* SearchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F7272D39ED00597B66 /* SearchItemCell.swift */; };
-		29C032FA272D3A4D00597B66 /* ShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F9272D3A4D00597B66 /* ShimmerCell.swift */; };
+		29C032FA272D3A4D00597B66 /* SearchShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032F9272D3A4D00597B66 /* SearchShimmerCell.swift */; };
 		29C032FC272D3A9100597B66 /* CellConfiguratorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032FB272D3A9100597B66 /* CellConfiguratorFactory.swift */; };
 		29C032FE272D3B0500597B66 /* GenericCellComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032FD272D3B0500597B66 /* GenericCellComponents.swift */; };
 		29C03301272DDEAE00597B66 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03300272DDEAE00597B66 /* Response.swift */; };
@@ -161,7 +161,7 @@
 		29C032F1272CA6AF00597B66 /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
 		29C032F3272CA6BE00597B66 /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
 		29C032F7272D39ED00597B66 /* SearchItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemCell.swift; sourceTree = "<group>"; };
-		29C032F9272D3A4D00597B66 /* ShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerCell.swift; sourceTree = "<group>"; };
+		29C032F9272D3A4D00597B66 /* SearchShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchShimmerCell.swift; sourceTree = "<group>"; };
 		29C032FB272D3A9100597B66 /* CellConfiguratorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfiguratorFactory.swift; sourceTree = "<group>"; };
 		29C032FD272D3B0500597B66 /* GenericCellComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCellComponents.swift; sourceTree = "<group>"; };
 		29C03300272DDEAE00597B66 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -375,7 +375,7 @@
 			children = (
 				29C032FF272D3E6200597B66 /* Abstraction */,
 				29C032F7272D39ED00597B66 /* SearchItemCell.swift */,
-				29C032F9272D3A4D00597B66 /* ShimmerCell.swift */,
+				29C032F9272D3A4D00597B66 /* SearchShimmerCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1300,7 +1300,7 @@
 				29C032F4272CA6BE00597B66 /* SearchRepository.swift in Sources */,
 				29C2312C272B46D800E67AAE /* UIView+Transitions.swift in Sources */,
 				29C2313E272B46D800E67AAE /* IQTextView.swift in Sources */,
-				29C032FA272D3A4D00597B66 /* ShimmerCell.swift in Sources */,
+				29C032FA272D3A4D00597B66 /* SearchShimmerCell.swift in Sources */,
 				29C23125272B46D800E67AAE /* UITableView+VisibleSections.swift in Sources */,
 				29C23150272B46D800E67AAE /* IQUIViewController+Additions.swift in Sources */,
 				29C2302B272B45D000E67AAE /* Downloader.swift in Sources */,

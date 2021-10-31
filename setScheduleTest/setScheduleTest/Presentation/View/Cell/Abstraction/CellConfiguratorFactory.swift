@@ -9,6 +9,7 @@ import Foundation
 
 
 typealias SearchItemCellConfig = TableViewCellConfigurator<SearchItemCell, AbstractCellViewModel>
+typealias ShimmerItemCellConfig = TableViewCellConfigurator<SearchShimmerCell, AbstractCellViewModel>
 
 
 // collection of cell configurator

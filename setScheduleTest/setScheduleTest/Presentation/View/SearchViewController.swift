@@ -23,6 +23,7 @@ class SearchViewController: BaseViewController {
         
         //cell registration
         tableView.register(SearchItemCell.self, forCellReuseIdentifier: SearchItemCellConfig.reuseId)
+        tableView.register(SearchShimmerCell.self, forCellReuseIdentifier: ShimmerItemCellConfig.reuseId)
         return tableView
     }()
 
@@ -58,12 +59,18 @@ class SearchViewController: BaseViewController {
         let searchOutput = searchViewModel.getSearchOutput(input: searchInput)
         
         searchOutput.searchItems
-            .bind(to: tableView.rx.items(cellIdentifier: SearchItemCellConfig.reuseId)) { row, model, cell in
-                guard let cell = cell as? SearchItemCell else {
-                    return
+            .bind(to: tableView.rx.items) { tableView, row, model in
+                // Movie title cant be nil after receiving response from api call 
+                if model.title == nil {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: ShimmerItemCellConfig.reuseId, for: IndexPath(row: row, section: 0)) as! SearchShimmerCell
+                    cell.configure()
+                    return cell
+                }else {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: SearchItemCellConfig.reuseId, for: IndexPath(row: row, section: 0)) as! SearchItemCell
+                    cell.lblTitle.text = model.title
+                    return cell
                 }
-            cell.lblUsername.text = "\(model.title ?? "") from \(model.originalTitle ?? "")"
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
         
         searchOutput.errorTracker.subscribe(onNext: {
             [weak self] error in
