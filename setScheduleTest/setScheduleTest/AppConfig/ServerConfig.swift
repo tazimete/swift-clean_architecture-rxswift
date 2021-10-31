@@ -16,13 +16,18 @@ public enum BuildType {
 
 public class AuthCredential{
     public var token: String?
+    public var apiKey: String?
 
     public init() {
 
     }
 
-    public init(token: String) {
+    public init(token: String?) {
         self.token = token
+    }
+    
+    public init(apiKey: String?) {
+        self.apiKey = apiKey
     }
 }
 
@@ -33,7 +38,7 @@ public class ServerConfig {
         self.builder = builder
     }
 
-    public func getBaseUrl(baseUrl: String) -> String{
+    public func getBaseUrl() -> String{
         return self.builder.baseUrl
     }
 

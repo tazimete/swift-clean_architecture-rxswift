@@ -9,7 +9,7 @@ import Foundation
 
 
 struct MoviewSearchParams: Parameterizable{
-    let apiKey: String = "feb6f0eeaa0a72662967d77079850353"
+    let apiKey: String = AppConfig.shared.getServerConfig().setAuthCredential().apiKey ?? ""
     let query: String
     let year: Int
 

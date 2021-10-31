@@ -414,7 +414,7 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		29C0330F272F161E00597B66 /* Config */ = {
+		29C0330F272F161E00597B66 /* AppConfig */ = {
 			isa = PBXGroup;
 			children = (
 				29C03309272F12A400597B66 /* AppConfig.swift */,
@@ -422,7 +422,7 @@
 				29C0330B272F141200597B66 /* ConfigComponents.swift */,
 				29C03310272F163F00597B66 /* ServerConfig.swift */,
 			);
-			path = Config;
+			path = AppConfig;
 			sourceTree = "<group>";
 		};
 		29C22FB4272B435100E67AAE = {
@@ -451,9 +451,9 @@
 			isa = PBXGroup;
 			children = (
 				29C22FFE272B45D000E67AAE /* Application */,
+				29C0330F272F161E00597B66 /* AppConfig */,
 				29C23040272B46D800E67AAE /* Library */,
 				29C23019272B45D000E67AAE /* Helper */,
-				29C0330F272F161E00597B66 /* Config */,
 				29C22FF9272B45D000E67AAE /* Extension */,
 				29C2316B272B54E200E67AAE /* Client */,
 				29C22FF3272B45D000E67AAE /* Route */,

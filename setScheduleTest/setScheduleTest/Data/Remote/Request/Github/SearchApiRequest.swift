@@ -14,7 +14,7 @@ enum SearchApiRequest {
 
 extension SearchApiRequest: APIRequest {
     public var baseURL: URL {
-        let url =  "https://api.themoviedb.org/3/"
+        let url =  "\(AppConfig.shared.getServerConfig().getBaseUrl())/\(AppConfig.shared.getServerConfig().getApiVersion())/"
         return URL(string: url)!
     }
     

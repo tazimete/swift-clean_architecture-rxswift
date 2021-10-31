@@ -41,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func buildAppConfig() -> Void {
-        //builder, build -> return theme
         let theme = AppTheme.Builder()
             .addColors(colors: Colors())
             .addFonts(fonts: Fonts())
@@ -49,16 +48,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         //server/api config builder
         let serverConfig = ServerConfig.Builder()
-            .addBaseUrl(baseUrl: "")
+            .addBaseUrl(baseUrl: "https://api.themoviedb.org")
             .addApiVersion(apiVersion: "3")
-            .addAuthCredential(credential: AuthCredential())
+            .addAuthCredential(credential: AuthCredential(apiKey: "feb6f0eeaa0a72662967d77079850353"))
             .addBuildType(buildType: .DEVELOP)
             .build()
 
         //Singleton with builder, commit-> no return
         AppConfig.Builder()
             .setServerConfig(serverConfig: serverConfig)
-            .setThemeType(themeType: .DARK)
+            .setThemeType(themeType: .NORMAL)
             .setNormalTheme(theme: theme)
             .setDarkTheme(theme: theme)
             .setLocale(local: "en")
