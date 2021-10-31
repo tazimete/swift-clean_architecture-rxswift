@@ -8,6 +8,6 @@
 import Foundation
 import RxSwift
 
-public protocol AbstractSearchUsecase: AbstractUsecase {
-    func search() -> Observable<SearchApiRequest.ResponseType>
+protocol AbstractSearchUsecase: AbstractUsecase {
+    func search(query: String, year: Int) -> Observable<SearchApiRequest.ResponseType>
 }

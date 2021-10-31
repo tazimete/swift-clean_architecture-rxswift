@@ -8,9 +8,9 @@
 import Foundation
 import RxSwift
 
-public typealias NetworkCompletionHandler<T: Codable> = (Result<T, NetworkError>) -> Void
+typealias NetworkCompletionHandler<T: Codable> = (Result<T, NetworkError>) -> Void
 
-public protocol AbstractApiClient: AnyObject {
+protocol AbstractApiClient: AnyObject {
     var queueManager: QueueManager {get set}
     func enqueue<T: Codable>(apiRequest: APIRequest, type: T.Type, completionHandler: @escaping (NetworkCompletionHandler<T>))
     func send<T: Codable>(apiRequest: APIRequest, type: T.Type) -> Observable<T>

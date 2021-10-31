@@ -9,10 +9,15 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-public class SearchViewModel: AbstarctSearchViewModel {
+class SearchViewModel: AbstractSearchViewModel {
     
     public init() {
         usecase = SearchUsecase()
+    }
+    
+    public struct SearchInputModel {
+        let query: String
+        let year: Int
     }
     
     public struct SearchInput {
@@ -24,6 +29,7 @@ public class SearchViewModel: AbstarctSearchViewModel {
         let errorTracker: BehaviorRelay<NetworkError?>
     }
     
+    public var inputModel: SearchInputModel?
     public var usecase: AbstractUsecase
     
     public func getSearchOutput(input: SearchInput) -> SearchOutput {
@@ -35,7 +41,7 @@ public class SearchViewModel: AbstarctSearchViewModel {
                 return Observable.just(SearchApiRequest.ResponseType())
             }
             
-            return weakSelf.searchData()
+            return weakSelf.searchData(query: weakSelf.inputModel?.query ?? "", year: weakSelf.inputModel?.year ?? 0)
         }).subscribe(onNext: {
             response in
             
@@ -47,7 +53,7 @@ public class SearchViewModel: AbstarctSearchViewModel {
         return SearchOutput.init(searchItems: searchListResponse, errorTracker: errorResponse)
     }
     
-    public func searchData() -> Observable<SearchApiRequest.ResponseType> {
-        return (usecase as! AbstractSearchUsecase).search()
+    public func searchData(query: String, year: Int) -> Observable<SearchApiRequest.ResponseType> {
+        return (usecase as! AbstractSearchUsecase).search(query: query, year: year)
     }
 }

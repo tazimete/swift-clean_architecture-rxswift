@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 
 class SearchViewController: BaseViewController {
+    public var searchViewModel: AbstractSearchViewModel!
     private let disposeBag = DisposeBag()
     private let searchTrigger = PublishSubject<Void>()
     private lazy var tableView: UITableView = {
@@ -25,6 +26,15 @@ class SearchViewController: BaseViewController {
         return tableView
     }()
 
+    init(viewModel: AbstractSearchViewModel) {
+        super.init(viewModel: viewModel)
+        searchViewModel = viewModel
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -44,7 +54,6 @@ class SearchViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        let searchViewModel = (viewModel as? AbstarctSearchViewModel) ?? SearchViewModel()
         let searchInput = SearchViewModel.SearchInput(searchItemListTrigger: searchTrigger)
         let searchOutput = searchViewModel.getSearchOutput(input: searchInput)
         
@@ -68,7 +77,11 @@ class SearchViewController: BaseViewController {
     }
     
     @objc func didTapSearchButton(sender : AnyObject){
-        let alertController = UIAlertController(title: "Search movie", message: "", preferredStyle: UIAlertController.Style.alert)
+        showSearchDialog()
+    }
+    
+    private func showSearchDialog() {
+        let alertController = UIAlertController(title: "Search movie", message: "Enter movie name. Ex- The \n Enter releasing year. Ex- 2000", preferredStyle: UIAlertController.Style.alert)
         
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Movie name"
@@ -97,21 +110,8 @@ class SearchViewController: BaseViewController {
     }
     
     private func searchMovie(name: String, year: Int) {
+        searchViewModel.inputModel = SearchViewModel.SearchInputModel(query: name, year: year)
         searchTrigger.onNext(())
     }
 }
 
-//MARK: UISeacrController Delegate
-extension SearchViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        let text = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-//        githubViewModel.searchUser(searchText: searchText)
-//        tableView.reloadData()
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        view.endEditing(true)
-//        tableView.reloadData()
-    }
-}

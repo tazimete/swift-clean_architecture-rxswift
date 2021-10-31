@@ -8,14 +8,14 @@
 import Foundation
 import RxSwift
 
-public class SearchRepository: AbstractSearchRepository {
-    public var apiClient: AbstractApiClient
+class SearchRepository: AbstractSearchRepository {
+    var apiClient: AbstractApiClient
     
-    public init() {
+    init() {
         apiClient = APIClient.shared
     }
     
-    public func get() -> Observable<SearchApiRequest.ResponseType> {
-        return apiClient.send(apiRequest: SearchApiRequest.searchMovie(params: MoviewSearchParams(query: "the", year: 2000)), type: SearchApiRequest.ResponseType.self)
+    public func get(query: String, year: Int) -> Observable<SearchApiRequest.ResponseType> {
+        return apiClient.send(apiRequest: SearchApiRequest.searchMovie(params: MoviewSearchParams(query: query, year: year)), type: SearchApiRequest.ResponseType.self)
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class NetworkOperation: Operation {
+class NetworkOperation: Operation {
     
     private var task: URLSessionTask?
     

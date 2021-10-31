@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SearchApiRequest {
+enum SearchApiRequest {
     case searchMovie(params: Parameterizable)
     case fetchUserProfile(params: Parameterizable)
 }

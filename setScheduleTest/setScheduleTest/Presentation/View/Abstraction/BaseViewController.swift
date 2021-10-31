@@ -11,11 +11,11 @@ public class BaseViewController: UIViewController, UIScrollViewDelegate {
     public lazy var TAG = {
         return self.description
     }
-    public var viewModel: AbstractViewModel!
+    var viewModel: AbstractViewModel!
     public var isShimmerNeeded: Bool = false
     public var isPaginationEnabled: Bool = true
     
-    public init(viewModel: AbstractViewModel) {
+    init(viewModel: AbstractViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
     }

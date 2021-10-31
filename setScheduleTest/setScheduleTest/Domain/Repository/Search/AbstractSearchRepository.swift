@@ -8,6 +8,6 @@
 import Foundation
 import RxSwift
 
-public protocol AbstractSearchRepository: AbstractRepository {
-     func get() -> Observable<SearchApiRequest.ResponseType>
+protocol AbstractSearchRepository: AbstractRepository {
+     func get(query: String, year: Int) -> Observable<SearchApiRequest.ResponseType>
 }

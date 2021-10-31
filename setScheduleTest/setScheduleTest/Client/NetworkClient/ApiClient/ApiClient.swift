@@ -47,7 +47,7 @@ public enum NetworkError: Error {
 }
 
 
-public class APIClient: AbstractApiClient{
+class APIClient: AbstractApiClient{
     public static let shared = APIClient()
     public var queueManager: QueueManager
 

@@ -8,14 +8,14 @@
 import Foundation
 import RxSwift
 
-public class SearchUsecase: AbstractSearchUsecase {
-    public var repository: AbstractRepository
+class SearchUsecase: AbstractSearchUsecase {
+    var repository: AbstractRepository
     
     public init() {
         repository = SearchRepository()
     }
     
-    public func search() -> Observable<SearchApiRequest.ResponseType> {
-        return (repository as! AbstractSearchRepository).get()
+    public func search(query: String, year: Int) -> Observable<SearchApiRequest.ResponseType> {
+        return (repository as! AbstractSearchRepository).get(query: query, year: year)
     }
 }

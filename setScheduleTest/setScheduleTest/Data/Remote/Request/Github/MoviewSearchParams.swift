@@ -8,7 +8,7 @@
 import Foundation
 
 
-public struct MoviewSearchParams: Parameterizable{
+struct MoviewSearchParams: Parameterizable{
     let apiKey: String = "feb6f0eeaa0a72662967d77079850353"
     let query: String
     let year: Int

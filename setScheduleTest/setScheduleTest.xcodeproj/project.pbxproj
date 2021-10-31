@@ -314,14 +314,6 @@
 			path = Abstraction;
 			sourceTree = "<group>";
 		};
-		29C032E1272C8F5500597B66 /* Abstarction */ = {
-			isa = PBXGroup;
-			children = (
-				29C032DF272C8F4E00597B66 /* AbstractViewModel.swift */,
-			);
-			path = Abstarction;
-			sourceTree = "<group>";
-		};
 		29C032E4272CA57700597B66 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,12 +389,13 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		29C03305272E880300597B66 /* ViewModel */ = {
+		29C03305272E880300597B66 /* Abstraction */ = {
 			isa = PBXGroup;
 			children = (
+				29C032DF272C8F4E00597B66 /* AbstractViewModel.swift */,
 				29C03306272E881A00597B66 /* Search */,
 			);
-			path = ViewModel;
+			path = Abstraction;
 			sourceTree = "<group>";
 		};
 		29C03306272E881A00597B66 /* Search */ = {
@@ -862,7 +855,6 @@
 				29C032E4272CA57700597B66 /* Entity */,
 				29C23168272B513200E67AAE /* Usecase */,
 				29C23167272B512B00E67AAE /* Repository */,
-				29C03305272E880300597B66 /* ViewModel */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -870,7 +862,7 @@
 		29C23163272B50BC00E67AAE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				29C032E1272C8F5500597B66 /* Abstarction */,
+				29C03305272E880300597B66 /* Abstraction */,
 				29C032E2272C9B2D00597B66 /* SerachViewModel.swift */,
 			);
 			path = ViewModel;

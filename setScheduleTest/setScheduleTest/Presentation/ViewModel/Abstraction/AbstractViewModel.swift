@@ -8,6 +8,6 @@
 import Foundation
 
 
-public protocol AbstractViewModel: AnyObject {
+protocol AbstractViewModel: AnyObject {
     var usecase: AbstractUsecase {get}
 }

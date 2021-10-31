@@ -16,8 +16,8 @@ class GithubCoordinator: Coordinator {
     }
 
     public func start() {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SearchViewController") as! SearchViewController
-        vc.viewModel = SearchViewModel()
+//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SearchViewController") as! SearchViewController
+        let vc = SearchViewController(viewModel: SearchViewModel())
         self.navigationController.pushViewController(vc, animated: true)
     }
     
