@@ -51,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .addBaseUrl(baseUrl: "https://api.themoviedb.org")
             .addApiVersion(apiVersion: "3")
             .addAuthCredential(credential: AuthCredential(apiKey: "feb6f0eeaa0a72662967d77079850353"))
+            .addMediaBaseUrl(mediaBaseUrl: "https://image.tmdb.org/t/p/w500")
             .addBuildType(buildType: .DEVELOP)
             .build()
 

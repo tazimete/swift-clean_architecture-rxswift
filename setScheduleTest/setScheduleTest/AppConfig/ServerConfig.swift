@@ -41,6 +41,10 @@ public class ServerConfig {
     public func getBaseUrl() -> String{
         return self.builder.baseUrl
     }
+    
+    public func getMediaBaseUrl() -> String{
+        return self.builder.mediaBaseUrl
+    }
 
     public func getApiVersion() -> String{
         return self.builder.apiVersion
@@ -53,6 +57,7 @@ public class ServerConfig {
     public class Builder{
         var baseUrl: String!
         var apiVersion: String!
+        var mediaBaseUrl: String!
         var buildType: BuildType!
         var credential: AuthCredential!
 
@@ -74,6 +79,11 @@ public class ServerConfig {
         public func addBuildType(buildType: BuildType) -> Builder{
             self.buildType = buildType
             return  self
+        }
+        
+        public func addMediaBaseUrl(mediaBaseUrl: String) -> Builder{
+            self.mediaBaseUrl = mediaBaseUrl
+            return self
         }
 
         public func build() -> ServerConfig {
