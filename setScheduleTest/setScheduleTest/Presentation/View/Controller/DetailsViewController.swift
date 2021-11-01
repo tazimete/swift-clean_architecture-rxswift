@@ -34,6 +34,9 @@ class DetailsViewController: BaseViewController {
 
     override func initView() {
         super.initView()
+        ivPoster.contentMode = .scaleAspectFill
+        
+        //start shimmer animation
         startShimmerAnimation()
     }
     
@@ -86,7 +89,7 @@ class DetailsViewController: BaseViewController {
                 return
             }
             
-            weakSelf.ivPoster.image = image
+            weakSelf.ivPoster.image = image?.decodedImage(size: weakSelf.ivPoster.bounds.size)
             weakSelf.stopShimmerAnimation(views: [weakSelf.ivPoster])
         })
         
