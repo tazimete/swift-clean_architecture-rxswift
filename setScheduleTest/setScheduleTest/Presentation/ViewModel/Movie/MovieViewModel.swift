@@ -11,8 +11,7 @@ import RxCocoa
 
 class MovieViewModel: AbstractMovieViewModel {
     public struct MovieInputModel {
-        let query: String
-        let year: Int
+        let movieId: Int
     }
     
     public struct MovieInput {
@@ -41,7 +40,7 @@ class MovieViewModel: AbstractMovieViewModel {
             }
             
             //fetch movie details
-            return weakSelf.getMovieDetails(movieId: 100)
+            return weakSelf.getMovieDetails(movieId: weakSelf.inputModel?.movieId ?? 100)
         }).subscribe(onNext: {
             response in
             
