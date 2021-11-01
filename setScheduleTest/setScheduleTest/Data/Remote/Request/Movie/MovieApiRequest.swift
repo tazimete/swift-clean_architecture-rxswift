@@ -29,7 +29,6 @@ extension MovieApiRequest: APIRequest {
     public var path: String {
         switch self {
             case .getMovie: return "movie/\(parameters["movieId"] as! Int)"
-
         }
     }
     
