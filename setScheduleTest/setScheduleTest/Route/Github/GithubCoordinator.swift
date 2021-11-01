@@ -16,12 +16,13 @@ class GithubCoordinator: Coordinator {
     }
 
     public func start() {
-//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SearchViewController") as! SearchViewController
         let vc = SearchViewController(viewModel: SearchViewModel())
         self.navigationController.pushViewController(vc, animated: true)
     }
     
-    public func showUserProfileController() {
-        // Not Implemented Yet
+    public func showDetailsController(movie: Movie) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DetailsViewController") as! DetailsViewController
+        vc.viewModel = SearchViewModel()
+        self.navigationController.pushViewController(vc, animated: true)
     }
 }

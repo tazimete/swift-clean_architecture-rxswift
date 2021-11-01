@@ -27,7 +27,6 @@ class DetailsViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        let searchInput = SearchViewModel.SearchInput(searchItemListTrigger: searchTrigger)
-        let searchOutput = searchViewModel.getSearchOutput(input: searchInput)
+        
     }
 }

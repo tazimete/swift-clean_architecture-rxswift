@@ -45,6 +45,9 @@ class SearchViewController: BaseViewController {
         //setup tableview
         view.addSubview(tableView)
         tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 0, enableInsets: true)
+        
+        //table view
+        onTapTableviewCell()
     }
     
     override func initNavigationBar() {
@@ -58,6 +61,7 @@ class SearchViewController: BaseViewController {
         let searchInput = SearchViewModel.SearchInput(searchItemListTrigger: searchTrigger)
         let searchOutput = searchViewModel.getSearchOutput(input: searchInput)
         
+        //populate table view
         searchOutput.searchItems
             .bind(to: tableView.rx.items) { tableView, row, model in
                 // Assume Movie title cant be nil after receiving response from api call, its for shimmer cell first time
@@ -72,6 +76,7 @@ class SearchViewController: BaseViewController {
                 }
             }.disposed(by: disposeBag)
         
+        // detect error
         searchOutput.errorTracker.subscribe(onNext: {
             [weak self] error in
             
@@ -81,6 +86,23 @@ class SearchViewController: BaseViewController {
             
             print("\(String(describing: weakSelf.TAG)) -- bindViewModel() -- error  -- code = \(error.errorCode), message = \(error.errorMessage)")
         }).disposed(by: disposeBag)
+    }
+    
+    private func onTapTableviewCell() {
+        Observable
+            .zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Movie.self))
+            .bind { [weak self] indexPath, model in
+                guard let weakSelf = self else {
+                    return
+                }
+                
+                weakSelf.tableView.deselectRow(at: indexPath, animated: true)
+                print("\(weakSelf.TAG) -- onTapTableviewCell() -- Selected " + (model.originalTitle ?? "") + " at \(indexPath)")
+                
+                //navigate to profile view controller
+                weakSelf.navigateToDetailsController(with: model)
+            }
+            .disposed(by: disposeBag)
     }
     
     @objc func didTapSearchButton(sender : AnyObject){
@@ -119,6 +141,10 @@ class SearchViewController: BaseViewController {
     private func searchMovie(name: String, year: Int) {
         searchViewModel.inputModel = SearchViewModel.SearchInputModel(query: name, year: year)
         searchTrigger.onNext(())
+    }
+    
+    private func navigateToDetailsController(with movie: Movie) {
+        (view.window?.windowScene?.delegate as! SceneDelegate).rootCoordinator.showDetailsController(movie: movie)
     }
 }
 
