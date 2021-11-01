@@ -41,6 +41,7 @@ class ShimmerHelper: NSObject {
         let gradient = SkeletonGradient(baseColor: UIColor.lightGray)
         let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .topLeftBottomRight)
 
+        view.isSkeletonable = true 
         if view.isKind(of: UITextView.self){
             (view as! UITextView).linesCornerRadius = 5
         }else if view.isKind(of: UILabel.self){

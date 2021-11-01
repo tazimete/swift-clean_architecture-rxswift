@@ -113,10 +113,16 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8I-OQ-em3">
-                                            <rect key="frame" x="15" y="532.5" width="384" height="20.5"/>
+                                            <rect key="frame" x="15" y="532.5" width="384" height="160"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="160" id="jyc-AC-vG0"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -157,9 +163,11 @@
                         <outlet property="lblLanguage" destination="Dz8-oj-IKf" id="MMZ-wT-EPm"/>
                         <outlet property="lblName" destination="rUI-MT-hQB" id="Xqz-x9-mxc"/>
                         <outlet property="lblOverview" destination="I8I-OQ-em3" id="PLz-Qb-q3r"/>
+                        <outlet property="lblOverviewTitle" destination="XqJ-av-RLu" id="J5p-Zp-ttB"/>
                         <outlet property="lblReleasingYear" destination="Yry-8S-fzy" id="gwO-LE-62l"/>
                         <outlet property="lblTotalVote" destination="rVZ-Oa-edP" id="M5J-8A-Y7M"/>
                         <outlet property="lblVoteAverage" destination="cfy-yk-kad" id="eJP-om-9JO"/>
+                        <outlet property="uivInfoContainer" destination="7r1-3W-uUb" id="Pat-90-csD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VnI-jE-pPu" sceneMemberID="firstResponder"/>
