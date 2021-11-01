@@ -10,10 +10,21 @@ import RxSwift
 import RxCocoa
 
 class DetailsViewController: BaseViewController {
+    // MARK: Non UI Objects
     public var searchViewModel: AbstractSearchViewModel!
     private let disposeBag = DisposeBag()
     private let searchTrigger = PublishSubject<Void>()
-
+    
+    // MARK: UI Objects
+    @IBOutlet weak var ivPoster: UIImageView!
+    @IBOutlet weak var lblVoteAverage: UILabel!
+    @IBOutlet weak var lblTotalVote: UILabel!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblReleasingYear: UILabel!
+    @IBOutlet weak var lblLanguage: UILabel!
+    @IBOutlet weak var lblOverview: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

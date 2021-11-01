@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class BaseViewController: UIViewController, UIScrollViewDelegate {
+public class BaseViewController: UIViewController, UIScrollViewDelegate, Storyboarded {
     public lazy var TAG = {
         return self.description
     }

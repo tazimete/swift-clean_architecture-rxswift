@@ -29,7 +29,7 @@ class SearchViewController: BaseViewController {
 
     init(viewModel: AbstractSearchViewModel) {
         super.init(viewModel: viewModel)
-        searchViewModel = viewModel
+        self.viewModel = viewModel
     }
     
     required init?(coder: NSCoder) {
@@ -58,6 +58,7 @@ class SearchViewController: BaseViewController {
     }
     
     override func bindViewModel() {
+        searchViewModel = (viewModel as? AbstractSearchViewModel) ?? SearchViewModel()
         let searchInput = SearchViewModel.SearchInput(searchItemListTrigger: searchTrigger)
         let searchOutput = searchViewModel.getSearchOutput(input: searchInput)
         

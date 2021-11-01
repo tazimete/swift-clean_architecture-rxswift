@@ -17,7 +17,7 @@ protocol Coordinator {
 
 
 protocol Storyboarded {
-    static func instantiate() -> Self
+    static func instantiate(viewModel: AbstractViewModel) -> Self
 }
 
 extension Storyboarded where Self: BaseViewController {
