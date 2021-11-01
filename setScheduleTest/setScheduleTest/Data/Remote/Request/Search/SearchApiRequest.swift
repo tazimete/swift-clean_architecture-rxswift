@@ -9,7 +9,6 @@ import Foundation
 
 enum SearchApiRequest {
     case searchMovie(params: Parameterizable)
-    case fetchUserProfile(params: Parameterizable)
 }
 
 extension SearchApiRequest: APIRequest {
@@ -19,19 +18,17 @@ extension SearchApiRequest: APIRequest {
     }
     
     public typealias ItemType = Movie
-    public typealias ResponseType = Response<ItemType>
+    public typealias ResponseType = SearchResponse<ItemType>
     
     public var method: RequestType {
         switch self {
             case .searchMovie: return .GET
-            case .fetchUserProfile: return .GET
         }
     }
     
     public var path: String {
         switch self {
             case .searchMovie: return "search/movie"
-            case .fetchUserProfile: return "users/\(parameters["username"] as! String)"
         }
     }
     
@@ -40,9 +37,6 @@ extension SearchApiRequest: APIRequest {
         
         switch self {
             case .searchMovie (let params):
-                parameter = params.asRequestParam
-                
-            case .fetchUserProfile (let params):
                 parameter = params.asRequestParam
         }
         

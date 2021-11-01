@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Response<T: Codable>: Codable {
+public struct SearchResponse<T: Codable>: Codable {
     public let page: Int?
     public let results: [T]?
     public let totalPages: Int?

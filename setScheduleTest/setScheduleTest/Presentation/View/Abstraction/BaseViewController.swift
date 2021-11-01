@@ -98,6 +98,14 @@ public class BaseViewController: UIViewController, UIScrollViewDelegate, Storybo
         self.present(alert, animated: true, completion: nil)
     }
     
+    // MARK: Shimmer
+    public func startShimmerAnimation(views: [UIView]) {
+        ShimmerHelper.startShimmerAnimation(viewlist: views)
+    }
+    
+    public func stopShimmerAnimation(views: [UIView]) {
+        ShimmerHelper.stopShimmerAnimation(viewlist: views)
+    }
     
     // MARK: Pagination
     public enum ScrollDirection : Int {

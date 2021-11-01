@@ -46,20 +46,11 @@ class DetailsViewController: BaseViewController {
     
     public func startShimmerAnimation() -> Void {
        //shmmer skeleton animation
-        ShimmerHelper.startShimmerAnimation(view: ivPoster)
-        ShimmerHelper.startShimmerAnimation(view: lblVoteAverage)
-        ShimmerHelper.startShimmerAnimation(view: lblTotalVote)
-        ShimmerHelper.startShimmerAnimation(view: uivInfoContainer)
-        ShimmerHelper.startShimmerAnimation(view: lblOverviewTitle)
-        ShimmerHelper.startShimmerAnimation(view: lblOverview)
+        startShimmerAnimation(views: [ivPoster, lblVoteAverage, lblTotalVote, uivInfoContainer, lblOverviewTitle, lblOverview])
    }
        
    //stop shimmer animation
    public func stopShimmerAnimation() -> Void {
-        ShimmerHelper.stopShimmerAnimation(view: lblVoteAverage)
-        ShimmerHelper.stopShimmerAnimation(view: lblTotalVote)
-        ShimmerHelper.stopShimmerAnimation(view: uivInfoContainer)
-        ShimmerHelper.stopShimmerAnimation(view: lblOverviewTitle)
-        ShimmerHelper.stopShimmerAnimation(view: lblOverview)
+        stopShimmerAnimation(views: [ivPoster, lblVoteAverage, lblTotalVote, uivInfoContainer, lblOverviewTitle, lblOverview])
    }
 }

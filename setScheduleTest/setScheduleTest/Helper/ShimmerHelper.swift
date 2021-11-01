@@ -13,10 +13,11 @@ class ShimmerHelper: NSObject {
     //start shimmer animation
     public static func startShimmerAnimation(viewlist: [UIView]) -> Void {
         //shmmer skeleton animation
-        let gradient = SkeletonGradient(baseColor: UIColor(0xe2e2e2))
+        let gradient = SkeletonGradient(baseColor: UIColor.lightGray)
         let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .topLeftBottomRight)
 
         for  view in viewlist{
+            view.isSkeletonable = true
             if view.isKind(of: UITextView.self){
                 (view as! UITextView).linesCornerRadius = 5
             }else if view.isKind(of: UILabel.self){
