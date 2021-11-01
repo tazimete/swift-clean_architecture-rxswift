@@ -29,6 +29,7 @@
 		29C0330C272F141200597B66 /* ConfigComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0330B272F141200597B66 /* ConfigComponents.swift */; };
 		29C0330E272F161800597B66 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0330D272F161800597B66 /* AppTheme.swift */; };
 		29C03311272F163F00597B66 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03310272F163F00597B66 /* ServerConfig.swift */; };
+		29C03314272FF79400597B66 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03313272FF79400597B66 /* DetailsViewController.swift */; };
 		29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* SearchViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -148,6 +149,7 @@
 		29C0330B272F141200597B66 /* ConfigComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigComponents.swift; sourceTree = "<group>"; };
 		29C0330D272F161800597B66 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		29C03310272F163F00597B66 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
+		29C03313272FF79400597B66 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -376,6 +378,15 @@
 				29C03310272F163F00597B66 /* ServerConfig.swift */,
 			);
 			path = AppConfig;
+			sourceTree = "<group>";
+		};
+		29C03312272FF77E00597B66 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				29C22FC4272B435100E67AAE /* SearchViewController.swift */,
+				29C03313272FF79400597B66 /* DetailsViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		29C22FB4272B435100E67AAE = {
@@ -782,7 +793,7 @@
 			children = (
 				29C032DC272C297D00597B66 /* Abstraction */,
 				29C032F6272D39DD00597B66 /* Cell */,
-				29C22FC4272B435100E67AAE /* SearchViewController.swift */,
+				29C03312272FF77E00597B66 /* Controller */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1157,6 +1168,7 @@
 				29C23132272B46D800E67AAE /* UITableView+CollectionSkeleton.swift in Sources */,
 				29C032FE272D3B0500597B66 /* GenericCellComponents.swift in Sources */,
 				29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */,
+				29C03314272FF79400597B66 /* DetailsViewController.swift in Sources */,
 				29C0330C272F141200597B66 /* ConfigComponents.swift in Sources */,
 				29C23138272B46D800E67AAE /* Swizzling.swift in Sources */,
 				29C032F2272CA6AF00597B66 /* SearchUsecase.swift in Sources */,
