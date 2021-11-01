@@ -11,6 +11,7 @@ import RxCocoa
 
 class DetailsViewController: BaseViewController {
     // MARK: Non UI Objects
+    public var movie: Movie!
     public var movieViewModel: AbstractMovieViewModel!
     private let disposeBag = DisposeBag()
     private let movieDetailsTrigger = PublishSubject<Void>()
@@ -52,7 +53,8 @@ class DetailsViewController: BaseViewController {
                     return
                 }
                 
-                debugPrint("\(weakSelf.TAG) -- bindViewModel() -- response = \(response)")
+                print("\(weakSelf.TAG) -- bindViewModel() -- response = \(response)")
+                weakSelf.bindData(model: response)
             }).disposed(by: disposeBag)
         
         // detect error and show error message
@@ -70,16 +72,32 @@ class DetailsViewController: BaseViewController {
     }
     
     public func triggerFetcingMovieDetails() {
+        movieViewModel.inputModel = MovieViewModel.MovieInputModel(movieId: movie.id ?? 0)
         movieDetailsTrigger.onNext(())
     }
     
-    public func startShimmerAnimation() -> Void {
+    private func bindData(model: Movie) {
+        let posterUrl = "\(AppConfig.shared.getServerConfig().getMediaBaseUrl())\(model.posterPath ?? "")"
+        
+        ivPoster.loadImage(from: posterUrl, completionHandler: {
+            [weak self] url, image, isFinished in
+            
+            guard let weakSelf = self else {
+                return
+            }
+            
+            weakSelf.ivPoster.image = image
+            weakSelf.stopShimmerAnimation(views: [weakSelf.ivPoster])
+        })
+    }
+    
+    private func startShimmerAnimation() -> Void {
        //shmmer skeleton animation
         startShimmerAnimation(views: [ivPoster, lblVoteAverage, lblTotalVote, uivInfoContainer, lblOverviewTitle, lblOverview])
    }
        
    //stop shimmer animation
-   public func stopShimmerAnimation() -> Void {
-        stopShimmerAnimation(views: [ivPoster, lblVoteAverage, lblTotalVote, uivInfoContainer, lblOverviewTitle, lblOverview])
+   private func stopShimmerAnimation() -> Void {
+        stopShimmerAnimation(views: [lblVoteAverage, lblTotalVote, uivInfoContainer, lblOverviewTitle, lblOverview])
    }
 }

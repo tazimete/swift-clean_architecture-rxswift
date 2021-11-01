@@ -23,6 +23,7 @@ class GithubCoordinator: Coordinator {
     public func showDetailsController(movie: Movie) {
 //        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DetailsViewController") as! DetailsViewController
         let vc = DetailsViewController.instantiate(viewModel: SearchViewModel())
+        vc.movie = movie
         self.navigationController.pushViewController(vc, animated: true)
     }
 }
