@@ -48,6 +48,7 @@ class DetailsViewController: BaseViewController {
         
         //receive response and populate UI
         movieOutput.movieDetails
+            .observe(on: MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] response in
                 guard let weakSelf = self, let response = response else {
                     return
@@ -89,6 +90,16 @@ class DetailsViewController: BaseViewController {
             weakSelf.ivPoster.image = image
             weakSelf.stopShimmerAnimation(views: [weakSelf.ivPoster])
         })
+        
+        lblVoteAverage.text = "Vote Avg : \(model.voteAverage ?? 0)"
+        lblTotalVote.text = "Vote Total : \(model.voteCount ?? 0)"
+        lblName.text = "Name: \(model.originalTitle ?? "")"
+        lblReleasingYear.text = "Releasing Date : \(model.releaseDate ?? "")"
+        lblLanguage.text = "Popularity : \(model.popularity ?? 0)"
+        lblOverview.text = "\(model.overview ?? "")"
+        
+        //stop shimmer
+        stopShimmerAnimation()
     }
     
     private func startShimmerAnimation() -> Void {
