@@ -33,6 +33,11 @@
 		29C0331727304CCB00597B66 /* AbstractMovieUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0331627304CCB00597B66 /* AbstractMovieUsecase.swift */; };
 		29C0331B27304DDF00597B66 /* MovieApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0331A27304DDF00597B66 /* MovieApiRequest.swift */; };
 		29C0331E27305C4100597B66 /* AbstractMovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0331D27305C4100597B66 /* AbstractMovieRepository.swift */; };
+		29C0332127305E1C00597B66 /* MovieUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0332027305E1C00597B66 /* MovieUsecase.swift */; };
+		29C0332427305EAE00597B66 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0332327305EAE00597B66 /* MovieRepository.swift */; };
+		29C0332627305F5F00597B66 /* MovieDetailsParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0332527305F5F00597B66 /* MovieDetailsParameter.swift */; };
+		29C0332A2730628300597B66 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033292730628300597B66 /* MovieViewModel.swift */; };
+		29C0332D2730630E00597B66 /* AbstractMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0332C2730630E00597B66 /* AbstractMovieViewModel.swift */; };
 		29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* SearchViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -155,6 +160,11 @@
 		29C0331627304CCB00597B66 /* AbstractMovieUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractMovieUsecase.swift; sourceTree = "<group>"; };
 		29C0331A27304DDF00597B66 /* MovieApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieApiRequest.swift; sourceTree = "<group>"; };
 		29C0331D27305C4100597B66 /* AbstractMovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractMovieRepository.swift; sourceTree = "<group>"; };
+		29C0332027305E1C00597B66 /* MovieUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieUsecase.swift; sourceTree = "<group>"; };
+		29C0332327305EAE00597B66 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
+		29C0332527305F5F00597B66 /* MovieDetailsParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsParameter.swift; sourceTree = "<group>"; };
+		29C033292730628300597B66 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		29C0332C2730630E00597B66 /* AbstractMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractMovieViewModel.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -353,6 +363,7 @@
 			children = (
 				29C032DF272C8F4E00597B66 /* AbstractViewModel.swift */,
 				29C03306272E881A00597B66 /* Search */,
+				29C0332B273062E200597B66 /* Movie */,
 			);
 			path = Abstraction;
 			sourceTree = "<group>";
@@ -405,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				29C0331A27304DDF00597B66 /* MovieApiRequest.swift */,
+				29C0332527305F5F00597B66 /* MovieDetailsParameter.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -413,6 +425,46 @@
 			isa = PBXGroup;
 			children = (
 				29C0331D27305C4100597B66 /* AbstractMovieRepository.swift */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		29C0331F27305E0A00597B66 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				29C0332027305E1C00597B66 /* MovieUsecase.swift */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		29C0332227305E9800597B66 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				29C0332327305EAE00597B66 /* MovieRepository.swift */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		29C033272730626200597B66 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				29C032E2272C9B2D00597B66 /* SerachViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		29C033282730626800597B66 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				29C033292730628300597B66 /* MovieViewModel.swift */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		29C0332B273062E200597B66 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				29C0332C2730630E00597B66 /* AbstractMovieViewModel.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -811,7 +863,8 @@
 			isa = PBXGroup;
 			children = (
 				29C03305272E880300597B66 /* Abstraction */,
-				29C032E2272C9B2D00597B66 /* SerachViewModel.swift */,
+				29C033272730626200597B66 /* Search */,
+				29C033282730626800597B66 /* Movie */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -839,6 +892,7 @@
 			isa = PBXGroup;
 			children = (
 				29C032F0272CA69E00597B66 /* Search */,
+				29C0332227305E9800597B66 /* Movie */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -867,6 +921,7 @@
 			isa = PBXGroup;
 			children = (
 				29C032EF272CA69700597B66 /* Search */,
+				29C0331F27305E0A00597B66 /* Movie */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -1156,6 +1211,8 @@
 				29C23120272B46D800E67AAE /* ProcessInfo+XCTest.swift in Sources */,
 				29C23119272B46D800E67AAE /* SubviewsSkeletonables.swift in Sources */,
 				29C23028272B45D000E67AAE /* QueueManager.swift in Sources */,
+				29C0332A2730628300597B66 /* MovieViewModel.swift in Sources */,
+				29C0332D2730630E00597B66 /* AbstractMovieViewModel.swift in Sources */,
 				29C2311A272B46D800E67AAE /* SkeletonConfig.swift in Sources */,
 				29C032EB272CA62700597B66 /* AbstractRepository.swift in Sources */,
 				29C23025272B45D000E67AAE /* Parameterizable.swift in Sources */,
@@ -1163,6 +1220,7 @@
 				29C23136272B46D800E67AAE /* SkeletonCollectionViewProtocols.swift in Sources */,
 				29C2312D272B46D800E67AAE /* SkeletonReusableCell.swift in Sources */,
 				29C032E3272C9B2D00597B66 /* SerachViewModel.swift in Sources */,
+				29C0332127305E1C00597B66 /* MovieUsecase.swift in Sources */,
 				29C2312A272B46D800E67AAE /* SkeletonAnimationBuilder.swift in Sources */,
 				29C23026272B45D000E67AAE /* StubResponseProvider.swift in Sources */,
 				29C032E6272CA5A500597B66 /* AbstractUsecase.swift in Sources */,
@@ -1183,6 +1241,7 @@
 				29C2301F272B45D000E67AAE /* UIView+Extensions.swift in Sources */,
 				29C23121272B46D800E67AAE /* UIView+Frame.swift in Sources */,
 				29C032FC272D3A9100597B66 /* CellConfiguratorFactory.swift in Sources */,
+				29C0332627305F5F00597B66 /* MovieDetailsParameter.swift in Sources */,
 				29C23115272B46D800E67AAE /* SkeletonMultilineLayerBuilder.swift in Sources */,
 				29C23032272B45D000E67AAE /* SearchApiRequest.swift in Sources */,
 				29C23020272B45D000E67AAE /* UIImage+Extension.swift in Sources */,
@@ -1230,6 +1289,7 @@
 				29C2312F272B46D800E67AAE /* SkeletonCollectionDataSource.swift in Sources */,
 				29C0331B27304DDF00597B66 /* MovieApiRequest.swift in Sources */,
 				29C032E0272C8F4E00597B66 /* AbstractViewModel.swift in Sources */,
+				29C0332427305EAE00597B66 /* MovieRepository.swift in Sources */,
 				29C23122272B46D800E67AAE /* UIColor+Skeleton.swift in Sources */,
 				29C23116272B46D800E67AAE /* SkeletonLayerBuilder.swift in Sources */,
 				29C23134272B46D800E67AAE /* UIView+CollectionSkeleton.swift in Sources */,

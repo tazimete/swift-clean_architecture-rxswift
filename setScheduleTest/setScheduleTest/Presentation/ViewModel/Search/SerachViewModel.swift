@@ -10,11 +10,6 @@ import RxSwift
 import RxCocoa
 
 class SearchViewModel: AbstractSearchViewModel {
-    
-    public init() {
-        usecase = SearchUsecase()
-    }
-    
     public struct SearchInputModel {
         let query: String
         let year: Int
@@ -31,6 +26,10 @@ class SearchViewModel: AbstractSearchViewModel {
     
     public var inputModel: SearchInputModel?
     public var usecase: AbstractUsecase
+    
+    public init() {
+        usecase = SearchUsecase()
+    }
     
     public func getSearchOutput(input: SearchInput) -> SearchOutput {
         let searchListResponse = BehaviorRelay<[SearchApiRequest.ItemType]>(value: [])

@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol AbstractMovieRepository: AbstractRepository {
-     func get(query: String, year: Int) -> Observable<MovieApiRequest.ResponseType>
+     func get(movieId: Int) -> Observable<MovieApiRequest.ResponseType>
 }

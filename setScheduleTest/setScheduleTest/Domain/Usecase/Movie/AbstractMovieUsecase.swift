@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol AbstractMovieUsecase: AbstractUsecase {
-    func getMovieDetails(id: Int) -> Observable<MovieApiRequest.ResponseType>
+    func getMovieDetails(movieId: Int) -> Observable<MovieApiRequest.ResponseType>
 }
