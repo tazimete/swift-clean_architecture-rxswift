@@ -16,7 +16,7 @@ class SearchViewModel: AbstractSearchViewModel {
     }
     
     public struct SearchInput {
-        let searchItemListTrigger: Observable<Void>
+        let searchItemListTrigger: Observable<SearchInputModel>
     }
     
     public struct SearchOutput {
@@ -24,7 +24,6 @@ class SearchViewModel: AbstractSearchViewModel {
         let errorTracker: BehaviorRelay<NetworkError?>
     }
     
-    public var inputModel: SearchInputModel?
     public var usecase: AbstractUsecase
     
     public init() {
@@ -35,7 +34,7 @@ class SearchViewModel: AbstractSearchViewModel {
         let searchListResponse = BehaviorRelay<[SearchApiRequest.ItemType]>(value: [])
         let errorResponse = BehaviorRelay<NetworkError?>(value: nil)
         
-        input.searchItemListTrigger.flatMapLatest({ [weak self] () -> Observable<SearchApiRequest.ResponseType> in
+        input.searchItemListTrigger.flatMapLatest({ [weak self] (inputModel) -> Observable<SearchApiRequest.ResponseType> in
             guard let weakSelf = self else {
                 return Observable.just(SearchApiRequest.ResponseType())
             }
@@ -44,7 +43,7 @@ class SearchViewModel: AbstractSearchViewModel {
             searchListResponse.accept(Array<SearchApiRequest.ItemType>(repeating: SearchApiRequest.ItemType(), count: 9))
             
             //fetch movie list
-            return weakSelf.searchData(query: weakSelf.inputModel?.query ?? "", year: weakSelf.inputModel?.year ?? 0)
+            return weakSelf.searchData(query: inputModel.query, year: inputModel.year)
         }).subscribe(onNext: {
             response in
             

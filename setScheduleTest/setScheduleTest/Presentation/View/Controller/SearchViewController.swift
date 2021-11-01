@@ -12,7 +12,7 @@ import RxCocoa
 class SearchViewController: BaseViewController {
     public var searchViewModel: AbstractSearchViewModel!
     private let disposeBag = DisposeBag()
-    private let searchTrigger = PublishSubject<Void>()
+    private let searchTrigger = PublishSubject<SearchViewModel.SearchInputModel>()
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -140,8 +140,7 @@ class SearchViewController: BaseViewController {
     }
     
     private func searchMovie(name: String, year: Int) {
-        searchViewModel.inputModel = SearchViewModel.SearchInputModel(query: name, year: year)
-        searchTrigger.onNext(())
+        searchTrigger.onNext(SearchViewModel.SearchInputModel(query: name, year: year))
     }
     
     private func navigateToDetailsController(with movie: Movie) {

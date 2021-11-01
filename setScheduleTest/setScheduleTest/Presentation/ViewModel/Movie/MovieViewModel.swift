@@ -10,12 +10,8 @@ import RxSwift
 import RxCocoa
 
 class MovieViewModel: AbstractMovieViewModel {
-    public struct MovieInputModel {
-        let movieId: Int
-    }
-    
     public struct MovieInput {
-        let movieDetailsTrigger: Observable<Void>
+        let movieDetailsTrigger: Observable<Int>
     }
     
     public struct MovieOutput {
@@ -23,7 +19,6 @@ class MovieViewModel: AbstractMovieViewModel {
         let errorTracker: BehaviorRelay<NetworkError?>
     }
     
-    public var inputModel: MovieInputModel?
     public var usecase: AbstractUsecase
     
     public init() {
@@ -34,13 +29,13 @@ class MovieViewModel: AbstractMovieViewModel {
         let movieResponse = BehaviorRelay<MovieApiRequest.ResponseType?>(value: nil)
         let errorResponse = BehaviorRelay<NetworkError?>(value: nil)
         
-        input.movieDetailsTrigger.flatMapLatest({ [weak self] () -> Observable<MovieApiRequest.ResponseType> in
+        input.movieDetailsTrigger.flatMapLatest({ [weak self] (movieId) -> Observable<MovieApiRequest.ResponseType> in
             guard let weakSelf = self else {
                 return Observable.just(MovieApiRequest.ResponseType())
             }
-            
+            debugPrint("MovieViewModel -- getMovieOutput() -- movieDetailsTrigger -- movieId = \(movieId)")
             //fetch movie details
-            return weakSelf.getMovieDetails(movieId: weakSelf.inputModel?.movieId ?? 100)
+            return weakSelf.getMovieDetails(movieId: movieId)
         }).subscribe(onNext: {
             response in
             

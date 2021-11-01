@@ -14,7 +14,7 @@ class DetailsViewController: BaseViewController {
     public var movie: Movie!
     public var movieViewModel: AbstractMovieViewModel!
     private let disposeBag = DisposeBag()
-    private let movieDetailsTrigger = PublishSubject<Void>()
+    private let movieDetailsTrigger = PublishSubject<Int>()
     
     // MARK: UI Objects
     @IBOutlet weak var ivPoster: UIImageView!
@@ -69,12 +69,11 @@ class DetailsViewController: BaseViewController {
             print("\(String(describing: weakSelf.TAG)) -- bindViewModel() -- error  -- code = \(error.errorCode), message = \(error.errorMessage)")
         }).disposed(by: disposeBag)
         
-        triggerFetcingMovieDetails()
+        triggerFetcingMovieDetails(movieId: movie.id ?? 0)
     }
     
-    public func triggerFetcingMovieDetails() {
-        movieViewModel.inputModel = MovieViewModel.MovieInputModel(movieId: movie.id ?? 0)
-        movieDetailsTrigger.onNext(())
+    public func triggerFetcingMovieDetails(movieId: Int) {
+        movieDetailsTrigger.onNext(movieId)
     }
     
     private func bindData(model: Movie) {

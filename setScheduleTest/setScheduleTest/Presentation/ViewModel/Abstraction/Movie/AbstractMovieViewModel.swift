@@ -9,7 +9,6 @@ import Foundation
 import RxSwift
 
 protocol AbstractMovieViewModel: AbstractViewModel {
-    var inputModel: MovieViewModel.MovieInputModel? {get set}
     func getMovieOutput(input: MovieViewModel.MovieInput) -> MovieViewModel.MovieOutput
     func getMovieDetails(movieId: Int) -> Observable<MovieApiRequest.ResponseType>
 }

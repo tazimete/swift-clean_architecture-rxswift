@@ -8,9 +8,7 @@
 import UIKit
 
 public class BaseViewController: UIViewController, UIScrollViewDelegate, Storyboarded {
-    public lazy var TAG = {
-        return self.description
-    }
+    public lazy var TAG = self.description
     var viewModel: AbstractViewModel!
     public var isShimmerNeeded: Bool = false
     public var isPaginationEnabled: Bool = true
