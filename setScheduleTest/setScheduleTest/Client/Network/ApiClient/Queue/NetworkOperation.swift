@@ -129,23 +129,5 @@ class NetworkOperation: Operation {
         super.cancel()
         self.task?.cancel()
     }
-    
-    public func getStubbResponse<T: Codable>(type: T.Type, completionHandler: @escaping (NetworkCompletionHandler<T>)){
-        guard let response = ((StubResponseProvider.get(type: type)[0])["response"]) else {
-            completionHandler(.failure(.noDataError(code: 401, message: "No data found in response")))
-            return
-        }
-        guard let data = try? JSONSerialization.data(withJSONObject: response, options: .prettyPrinted) else {
-            completionHandler(.failure(.noDataError(code: 401, message: "No data found in response")))
-            return
-        }
-        
-        guard let resultData = try? JSONDecoder().decode(T.self, from: data) else {
-            completionHandler(.failure(.decodingError(code: 401, message: "No data found in response")))
-            return
-        }
-        
-        completionHandler(.success(resultData))
-    }
 }
 

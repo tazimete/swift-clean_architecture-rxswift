@@ -70,7 +70,6 @@
 		29C23031272B45D000E67AAE /* MoviewSearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C23016272B45D000E67AAE /* MoviewSearchParams.swift */; };
 		29C23032272B45D000E67AAE /* SearchApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C23017272B45D000E67AAE /* SearchApiRequest.swift */; };
 		29C23034272B45D000E67AAE /* ShimmerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2301A272B45D000E67AAE /* ShimmerHelper.swift */; };
-		29C2303D272B464A00E67AAE /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C23039272B464A00E67AAE /* GithubUser.swift */; };
 		29C2303E272B464A00E67AAE /* AbstractDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2303A272B464A00E67AAE /* AbstractDataModel.swift */; };
 		29C23113272B46D800E67AAE /* SkeletonGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C23083272B46D800E67AAE /* SkeletonGradient.swift */; };
 		29C23114272B46D800E67AAE /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C23084272B46D800E67AAE /* SkeletonView.swift */; };
@@ -204,7 +203,6 @@
 		29C23016272B45D000E67AAE /* MoviewSearchParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviewSearchParams.swift; sourceTree = "<group>"; };
 		29C23017272B45D000E67AAE /* SearchApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchApiRequest.swift; sourceTree = "<group>"; };
 		29C2301A272B45D000E67AAE /* ShimmerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimmerHelper.swift; sourceTree = "<group>"; };
-		29C23039272B464A00E67AAE /* GithubUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
 		29C2303A272B464A00E67AAE /* AbstractDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDataModel.swift; sourceTree = "<group>"; };
 		29C23083272B46D800E67AAE /* SkeletonGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonGradient.swift; sourceTree = "<group>"; };
 		29C23084272B46D800E67AAE /* SkeletonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
@@ -699,17 +697,8 @@
 			isa = PBXGroup;
 			children = (
 				29C2303A272B464A00E67AAE /* AbstractDataModel.swift */,
-				29C23038272B464A00E67AAE /* Github */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		29C23038272B464A00E67AAE /* Github */ = {
-			isa = PBXGroup;
-			children = (
-				29C23039272B464A00E67AAE /* GithubUser.swift */,
-			);
-			path = Github;
 			sourceTree = "<group>";
 		};
 		29C23040272B46D800E67AAE /* Library */ = {
@@ -1311,7 +1300,6 @@
 				29C23125272B46D800E67AAE /* UITableView+VisibleSections.swift in Sources */,
 				29C2302B272B45D000E67AAE /* Downloader.swift in Sources */,
 				29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */,
-				29C2303D272B464A00E67AAE /* GithubUser.swift in Sources */,
 				29C23029272B45D000E67AAE /* ApiRequest.swift in Sources */,
 				29C0331E27305C4100597B66 /* AbstractMovieRepository.swift in Sources */,
 				29C2302D272B45D000E67AAE /* AbstractDownloader.swift in Sources */,
