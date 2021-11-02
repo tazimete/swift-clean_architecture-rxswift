@@ -64,13 +64,7 @@ class APIClient: AbstractApiClient{
     
     public func send<T: Codable>(session: AbstractURLSession, apiRequest: APIRequest, type: T.Type) -> Observable<T> {
         let request = apiRequest.request(with: apiRequest.baseURL)
-        let config = URLSessionConfiguration.default
-        config.requestCachePolicy = .reloadIgnoringLocalCacheData
-        config.urlCache = nil
-
 //        let session = URLSession(configuration: config)
-        var session = session
-        session.customConfig = config
 
         return Observable.create { observer -> Disposable in
             session.dataTask(with: request) { [weak self] data, response, error in

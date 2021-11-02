@@ -16,6 +16,6 @@ class MovieRepository: AbstractMovieRepository {
     }
     
     public func get(movieId: Int) -> Observable<MovieApiRequest.ResponseType> {
-        return apiClient.send(apiRequest: MovieApiRequest.getMovie(params: MovieDetailsParams(movieId: movieId)), type: MovieApiRequest.ResponseType.self)
+        return apiClient.send(session: URLSession(config: URLSessionConfigHolder.config), apiRequest: MovieApiRequest.getMovie(params: MovieDetailsParams(movieId: movieId)), type: MovieApiRequest.ResponseType.self)
     }
 }
