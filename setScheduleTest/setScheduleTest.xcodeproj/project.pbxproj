@@ -39,6 +39,7 @@
 		29C0332A2730628300597B66 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033292730628300597B66 /* MovieViewModel.swift */; };
 		29C0332D2730630E00597B66 /* AbstractMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0332C2730630E00597B66 /* AbstractMovieViewModel.swift */; };
 		29C033322731AFD500597B66 /* MockApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033312731AFD500597B66 /* MockApiClient.swift */; };
+		29C033382731CE0000597B66 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033372731CE0000597B66 /* URLSessionProtocol.swift */; };
 		29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* SearchViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -166,6 +167,7 @@
 		29C033292730628300597B66 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		29C0332C2730630E00597B66 /* AbstractMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractMovieViewModel.swift; sourceTree = "<group>"; };
 		29C033312731AFD500597B66 /* MockApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiClient.swift; sourceTree = "<group>"; };
+		29C033372731CE0000597B66 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -501,6 +503,15 @@
 			path = Stubbing;
 			sourceTree = "<group>";
 		};
+		29C033362731CD8A00597B66 /* Abstraction */ = {
+			isa = PBXGroup;
+			children = (
+				29C2300A272B45D000E67AAE /* AbstractApiClient.swift */,
+				29C033372731CE0000597B66 /* URLSessionProtocol.swift */,
+			);
+			path = Abstraction;
+			sourceTree = "<group>";
+		};
 		29C22FB4272B435100E67AAE = {
 			isa = PBXGroup;
 			children = (
@@ -620,9 +631,9 @@
 		29C23002272B45D000E67AAE /* ApiClient */ = {
 			isa = PBXGroup;
 			children = (
+				29C033362731CD8A00597B66 /* Abstraction */,
 				29C033332731BAB500597B66 /* Stubbing */,
 				29C23006272B45D000E67AAE /* Queue */,
-				29C2300A272B45D000E67AAE /* AbstractApiClient.swift */,
 				29C23003272B45D000E67AAE /* ApiClient.swift */,
 				29C23004272B45D000E67AAE /* Parameterizable.swift */,
 				29C23009272B45D000E67AAE /* ApiRequest.swift */,
@@ -1257,6 +1268,7 @@
 				29C2303E272B464A00E67AAE /* AbstractDataModel.swift in Sources */,
 				29C2311E272B46D800E67AAE /* UIView+Extension.swift in Sources */,
 				29C23137272B46D800E67AAE /* SkeletonLayer.swift in Sources */,
+				29C033382731CE0000597B66 /* URLSessionProtocol.swift in Sources */,
 				29C23117272B46D800E67AAE /* SkeletonFlow.swift in Sources */,
 				29C23031272B45D000E67AAE /* MoviewSearchParams.swift in Sources */,
 				29C2311B272B46D800E67AAE /* Recoverable.swift in Sources */,
