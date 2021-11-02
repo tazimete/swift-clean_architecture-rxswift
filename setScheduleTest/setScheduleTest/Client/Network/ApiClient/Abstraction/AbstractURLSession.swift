@@ -41,6 +41,5 @@ extension URLSession: AbstractURLSession {
         self.init(configuration: config)
         defaultConfig = config
     }
-    
 }
 
