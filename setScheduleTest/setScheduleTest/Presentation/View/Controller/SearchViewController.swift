@@ -58,7 +58,7 @@ class SearchViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        searchViewModel = (viewModel as? AbstractSearchViewModel) ?? SearchViewModel()
+        searchViewModel = (viewModel as! AbstractSearchViewModel)
         let searchInput = SearchViewModel.SearchInput(searchItemListTrigger: searchTrigger)
         let searchOutput = searchViewModel.getSearchOutput(input: searchInput)
         

@@ -45,7 +45,7 @@ class DetailsViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        movieViewModel = (viewModel as? AbstractMovieViewModel) ?? MovieViewModel()
+        movieViewModel = (viewModel as! AbstractMovieViewModel)
         let movieInput = MovieViewModel.MovieInput(movieDetailsTrigger: movieDetailsTrigger)
         let movieOutput = movieViewModel.getMovieOutput(input: movieInput)
         

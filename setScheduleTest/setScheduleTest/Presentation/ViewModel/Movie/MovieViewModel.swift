@@ -21,8 +21,8 @@ class MovieViewModel: AbstractMovieViewModel {
     
     public var usecase: AbstractUsecase
     
-    public init() {
-        usecase = MovieUsecase()
+    public init(usecase: AbstractMovieUsecase) {
+        self.usecase = usecase
     }
     
     public func getMovieOutput(input: MovieInput) -> MovieOutput {

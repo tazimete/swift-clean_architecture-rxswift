@@ -11,8 +11,8 @@ import RxSwift
 class SearchUsecase: AbstractSearchUsecase {
     var repository: AbstractRepository
     
-    public init() {
-        repository = SearchRepository()
+    public init(repository: AbstractSearchRepository) {
+        self.repository = repository
     }
     
     public func search(query: String, year: Int) -> Observable<SearchApiRequest.ResponseType> {

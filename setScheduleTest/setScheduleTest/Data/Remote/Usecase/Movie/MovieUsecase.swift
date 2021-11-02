@@ -11,8 +11,8 @@ import RxSwift
 class MovieUsecase: AbstractMovieUsecase {
     var repository: AbstractRepository
     
-    public init() {
-        repository = MovieRepository()
+    public init(repository: AbstractMovieRepository) {
+        self.repository = repository
     }
     
     public func getMovieDetails(movieId: Int) -> Observable<MovieApiRequest.ResponseType> {

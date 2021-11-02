@@ -26,8 +26,8 @@ class SearchViewModel: AbstractSearchViewModel {
     
     public var usecase: AbstractUsecase
     
-    public init() {
-        usecase = SearchUsecase()
+    public init(usecase: AbstractSearchUsecase) {
+        self.usecase = usecase
     }
     
     public func getSearchOutput(input: SearchInput) -> SearchOutput {

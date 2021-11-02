@@ -11,8 +11,8 @@ import RxSwift
 class MovieRepository: AbstractMovieRepository {
     var apiClient: AbstractApiClient
     
-    init() {
-        apiClient = APIClient.shared
+    init(apiClient: AbstractApiClient = APIClient.shared) {
+        self.apiClient = apiClient
     }
     
     public func get(movieId: Int) -> Observable<MovieApiRequest.ResponseType> {
