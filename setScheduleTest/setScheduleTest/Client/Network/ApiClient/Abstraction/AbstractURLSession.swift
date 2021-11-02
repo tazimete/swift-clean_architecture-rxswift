@@ -10,25 +10,24 @@ import UIKit
 typealias URLSessionDataTaskResult = (Data?, URLResponse?, Error?) -> Void
 
 protocol AbstractURLSession: AnyObject {
-    var customConfig: URLSessionConfiguration {get set}
+    var defaultConfig: URLSessionConfiguration {get set}
     init(configuration: URLSessionConfiguration)
     func dataTask(with request: URLRequest, completionHandler: @escaping URLSessionDataTaskResult) -> URLSessionDataTask
 }
 
-struct URLSessionConfigHolder {
-    static var config: URLSessionConfiguration = URLSessionConfiguration.default
+class URLSessionConfigHolder {
+    static var config: URLSessionConfiguration = {
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+        
+        return config
+    }()
 }
 
 extension AbstractURLSession {
-    var customConfig: URLSessionConfiguration {
+    var defaultConfig: URLSessionConfiguration {
         get {
-            if customConfig == nil {
-                let config = URLSessionConfiguration.default
-                config.requestCachePolicy = .reloadIgnoringLocalCacheData
-                config.urlCache = nil
-                
-                return config
-            }
             return URLSessionConfigHolder.config
         }set(newValue) {
             URLSessionConfigHolder.config  = newValue
@@ -38,9 +37,9 @@ extension AbstractURLSession {
 }
 
 extension URLSession: AbstractURLSession {
-    convenience init(config: URLSessionConfiguration) {
+    convenience init(config: URLSessionConfiguration = URLSessionConfigHolder.config) {
         self.init(configuration: config)
-        customConfig = config
+        defaultConfig = config
     }
     
 }
