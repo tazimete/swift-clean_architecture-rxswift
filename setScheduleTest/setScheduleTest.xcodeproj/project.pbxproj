@@ -38,6 +38,7 @@
 		29C0332627305F5F00597B66 /* MovieDetailsParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0332527305F5F00597B66 /* MovieDetailsParameter.swift */; };
 		29C0332A2730628300597B66 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033292730628300597B66 /* MovieViewModel.swift */; };
 		29C0332D2730630E00597B66 /* AbstractMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0332C2730630E00597B66 /* AbstractMovieViewModel.swift */; };
+		29C033322731AFD500597B66 /* MockApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033312731AFD500597B66 /* MockApiClient.swift */; };
 		29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* SearchViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -165,6 +166,7 @@
 		29C0332527305F5F00597B66 /* MovieDetailsParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsParameter.swift; sourceTree = "<group>"; };
 		29C033292730628300597B66 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		29C0332C2730630E00597B66 /* AbstractMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractMovieViewModel.swift; sourceTree = "<group>"; };
+		29C033312731AFD500597B66 /* MockApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiClient.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -469,6 +471,38 @@
 			path = Movie;
 			sourceTree = "<group>";
 		};
+		29C0332E2731AF7F00597B66 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				29C0332F2731AF9200597B66 /* Network */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		29C0332F2731AF9200597B66 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				29C033302731AFB200597B66 /* ApiClient */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		29C033302731AFB200597B66 /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				29C033312731AFD500597B66 /* MockApiClient.swift */,
+			);
+			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		29C033332731BAB500597B66 /* Stubbing */ = {
+			isa = PBXGroup;
+			children = (
+				29C23005272B45D000E67AAE /* StubResponseProvider.swift */,
+			);
+			path = Stubbing;
+			sourceTree = "<group>";
+		};
 		29C22FB4272B435100E67AAE = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +548,7 @@
 		29C22FD9272B435100E67AAE /* setScheduleTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				29C0332E2731AF7F00597B66 /* Client */,
 				29C22FDA272B435100E67AAE /* setScheduleTestTests.swift */,
 				29C22FDC272B435100E67AAE /* Info.plist */,
 			);
@@ -574,25 +609,25 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		29C23001272B45D000E67AAE /* NetworkClient */ = {
+		29C23001272B45D000E67AAE /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				29C23002272B45D000E67AAE /* ApiClient */,
 				29C2300B272B45D000E67AAE /* Downloader */,
 				29C23012272B45D000E67AAE /* ImageDownloader */,
 			);
-			path = NetworkClient;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		29C23002272B45D000E67AAE /* ApiClient */ = {
 			isa = PBXGroup;
 			children = (
+				29C033332731BAB500597B66 /* Stubbing */,
+				29C23006272B45D000E67AAE /* Queue */,
 				29C2300A272B45D000E67AAE /* AbstractApiClient.swift */,
 				29C23003272B45D000E67AAE /* ApiClient.swift */,
 				29C23004272B45D000E67AAE /* Parameterizable.swift */,
-				29C23005272B45D000E67AAE /* StubResponseProvider.swift */,
 				29C23009272B45D000E67AAE /* ApiRequest.swift */,
-				29C23006272B45D000E67AAE /* Queue */,
 			);
 			path = ApiClient;
 			sourceTree = "<group>";
@@ -940,7 +975,7 @@
 		29C2316B272B54E200E67AAE /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				29C23001272B45D000E67AAE /* NetworkClient */,
+				29C23001272B45D000E67AAE /* Network */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -1313,6 +1348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C22FDB272B435100E67AAE /* setScheduleTestTests.swift in Sources */,
+				29C033322731AFD500597B66 /* MockApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
