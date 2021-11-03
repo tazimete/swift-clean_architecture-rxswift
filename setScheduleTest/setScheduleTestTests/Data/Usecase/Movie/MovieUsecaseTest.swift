@@ -1,5 +1,5 @@
 //
-//  MovieDetailsRepositoryTest.swift
+//  MovieUsecaseTest.swift
 //  setScheduleTestTests
 //
 //  Created by JMC on 4/11/21.
@@ -9,28 +9,26 @@ import XCTest
 @testable import setScheduleTest
 import RxSwift
 
-class MovieRepositoryTest: XCTestCase {
+class MovieUsecaseTest: XCTestCase {
     private var disposeBag: DisposeBag!
-    private var movieRepository: AbstractMovieRepository!
-    private var apiClient: MockApiClient!
+    private var movieUsecase: AbstractMovieUsecase!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         disposeBag = DisposeBag()
-        apiClient = MockApiClient.shared
-        movieRepository = MovieRepository(apiClient: apiClient)
+        movieUsecase = MovieUsecase(repository: MockMovieRepository())
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        apiClient = nil
-        movieRepository = nil
         disposeBag = nil
+        movieUsecase = nil
     }
 
-    func testApiClient() {
-        XCTAssertNotNil(movieRepository.apiClient)
-        XCTAssertNotNil(movieRepository.apiClient.session)
+    func testRepository() {
+        XCTAssertNotNil(movieUsecase.repository)
+        XCTAssertNotNil(movieUsecase.repository.apiClient)
+        XCTAssertNotNil(movieUsecase.repository.apiClient.session)
     }
     
     func testGetMovieDetails() {
@@ -38,9 +36,9 @@ class MovieRepositoryTest: XCTestCase {
         var result: Movie!
         var networkError: NetworkError?
         
-        let expectation = self.expectation(description: "Wait for movieRepository to load moview details")
+        let expectation = self.expectation(description: "Wait for movieUsecase to get movie details")
         
-        movieRepository.get(movieId: movieId)
+        movieUsecase.getMovieDetails(movieId: movieId)
             .subscribe(onNext: { response in
                 result = response
                 expectation.fulfill()
