@@ -33,7 +33,7 @@ class MovieUsecaseTest: XCTestCase {
     
     func testGetMovieDetails() {
         let movieId = 630004
-        var result: Movie!
+        var result: MovieApiRequest.ResponseType!
         var networkError: NetworkError?
         
         let expectation = self.expectation(description: "Wait for movieUsecase to get movie details")
@@ -50,7 +50,7 @@ class MovieUsecaseTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         
         //stubbed response to check data which are received through non-mock components
-        let stubbedResposne = StubResponseProvider.getResponse(type: Movie.self)
+        let stubbedResposne = StubResponseProvider.getResponse(type: MovieApiRequest.ResponseType.self)
         
         //asserts
         XCTAssertEqual(result.id, stubbedResposne.id)

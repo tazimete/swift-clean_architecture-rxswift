@@ -360,13 +360,6 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		29C032F5272CAB2700597B66 /* Local */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
 		29C032F6272D39DD00597B66 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1013,8 +1006,10 @@
 		29C23161272B506300E67AAE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				29C23036272B464A00E67AAE /* Model */,
+				29C23169272B514900E67AAE /* Usecase */,
+				29C23166272B512200E67AAE /* Repository */,
 				29C2316A272B549400E67AAE /* Remote */,
-				29C032F5272CAB2700597B66 /* Local */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1100,9 +1095,6 @@
 			isa = PBXGroup;
 			children = (
 				29C23014272B45D000E67AAE /* Request */,
-				29C23036272B464A00E67AAE /* Model */,
-				29C23169272B514900E67AAE /* Usecase */,
-				29C23166272B512200E67AAE /* Repository */,
 			);
 			path = Remote;
 			sourceTree = "<group>";

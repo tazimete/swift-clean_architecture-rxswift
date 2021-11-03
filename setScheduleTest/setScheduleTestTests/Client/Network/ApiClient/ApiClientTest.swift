@@ -29,7 +29,7 @@ class ApiClientTest: XCTestCase {
         
         let request = SearchApiRequest.searchMovie(params: MoviewSearchParams(query: query, year: year))
         let expectation = self.expectation(description: "Wait for \(request.path) to load.")
-        var result: SearchResponse<Movie>!
+        var result: SearchApiRequest.ResponseType!
         var networkError: NetworkError?
         
         apiClient.send(apiRequest: request, type: SearchApiRequest.ResponseType.self)
@@ -44,7 +44,7 @@ class ApiClientTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         
         //stubbed response to check data which are received through non-mock components
-        let stubbedResposne = StubResponseProvider.getResponse(type: SearchResponse<Movie>.self)
+        let stubbedResposne = StubResponseProvider.getResponse(type: SearchApiRequest.ResponseType.self)
         
         //asserts
         XCTAssertEqual(result.results?.count ?? 0, stubbedResposne.results?.count ?? 0)
@@ -61,7 +61,7 @@ class ApiClientTest: XCTestCase {
         let movieId = 630004
         let request = MovieApiRequest.getMovie(params: MovieDetailsParams(movieId: movieId))
         let expectation = self.expectation(description: "Wait for \(request.path) to load.")
-        var result: Movie!
+        var result: MovieApiRequest.ResponseType!
         var networkError: NetworkError?
         
         apiClient.send(apiRequest: request, type: MovieApiRequest.ResponseType.self)
@@ -76,7 +76,7 @@ class ApiClientTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         
         //stubbed response to check data which are received through non-mock components
-        let stubbedResposne = StubResponseProvider.getResponse(type: Movie.self)
+        let stubbedResposne = StubResponseProvider.getResponse(type: MovieApiRequest.ResponseType.self)
         
         //asserts
         XCTAssertEqual(result.id, stubbedResposne.id)
@@ -96,14 +96,13 @@ class ApiClientTest: XCTestCase {
             // Put the code you want to measure the time of here.
             let request = SearchApiRequest.searchMovie(params: MoviewSearchParams(query: "the", year: 2000))
             let expectation = self.expectation(description: "Wait for \(request.path) to load to measure performance")
-            var result: SearchResponse<Movie>!
+            var result: SearchApiRequest.ResponseType!
             var networkError: NetworkError?
             
             apiClient.send(apiRequest: request, type: SearchApiRequest.ResponseType.self)
                 .subscribe(onNext: { [weak self] response in
                     result = response
                     expectation.fulfill()
-                
                 }, onError: { [weak self] error in
                     networkError = error as! NetworkError
                     expectation.fulfill()
@@ -112,7 +111,7 @@ class ApiClientTest: XCTestCase {
             waitForExpectations(timeout: 5, handler: nil)
             
             //stubbed response to check data which are received through non-mock components
-            let stubbedResposne = StubResponseProvider.getResponse(type: SearchResponse<Movie>.self)
+            let stubbedResposne = StubResponseProvider.getResponse(type: SearchApiRequest.ResponseType.self)
             
             //asserts
             XCTAssertEqual(result.results?.count ?? 0, stubbedResposne.results?.count ?? 0)

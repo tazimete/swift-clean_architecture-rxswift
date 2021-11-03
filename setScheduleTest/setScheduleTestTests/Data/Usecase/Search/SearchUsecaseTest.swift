@@ -33,7 +33,7 @@ class SearchUsecaseTest: XCTestCase {
     
     func testSearchMovies() {
         let expectation = self.expectation(description: "Wait for search usecase to load.")
-        var result: SearchResponse<Movie>!
+        var result: SearchApiRequest.ResponseType!
         var networkError: NetworkError?
         let query = "the"
         let year = 2000
@@ -50,7 +50,7 @@ class SearchUsecaseTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         
         //stubbed response to check data which are received through non-mock components
-        let stubbedResposne = StubResponseProvider.getResponse(type: SearchResponse<Movie>.self)
+        let stubbedResposne = StubResponseProvider.getResponse(type: SearchApiRequest.ResponseType.self)
         
         //asserts 
         XCTAssertEqual(result.results?.count ?? 0, stubbedResposne.results?.count ?? 0)

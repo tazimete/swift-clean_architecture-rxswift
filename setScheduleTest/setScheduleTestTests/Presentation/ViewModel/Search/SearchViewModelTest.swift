@@ -33,7 +33,7 @@ class SearchViewModelTest: XCTestCase {
     }
     
     func testSearchMovies() {
-        var result: [Movie]!
+        var result: [SearchApiRequest.ItemType]!
         var networkError: NetworkError?
         let query = "the"
         let year = 2000
@@ -64,7 +64,7 @@ class SearchViewModelTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         
         //stubbed response to check data which are received through non-mock components
-        let stubbedResposne = StubResponseProvider.getResponse(type: SearchResponse<Movie>.self).results ?? [Movie]()
+        let stubbedResposne = StubResponseProvider.getResponse(type: SearchApiRequest.ResponseType.self).results ?? [Movie]()
         
         //asserts
         XCTAssertEqual(result.count, stubbedResposne.count)
@@ -77,7 +77,7 @@ class SearchViewModelTest: XCTestCase {
     }
     
     func testSearchData() {
-        var result: [Movie]!
+        var result: [SearchApiRequest.ItemType]!
         var networkError: NetworkError?
         let query = "the"
         let year = 2000
@@ -96,7 +96,7 @@ class SearchViewModelTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         
         //stubbed response to check data which are received through non-mock components
-        let stubbedResposne = StubResponseProvider.getResponse(type: SearchResponse<Movie>.self).results ?? [Movie]()
+        let stubbedResposne = StubResponseProvider.getResponse(type: SearchApiRequest.ResponseType.self).results ?? [Movie]()
         
         //asserts
         XCTAssertEqual(result.count, stubbedResposne.count)

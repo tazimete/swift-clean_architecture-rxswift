@@ -33,7 +33,7 @@ class MovieViewModelTest: XCTestCase {
     }
 
     func testMovieDetailsOutput() {
-        var result: Movie!
+        var result: MovieApiRequest.ResponseType!
         var networkError: NetworkError?
         let movieId = 630004
         
@@ -63,7 +63,7 @@ class MovieViewModelTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         
         //stubbed response to check data which are received through non-mock components
-        let stubbedResposne = StubResponseProvider.getResponse(type: Movie.self)
+        let stubbedResposne = StubResponseProvider.getResponse(type: MovieApiRequest.ResponseType.self)
         
         //asserts
         XCTAssertEqual(result.id, stubbedResposne.id)
@@ -78,7 +78,7 @@ class MovieViewModelTest: XCTestCase {
     }
     
     func testGetMovieDetails() {
-        var result: Movie!
+        var result: MovieApiRequest.ResponseType!
         var networkError: NetworkError?
         let movieId = 630004
         
@@ -96,7 +96,7 @@ class MovieViewModelTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         
         //stubbed response to check data which are received through non-mock components
-        let stubbedResposne = StubResponseProvider.getResponse(type: Movie.self)
+        let stubbedResposne = StubResponseProvider.getResponse(type: MovieApiRequest.ResponseType.self)
         
         //asserts
         XCTAssertEqual(result.id, stubbedResposne.id)
