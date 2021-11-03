@@ -1,15 +1,13 @@
 //
-//  setScheduleTestTests.swift
+//  SearchRepositoryTest.swift
 //  setScheduleTestTests
 //
-//  Created by JMC on 29/10/21.
+//  Created by JMC on 3/11/21.
 //
 
 import XCTest
-@testable import setScheduleTest
-import RxSwift
 
-class setScheduleTestTests: XCTestCase {
+class SearchRepositoryTest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
