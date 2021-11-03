@@ -33,6 +33,17 @@ public class StubResponseProvider{
             }
         }
         
+        // model type is  movie details
+        if type is Movie.Type {
+            let data  = StubResponseProvider.getData(type: type.self)
+            
+            if let data = data {
+                result = try? JSONDecoder().decode(type, from: data)
+            }else {
+                result = Movie() as! T
+            }
+        }
+        
         return result
     }
     
@@ -46,7 +57,7 @@ public class StubResponseProvider{
         
         //if type is movie details
         else  if T.self is Movie.Type {
-            response = responseForMovieDetails 
+            response = responseForMovieDetails
         }
         
         data = try? JSONSerialization.data(withJSONObject: response, options: .fragmentsAllowed)
