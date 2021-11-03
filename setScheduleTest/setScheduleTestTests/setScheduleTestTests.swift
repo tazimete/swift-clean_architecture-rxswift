@@ -28,7 +28,7 @@ class setScheduleTestTests: XCTestCase {
         APIClient.shared.send(session: MockURLSession(), apiRequest: SearchApiRequest.searchMovie(params: MoviewSearchParams(query: "the", year: 2000)), type: SearchApiRequest.ResponseType.self).subscribe(onNext: {
             response in
             
-            print("Stubb Response = \(response)")
+            print("Stubb Response = \(response.results?.count)")
         }).disposed(by: DisposeBag())
     }
 
