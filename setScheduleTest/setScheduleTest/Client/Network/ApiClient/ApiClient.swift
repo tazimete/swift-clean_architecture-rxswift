@@ -65,10 +65,11 @@ class APIClient: AbstractApiClient{
     public func send<T: Codable>(session: AbstractURLSession, apiRequest: APIRequest, type: T.Type) -> Observable<T> {
         let request = apiRequest.request(with: apiRequest.baseURL)
 //        let session = URLSession(configuration: config)
+        var task:URLSessionDataTask?
 
         return Observable.create { observer -> Disposable in
-            session.dataTask(with: request) { [weak self] data, response, error in
-                
+            task = session.dataTask(with: request) { [weak self] data, response, error in
+                task?.cancel()
                 debugPrint("ApiClient -- send() -- response = \((try? JSONSerialization.jsonObject(with: data ?? Data([]), options: .allowFragments)) ?? NSDictionary())")
                 
                 guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
@@ -95,7 +96,8 @@ class APIClient: AbstractApiClient{
                  }
                 
                 observer.onCompleted()
-            }.resume()
+            }
+            task?.resume()
             
             return Disposables.create()
         }
