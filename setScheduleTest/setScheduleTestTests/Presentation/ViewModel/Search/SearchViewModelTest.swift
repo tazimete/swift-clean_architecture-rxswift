@@ -61,13 +61,16 @@ class SearchViewModelTest: XCTestCase {
         
         waitForExpectations(timeout: 5, handler: nil)
         
-        //asserts
-        XCTAssertEqual(result.count, 10)
+        //stubbed response to check data which are received through non-mock components
+        let stubbedResposne = StubResponseProvider.getResponse(type: SearchResponse<Movie>.self).results ?? [Movie]()
+        
+        //asserts 
+        XCTAssertEqual(result.count, stubbedResposne.count)
         XCTAssertNotNil(result)
-        XCTAssertEqual(result[0].id, 630004)
-        XCTAssertEqual(result[1].title, "The Protégé")
-        XCTAssertNotEqual(result[2].voteCount, 100)
-        XCTAssertNotEqual(result[3].voteCount, 5)
+        XCTAssertEqual(result[0].id, stubbedResposne[0].id)
+        XCTAssertEqual(result[1].title, stubbedResposne[1].title)
+        XCTAssertNotEqual(result[2].voteCount, stubbedResposne[3].voteCount)
+        XCTAssertNotEqual(result[3].voteCount, stubbedResposne[2].voteCount)
         XCTAssertNil(networkError)
     }
 }

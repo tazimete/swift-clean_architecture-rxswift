@@ -17,7 +17,7 @@ class MockURLSession: AbstractURLSession {
     
     func dataTask(with request: URLRequest, completionHandler: @escaping URLSessionDataTaskResult) -> URLSessionDataTask {
 //        let data = StubResponseProvider.get(type: getType(type: responseType!.self))
-        let data = StubResponseProvider.get(type: SearchResponse<Movie>.self)
+        let data = StubResponseProvider.getData(type: SearchResponse<Movie>.self)
         let response = HTTPURLResponse(url: request.url!, statusCode: 200, httpVersion: "1.0", headerFields: request.allHTTPHeaderFields)
         let error: Error? = nil
         
@@ -38,7 +38,7 @@ class MockURLSession: AbstractURLSession {
 }
 
 public func getStubbResponse<T: Codable>(type: T.Type, completionHandler: @escaping (NetworkCompletionHandler<T>)){
-    let data = StubResponseProvider.get(type: type)
+    let data = StubResponseProvider.getData(type: type)
     
     guard let data = data else {
         completionHandler(.failure(.noDataError(code: 401, message: "No data found in response")))

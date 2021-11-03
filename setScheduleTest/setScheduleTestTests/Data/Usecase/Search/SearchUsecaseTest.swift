@@ -47,14 +47,17 @@ class SearchUsecaseTest: XCTestCase {
         
         waitForExpectations(timeout: 5, handler: nil)
         
-        //asserts
-        XCTAssertEqual(result.results?.count ?? 0, 10)
+        //stubbed response to check data which are received through non-mock components
+        let stubbedResposne = StubResponseProvider.getResponse(type: SearchResponse<Movie>.self)
+        
+        //asserts 
+        XCTAssertEqual(result.results?.count ?? 0, stubbedResposne.results?.count ?? 0)
         XCTAssertNotNil(result)
         XCTAssertNotNil(result.results)
-        XCTAssertEqual(result.results?[0].id ?? 0, 630004)
-        XCTAssertEqual(result.results?[1].title ?? "", "The Protégé")
-        XCTAssertNotEqual(result.results?[2].voteCount ?? 0, 100)
-        XCTAssertNotEqual(result.results?[3].voteCount ?? 0, 5)
+        XCTAssertEqual(result.results?[0].id ?? 0, stubbedResposne.results?[0].id ?? 0)
+        XCTAssertEqual(result.results?[1].title ?? "", stubbedResposne.results?[1].title ?? "")
+        XCTAssertNotEqual(result.results?[2].voteCount ?? 0, stubbedResposne.results?[3].voteCount ?? 0)
+        XCTAssertNotEqual(result.results?[3].voteCount ?? 0, stubbedResposne.results?[2].voteCount ?? 0)
         XCTAssertNil(networkError)
     }
 }

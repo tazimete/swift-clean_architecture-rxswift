@@ -19,7 +19,23 @@ public class StubResponseProvider{
         return result
     }
     
-    public static func get<T: Codable>(type: T.Type) -> Data?{
+    public static func getResponse<T: Codable>(type: T.Type) -> T{
+        var result: T!
+        
+        if type is SearchResponse<Movie>.Type {
+            let data  = StubResponseProvider.getData(type: type.self)
+            
+            if let data = data {
+                result = try? JSONDecoder().decode(type, from: data)
+            }else {
+                result = SearchResponse<Movie>() as! T
+            }
+        }
+        
+        return result
+    }
+    
+    public static func getData<T: Codable>(type: T.Type) -> Data?{
         var data: Data? = nil
         
         if T.self is SearchResponse<Movie>.Type {
