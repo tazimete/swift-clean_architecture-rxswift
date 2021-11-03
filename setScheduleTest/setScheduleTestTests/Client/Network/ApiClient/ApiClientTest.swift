@@ -31,6 +31,11 @@ class ApiClientTest: XCTestCase {
             XCTAssertEqual(response.results?.count ?? 0, 10)
             XCTAssertNotNil(response)
             XCTAssertNotNil(response.results)
+            XCTAssertEqual(response.results?[0].id ?? 0, 630004)
+            XCTAssertEqual(response.results?[1].title ?? "", "The Protégé")
+            XCTAssertNotEqual(response.results?[2].voteCount ?? 0, 100)
+            XCTAssertNotEqual(response.results?[3].voteCount ?? 0, 5)
+            
         }).disposed(by: disposeBag)
     }
     
@@ -47,6 +52,5 @@ class ApiClientTest: XCTestCase {
             }).disposed(by: disposeBag)
         }
     }
-
 }
 
