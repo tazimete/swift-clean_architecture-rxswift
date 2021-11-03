@@ -29,6 +29,7 @@ class SearchViewModelTest: XCTestCase {
         XCTAssertNotNil(searchViewModel.usecase)
         XCTAssertNotNil(searchViewModel.usecase.repository)
         XCTAssertNotNil(searchViewModel.usecase.repository.apiClient)
+        XCTAssertNotNil(searchViewModel.usecase.repository.apiClient.session)
     }
     
     func testSearchMovies() {
@@ -56,6 +57,7 @@ class SearchViewModelTest: XCTestCase {
         // detect error
         searchOutput.errorTracker
             .subscribe(onNext: { error in
+                networkError = error 
                 expectationError.fulfill()
             }).disposed(by: disposeBag)
         
