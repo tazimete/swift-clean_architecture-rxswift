@@ -22,6 +22,7 @@ public class StubResponseProvider{
     public static func getResponse<T: Codable>(type: T.Type) -> T{
         var result: T!
         
+        // model type is search response with movie
         if type is SearchResponse<Movie>.Type {
             let data  = StubResponseProvider.getData(type: type.self)
             

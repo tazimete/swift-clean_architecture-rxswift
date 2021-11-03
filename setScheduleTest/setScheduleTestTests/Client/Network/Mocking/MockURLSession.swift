@@ -15,9 +15,8 @@ class MockURLSession: AbstractURLSession {
         defaultConfig = configuration
     }
     
-    func dataTask(with request: URLRequest, completionHandler: @escaping URLSessionDataTaskResult) -> URLSessionDataTask {
-//        let data = StubResponseProvider.get(type: getType(type: responseType!.self))
-        let data = StubResponseProvider.getData(type: SearchResponse<Movie>.self)
+    func dataTask<T: Codable>(with request: URLRequest, type: T.Type, completionHandler: @escaping URLSessionDataTaskResult) -> URLSessionDataTask {
+        let data = StubResponseProvider.getData(type: type)
         let response = HTTPURLResponse(url: request.url!, statusCode: 200, httpVersion: "1.0", headerFields: request.allHTTPHeaderFields)
         let error: Error? = nil
         

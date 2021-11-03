@@ -31,7 +31,7 @@ class MockApiClient: AbstractApiClient {
 //        let session = URLSession(configuration: config)
         
         return Observable.create { [weak self] observer -> Disposable in
-            let task: URLSessionDataTask? = self?.session.dataTask(with: request) { [weak self] data, response, error in
+            let task: URLSessionDataTask? = self?.session.dataTask(with: request, type: type) { [weak self] data, response, error in
                 debugPrint("MockApiClient -- send() -- response = \((try? JSONSerialization.jsonObject(with: data ?? Data([]), options: .allowFragments)) ?? NSDictionary())")
                 
                 guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
