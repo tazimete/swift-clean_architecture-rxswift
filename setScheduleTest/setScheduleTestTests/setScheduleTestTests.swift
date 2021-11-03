@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import setScheduleTest
+import RxSwift
 
 class setScheduleTestTests: XCTestCase {
 
@@ -21,6 +22,14 @@ class setScheduleTestTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testApiCLient() {
+        APIClient.shared.send(session: MockURLSession(), apiRequest: SearchApiRequest.searchMovie(params: MoviewSearchParams(query: "the", year: 2000)), type: SearchApiRequest.ResponseType.self).subscribe(onNext: {
+            response in
+            
+            print("Stubb Response = \(response)")
+        }).disposed(by: DisposeBag())
     }
 
     func testPerformanceExample() throws {
