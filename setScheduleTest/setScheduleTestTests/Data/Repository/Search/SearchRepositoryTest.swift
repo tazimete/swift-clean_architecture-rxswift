@@ -11,7 +11,7 @@ import RxSwift
 
 class SearchRepositoryTest: XCTestCase {
     private var disposeBag: DisposeBag!
-    private var searchRepository: SearchRepository!
+    private var searchRepository: AbstractSearchRepository!
     private var apiClient: MockApiClient!
 
     override func setUpWithError() throws {

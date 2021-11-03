@@ -45,6 +45,8 @@
 		29C033442732AA1F00597B66 /* MockApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033432732AA1F00597B66 /* MockApiClient.swift */; };
 		29C033482732D8D600597B66 /* SearchUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033472732D8D600597B66 /* SearchUsecaseTest.swift */; };
 		29C0334B2732DB1A00597B66 /* MockSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0334A2732DB1A00597B66 /* MockSearchRepository.swift */; };
+		29C0334D2732E68300597B66 /* MockSearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0334C2732E68300597B66 /* MockSearchUsecase.swift */; };
+		29C033522732E8A800597B66 /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033512732E8A800597B66 /* SearchViewModelTest.swift */; };
 		29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* SearchViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -178,6 +180,8 @@
 		29C033432732AA1F00597B66 /* MockApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiClient.swift; sourceTree = "<group>"; };
 		29C033472732D8D600597B66 /* SearchUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecaseTest.swift; sourceTree = "<group>"; };
 		29C0334A2732DB1A00597B66 /* MockSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchRepository.swift; sourceTree = "<group>"; };
+		29C0334C2732E68300597B66 /* MockSearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchUsecase.swift; sourceTree = "<group>"; };
+		29C033512732E8A800597B66 /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTest.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -569,6 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				29C033472732D8D600597B66 /* SearchUsecaseTest.swift */,
+				29C0334C2732E68300597B66 /* MockSearchUsecase.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -580,6 +585,30 @@
 				29C033432732AA1F00597B66 /* MockApiClient.swift */,
 			);
 			path = Mocking;
+			sourceTree = "<group>";
+		};
+		29C0334E2732E76600597B66 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				29C0334F2732E87B00597B66 /* ViewModel */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		29C0334F2732E87B00597B66 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				29C033502732E88500597B66 /* Search */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		29C033502732E88500597B66 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				29C033512732E8A800597B66 /* SearchViewModelTest.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		29C22FB4272B435100E67AAE = {
@@ -629,6 +658,7 @@
 			children = (
 				29C0332E2731AF7F00597B66 /* Client */,
 				29C0333B2732A4C100597B66 /* Data */,
+				29C0334E2732E76600597B66 /* Presentation */,
 				29C22FDA272B435100E67AAE /* setScheduleTestTests.swift */,
 				29C22FDC272B435100E67AAE /* Info.plist */,
 			);
@@ -1421,8 +1451,10 @@
 				29C0334B2732DB1A00597B66 /* MockSearchRepository.swift in Sources */,
 				29C0333A2732010500597B66 /* MockURLSession.swift in Sources */,
 				29C22FDB272B435100E67AAE /* setScheduleTestTests.swift in Sources */,
+				29C0334D2732E68300597B66 /* MockSearchUsecase.swift in Sources */,
 				29C033322731AFD500597B66 /* ApiClientTest.swift in Sources */,
 				29C033482732D8D600597B66 /* SearchUsecaseTest.swift in Sources */,
+				29C033522732E8A800597B66 /* SearchViewModelTest.swift in Sources */,
 				29C033442732AA1F00597B66 /* MockApiClient.swift in Sources */,
 				29C033422732A5D400597B66 /* SearchRepositoryTest.swift in Sources */,
 			);

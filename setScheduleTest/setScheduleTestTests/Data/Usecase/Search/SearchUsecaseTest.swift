@@ -11,7 +11,7 @@ import RxSwift
 
 class SearchUsecaseTest: XCTestCase {
     private var disposeBag: DisposeBag!
-    private var searchUsecase: SearchUsecase!
+    private var searchUsecase: AbstractSearchUsecase!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,7 +25,7 @@ class SearchUsecaseTest: XCTestCase {
         searchUsecase = nil
     }
 
-    func testApiClient() {
+    func testRepository() {
         XCTAssertNotNil(searchUsecase.repository)
         XCTAssertNotNil(searchUsecase.repository.apiClient)
         XCTAssertNotNil(searchUsecase.repository.apiClient.session)
@@ -57,5 +57,4 @@ class SearchUsecaseTest: XCTestCase {
         XCTAssertNotEqual(result.results?[3].voteCount ?? 0, 5)
         XCTAssertNil(networkError)
     }
-
 }
