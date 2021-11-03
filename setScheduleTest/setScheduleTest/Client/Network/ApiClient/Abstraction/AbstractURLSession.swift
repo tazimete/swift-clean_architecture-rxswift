@@ -10,6 +10,7 @@ import UIKit
 typealias URLSessionDataTaskResult = (Data?, URLResponse?, Error?) -> Void
 
 protocol AbstractURLSession: AnyObject {
+    var responseType: Codable.Type? {get set}
     var defaultConfig: URLSessionConfiguration {get set}
     init(configuration: URLSessionConfiguration)
     func dataTask(with request: URLRequest, completionHandler: @escaping URLSessionDataTaskResult) -> URLSessionDataTask
@@ -37,6 +38,15 @@ extension AbstractURLSession {
 }
 
 extension URLSession: AbstractURLSession {
+    var responseType: Codable.Type? {
+        get {
+            nil
+        }
+        set(newValue) {
+            
+        }
+    }
+    
     convenience init(config: URLSessionConfiguration = URLSessionConfigHolder.config) {
         self.init(configuration: config)
         defaultConfig = config

@@ -10,21 +10,19 @@ import Foundation
 
 public class StubResponseProvider{
     public static func getType<T: Codable>(type: T.Type) -> T{
-        var type: T!
+        var result: T!
         
         if T.self is SearchResponse<Movie>.Type {
-            type = SearchResponse<Movie>() as! T
+            result = SearchResponse<Movie>() as! T
         }
         
-        return type
+        return result
     }
     
     public static func get<T: Codable>(type: T.Type) -> Data?{
         var data: Data? = nil
         
         if T.self is SearchResponse<Movie>.Type {
-//            let strResponse = "{\"page\" : 1; \"results\" : [{\"adult\" : 0; \"backdrop_path\" : \"/fNG7i7RqMErkcqhohV2a6cV1Ehy.jpg\";          \"genre_ids\" : (28, 878); \"id\" : 603; \"original_language\" : en; \"original_title\" : \"The Matrix\"; \"overview\" : \"Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.\"; \"popularity\" : \"81.011\"; \"poster_path\" : \"/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg\"; \"release_date\" : \"1999-03-30\"; \"title\" : \"The Matrix\"; \"video\" : 0; \"vote_average\" : \"8.199999999999999\"; \"vote_count\" : 20106; }]; \"total_pages\" : 105; \"total_results\" : 2085;}"
-            
             let itemsArray = [
                 [
                     "adult": false,
