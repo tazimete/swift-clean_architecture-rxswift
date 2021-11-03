@@ -1,5 +1,5 @@
 //
-//  SearchRepositoryTest.swift
+//  SearchUsecaseTest.swift
 //  setScheduleTestTests
 //
 //  Created by JMC on 3/11/21.
@@ -9,36 +9,34 @@ import XCTest
 @testable import setScheduleTest
 import RxSwift
 
-class SearchRepositoryTest: XCTestCase {
+class SearchUsecaseTest: XCTestCase {
     private var disposeBag: DisposeBag!
-    private var searchRepository: SearchRepository!
-    private var apiClient: MockApiClient!
+    private var searchUsecase: SearchUsecase!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         disposeBag = DisposeBag()
-        apiClient = MockApiClient.shared
-        searchRepository = SearchRepository(apiClient: apiClient)
+        searchUsecase = SearchUsecase(repository: MockSearchRepository())
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        apiClient = nil
-        searchRepository = nil
         disposeBag = nil
+        searchUsecase = nil
     }
 
     func testApiClient() {
-        XCTAssertNotNil(searchRepository.apiClient)
-        XCTAssertNotNil(searchRepository.apiClient.session)
+        XCTAssertNotNil(searchUsecase.repository)
+        XCTAssertNotNil(searchUsecase.repository.apiClient)
+        XCTAssertNotNil(searchUsecase.repository.apiClient.session)
     }
     
-    func testGetMovies() {
-        let expectation = self.expectation(description: "Wait for search repository to load.")
+    func testSearchMovies() {
+        let expectation = self.expectation(description: "Wait for search usecase to load.")
         var result: SearchResponse<Movie>!
         var networkError: NetworkError?
         
-        searchRepository.get(query: "the", year: 2000)
+        searchUsecase.search(query: "the", year: 2000)
             .subscribe(onNext: { [weak self] response in
                 result = response
                 expectation.fulfill()

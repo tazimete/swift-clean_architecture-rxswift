@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GithubCoordinator: Coordinator {
+class SearchCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
 

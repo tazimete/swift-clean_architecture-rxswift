@@ -43,6 +43,8 @@
 		29C0333A2732010500597B66 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033392732010500597B66 /* MockURLSession.swift */; };
 		29C033422732A5D400597B66 /* SearchRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033412732A5D400597B66 /* SearchRepositoryTest.swift */; };
 		29C033442732AA1F00597B66 /* MockApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033432732AA1F00597B66 /* MockApiClient.swift */; };
+		29C033482732D8D600597B66 /* SearchUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033472732D8D600597B66 /* SearchUsecaseTest.swift */; };
+		29C0334B2732DB1A00597B66 /* MockSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0334A2732DB1A00597B66 /* MockSearchRepository.swift */; };
 		29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* SearchViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -51,7 +53,7 @@
 		29C22FDB272B435100E67AAE /* setScheduleTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FDA272B435100E67AAE /* setScheduleTestTests.swift */; };
 		29C22FE6272B435100E67AAE /* setScheduleTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FE5272B435100E67AAE /* setScheduleTestUITests.swift */; };
 		29C2301C272B45D000E67AAE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FF5272B45D000E67AAE /* Coordinator.swift */; };
-		29C2301D272B45D000E67AAE /* GithubCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FF7272B45D000E67AAE /* GithubCoordinator.swift */; };
+		29C2301D272B45D000E67AAE /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FF7272B45D000E67AAE /* SearchCoordinator.swift */; };
 		29C2301E272B45D000E67AAE /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FFA272B45D000E67AAE /* UIImageView+Extension.swift */; };
 		29C2301F272B45D000E67AAE /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FFB272B45D000E67AAE /* UIView+Extensions.swift */; };
 		29C23020272B45D000E67AAE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FFC272B45D000E67AAE /* UIImage+Extension.swift */; };
@@ -174,6 +176,8 @@
 		29C033392732010500597B66 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		29C033412732A5D400597B66 /* SearchRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryTest.swift; sourceTree = "<group>"; };
 		29C033432732AA1F00597B66 /* MockApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiClient.swift; sourceTree = "<group>"; };
+		29C033472732D8D600597B66 /* SearchUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecaseTest.swift; sourceTree = "<group>"; };
+		29C0334A2732DB1A00597B66 /* MockSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchRepository.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -188,7 +192,7 @@
 		29C22FE5272B435100E67AAE /* setScheduleTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setScheduleTestUITests.swift; sourceTree = "<group>"; };
 		29C22FE7272B435100E67AAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29C22FF5272B45D000E67AAE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		29C22FF7272B45D000E67AAE /* GithubCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubCoordinator.swift; sourceTree = "<group>"; };
+		29C22FF7272B45D000E67AAE /* SearchCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		29C22FFA272B45D000E67AAE /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		29C22FFB272B45D000E67AAE /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		29C22FFC272B45D000E67AAE /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -488,6 +492,7 @@
 		29C0332F2731AF9200597B66 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				29C033492732D8EA00597B66 /* Mocking */,
 				29C033302731AFB200597B66 /* ApiClient */,
 			);
 			path = Network;
@@ -496,8 +501,6 @@
 		29C033302731AFB200597B66 /* ApiClient */ = {
 			isa = PBXGroup;
 			children = (
-				29C033392732010500597B66 /* MockURLSession.swift */,
-				29C033432732AA1F00597B66 /* MockApiClient.swift */,
 				29C033312731AFD500597B66 /* ApiClientTest.swift */,
 			);
 			path = ApiClient;
@@ -533,6 +536,7 @@
 			isa = PBXGroup;
 			children = (
 				29C0333E2732A59C00597B66 /* Search */,
+				29C033452732D8B300597B66 /* Movie */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -540,6 +544,7 @@
 		29C0333D2732A4D300597B66 /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				29C033462732D8C200597B66 /* Search */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -548,8 +553,33 @@
 			isa = PBXGroup;
 			children = (
 				29C033412732A5D400597B66 /* SearchRepositoryTest.swift */,
+				29C0334A2732DB1A00597B66 /* MockSearchRepository.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		29C033452732D8B300597B66 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		29C033462732D8C200597B66 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				29C033472732D8D600597B66 /* SearchUsecaseTest.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		29C033492732D8EA00597B66 /* Mocking */ = {
+			isa = PBXGroup;
+			children = (
+				29C033392732010500597B66 /* MockURLSession.swift */,
+				29C033432732AA1F00597B66 /* MockApiClient.swift */,
+			);
+			path = Mocking;
 			sourceTree = "<group>";
 		};
 		29C22FB4272B435100E67AAE = {
@@ -618,7 +648,7 @@
 			isa = PBXGroup;
 			children = (
 				29C22FF4272B45D000E67AAE /* Coordinator */,
-				29C22FF6272B45D000E67AAE /* Github */,
+				29C22FF6272B45D000E67AAE /* Search */,
 			);
 			path = Route;
 			sourceTree = "<group>";
@@ -631,12 +661,12 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		29C22FF6272B45D000E67AAE /* Github */ = {
+		29C22FF6272B45D000E67AAE /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				29C22FF7272B45D000E67AAE /* GithubCoordinator.swift */,
+				29C22FF7272B45D000E67AAE /* SearchCoordinator.swift */,
 			);
-			path = Github;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		29C22FF9272B45D000E67AAE /* Extension */ = {
@@ -1344,7 +1374,7 @@
 				29C23118272B46D800E67AAE /* SkeletonAppearance.swift in Sources */,
 				29C2313A272B46D800E67AAE /* PrepareForSkeletonProtocol.swift in Sources */,
 				29C2302E272B45D000E67AAE /* DownloaderClient.swift in Sources */,
-				29C2301D272B45D000E67AAE /* GithubCoordinator.swift in Sources */,
+				29C2301D272B45D000E67AAE /* SearchCoordinator.swift in Sources */,
 				29C2302C272B45D000E67AAE /* DownloadDataParser.swift in Sources */,
 				29C03304272DE17300597B66 /* Movie.swift in Sources */,
 				29C032F4272CA6BE00597B66 /* SearchRepository.swift in Sources */,
@@ -1388,9 +1418,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C0334B2732DB1A00597B66 /* MockSearchRepository.swift in Sources */,
 				29C0333A2732010500597B66 /* MockURLSession.swift in Sources */,
 				29C22FDB272B435100E67AAE /* setScheduleTestTests.swift in Sources */,
 				29C033322731AFD500597B66 /* ApiClientTest.swift in Sources */,
+				29C033482732D8D600597B66 /* SearchUsecaseTest.swift in Sources */,
 				29C033442732AA1F00597B66 /* MockApiClient.swift in Sources */,
 				29C033422732A5D400597B66 /* SearchRepositoryTest.swift in Sources */,
 			);
