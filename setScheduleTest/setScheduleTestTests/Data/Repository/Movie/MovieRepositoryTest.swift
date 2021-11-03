@@ -9,7 +9,7 @@ import XCTest
 @testable import setScheduleTest
 import RxSwift
 
-class MovieDetailsRepositoryTest: XCTestCase {
+class MovieRepositoryTest: XCTestCase {
     private var disposeBag: DisposeBag!
     private var movieRepository: AbstractMovieRepository!
     private var apiClient: MockApiClient!
