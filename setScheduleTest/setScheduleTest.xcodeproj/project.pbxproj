@@ -48,6 +48,7 @@
 		29C0334D2732E68300597B66 /* MockSearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0334C2732E68300597B66 /* MockSearchUsecase.swift */; };
 		29C033522732E8A800597B66 /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033512732E8A800597B66 /* SearchViewModelTest.swift */; };
 		29C03354273300A600597B66 /* StubbedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03353273300A600597B66 /* StubbedResponse.swift */; };
+		29C0335627330F5500597B66 /* MovieDetailsRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0335527330F5500597B66 /* MovieDetailsRepositoryTest.swift */; };
 		29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* SearchViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -184,6 +185,7 @@
 		29C0334C2732E68300597B66 /* MockSearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchUsecase.swift; sourceTree = "<group>"; };
 		29C033512732E8A800597B66 /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTest.swift; sourceTree = "<group>"; };
 		29C03353273300A600597B66 /* StubbedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubbedResponse.swift; sourceTree = "<group>"; };
+		29C0335527330F5500597B66 /* MovieDetailsRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsRepositoryTest.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -568,6 +570,7 @@
 		29C033452732D8B300597B66 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
+				29C0335527330F5500597B66 /* MovieDetailsRepositoryTest.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -1452,6 +1455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C0335627330F5500597B66 /* MovieDetailsRepositoryTest.swift in Sources */,
 				29C0334B2732DB1A00597B66 /* MockSearchRepository.swift in Sources */,
 				29C0333A2732010500597B66 /* MockURLSession.swift in Sources */,
 				29C22FDB272B435100E67AAE /* setScheduleTestTests.swift in Sources */,

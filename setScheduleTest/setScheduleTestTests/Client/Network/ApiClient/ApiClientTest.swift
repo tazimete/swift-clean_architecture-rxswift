@@ -95,7 +95,7 @@ class ApiClientTest: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
             let request = SearchApiRequest.searchMovie(params: MoviewSearchParams(query: "the", year: 2000))
-            let expectation = self.expectation(description: "Wait for \(request.path) to load.")
+            let expectation = self.expectation(description: "Wait for \(request.path) to load to measure performance")
             var result: SearchResponse<Movie>!
             var networkError: NetworkError?
             

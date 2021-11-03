@@ -39,7 +39,6 @@ class SearchViewModelTest: XCTestCase {
         
         let expectationSuccess = self.expectation(description: "Wait for searchViewModel to load succress respone")
         
-        
         let searchInput = SearchViewModel.SearchInput(searchItemListTrigger: Observable.just(SearchViewModel.SearchInputModel(query: query, year: year)))
         let searchOutput = searchViewModel.getSearchOutput(input: searchInput)
         
