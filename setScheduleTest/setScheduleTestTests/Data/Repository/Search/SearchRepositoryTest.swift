@@ -37,8 +37,10 @@ class SearchRepositoryTest: XCTestCase {
         let expectation = self.expectation(description: "Wait for search repository to load.")
         var result: SearchResponse<Movie>!
         var networkError: NetworkError?
+        let query = "the"
+        let year = 2000
         
-        searchRepository.get(query: "the", year: 2000)
+        searchRepository.get(query: query, year: year)
             .subscribe(onNext: { [weak self] response in
                 result = response
                 expectation.fulfill()

@@ -32,39 +32,72 @@ class SearchViewModelTest: XCTestCase {
     }
     
     func testSearchMovies() {
-        let expectation = self.expectation(description: "Wait for search usecase to load.")
         var result: [Movie]!
         var networkError: NetworkError?
+        let query = "the"
+        let year = 2000
         
-        let searchInput = SearchViewModel.SearchInput(searchItemListTrigger: Observable.just(SearchViewModel.SearchInputModel(query: "the", year: 2000)))
+        let expectationSuccess = self.expectation(description: "Wait for searchViewModel to load succress respone")
+        
+        
+        let searchInput = SearchViewModel.SearchInput(searchItemListTrigger: Observable.just(SearchViewModel.SearchInputModel(query: query, year: year)))
         let searchOutput = searchViewModel.getSearchOutput(input: searchInput)
         
         //populate table view
-        searchOutput.searchItems.subscribe(onNext: { [weak self] response in
+        searchOutput.searchItems.subscribe(onNext: { response in
             result = response
-            expectation.fulfill()
-        }, onError: { [weak self] error in
+            expectationSuccess.fulfill()
+        }, onError: { error in
             networkError = error as! NetworkError
-            expectation.fulfill()
+            expectationSuccess.fulfill()
         }).disposed(by: disposeBag)
         
+        let expectationError = self.expectation(description: "Wait for searchViewModel to load error")
+        
         // detect error
-        searchOutput.errorTracker.subscribe(onNext: {
-            [weak self] error in
-            
-            guard let weakSelf = self, let error = error else {
-                return
-            }
-            
-            expectation.fulfill()
-        }).disposed(by: disposeBag)
+        searchOutput.errorTracker
+            .subscribe(onNext: { error in
+                expectationError.fulfill()
+            }).disposed(by: disposeBag)
         
         waitForExpectations(timeout: 5, handler: nil)
         
         //stubbed response to check data which are received through non-mock components
         let stubbedResposne = StubResponseProvider.getResponse(type: SearchResponse<Movie>.self).results ?? [Movie]()
         
-        //asserts 
+        //asserts
+        XCTAssertEqual(result.count, stubbedResposne.count)
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result[0].id, stubbedResposne[0].id)
+        XCTAssertEqual(result[1].title, stubbedResposne[1].title)
+        XCTAssertNotEqual(result[2].voteCount, stubbedResposne[3].voteCount)
+        XCTAssertNotEqual(result[3].voteCount, stubbedResposne[2].voteCount)
+        XCTAssertNil(networkError)
+    }
+    
+    func testSearchData() {
+        var result: [Movie]!
+        var networkError: NetworkError?
+        let query = "the"
+        let year = 2000
+        
+        let expectation = self.expectation(description: "Wait for searchViewModel searchData to load.")
+        
+        searchViewModel.searchData(query: query, year: year)
+            .subscribe(onNext: { response in
+                result = response.results
+                expectation.fulfill()
+            }, onError: { error in
+                networkError = error as! NetworkError
+                expectation.fulfill()
+            }).disposed(by: disposeBag)
+        
+        waitForExpectations(timeout: 5, handler: nil)
+        
+        //stubbed response to check data which are received through non-mock components
+        let stubbedResposne = StubResponseProvider.getResponse(type: SearchResponse<Movie>.self).results ?? [Movie]()
+        
+        //asserts
         XCTAssertEqual(result.count, stubbedResposne.count)
         XCTAssertNotNil(result)
         XCTAssertEqual(result[0].id, stubbedResposne[0].id)

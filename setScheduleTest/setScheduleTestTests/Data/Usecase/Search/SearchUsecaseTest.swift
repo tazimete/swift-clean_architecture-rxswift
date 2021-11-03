@@ -35,8 +35,10 @@ class SearchUsecaseTest: XCTestCase {
         let expectation = self.expectation(description: "Wait for search usecase to load.")
         var result: SearchResponse<Movie>!
         var networkError: NetworkError?
+        let query = "the"
+        let year = 2000
         
-        searchUsecase.search(query: "the", year: 2000)
+        searchUsecase.search(query: query, year: year)
             .subscribe(onNext: { [weak self] response in
                 result = response
                 expectation.fulfill()
