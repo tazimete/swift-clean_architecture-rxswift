@@ -29,19 +29,30 @@ class SearchRepositoryTest: XCTestCase {
     }
 
     func testGetMovies() {
+        let expectation = self.expectation(description: "Wait for search repository to load.")
+        var result: SearchResponse<Movie>!
+        var networkError: NetworkError?
+        
         searchRepository.get(query: "the", year: 2000)
-            .subscribe(onNext: {
-                response in
-                
-                XCTAssertEqual(response.results?.count ?? 0, 10)
-                XCTAssertNotNil(response)
-                XCTAssertNotNil(response.results)
-                XCTAssertEqual(response.results?[0].id ?? 0, 630004)
-                XCTAssertEqual(response.results?[1].title ?? "", "The Protégé")
-                XCTAssertNotEqual(response.results?[2].voteCount ?? 0, 100)
-                XCTAssertNotEqual(response.results?[3].voteCount ?? 0, 5)
-                
+            .subscribe(onNext: { [weak self] response in
+                result = response
+                expectation.fulfill()
+            }, onError: { [weak self] error in
+                networkError = error as! NetworkError
+                expectation.fulfill()
             }).disposed(by: disposeBag)
+        
+        waitForExpectations(timeout: 5, handler: nil)
+        
+        //asserts
+        XCTAssertEqual(result.results?.count ?? 0, 10)
+        XCTAssertNotNil(result)
+        XCTAssertNotNil(result.results)
+        XCTAssertEqual(result.results?[0].id ?? 0, 630004)
+        XCTAssertEqual(result.results?[1].title ?? "", "The Protégé")
+        XCTAssertNotEqual(result.results?[2].voteCount ?? 0, 100)
+        XCTAssertNotEqual(result.results?[3].voteCount ?? 0, 5)
+        XCTAssertNil(networkError)
     }
 
 }

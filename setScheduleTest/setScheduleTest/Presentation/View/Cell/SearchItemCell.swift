@@ -18,7 +18,7 @@ class SearchItemCell : UITableViewCell, ConfigurableCell {
         view.backgroundColor = .white
         view.isSkeletonable = true
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderColor = UIColor.darkGray.cgColor
         return view
     }()
     

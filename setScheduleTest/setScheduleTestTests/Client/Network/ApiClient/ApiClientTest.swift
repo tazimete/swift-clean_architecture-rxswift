@@ -33,7 +33,6 @@ class ApiClientTest: XCTestCase {
             .subscribe(onNext: { [weak self] response in
                 result = response
                 expectation.fulfill()
-            
             }, onError: { [weak self] error in
                 networkError = error as! NetworkError
                 expectation.fulfill()
