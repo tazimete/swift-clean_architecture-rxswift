@@ -47,6 +47,7 @@
 		29C0334B2732DB1A00597B66 /* MockSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0334A2732DB1A00597B66 /* MockSearchRepository.swift */; };
 		29C0334D2732E68300597B66 /* MockSearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0334C2732E68300597B66 /* MockSearchUsecase.swift */; };
 		29C033522732E8A800597B66 /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C033512732E8A800597B66 /* SearchViewModelTest.swift */; };
+		29C03354273300A600597B66 /* StubbedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C03353273300A600597B66 /* StubbedResponse.swift */; };
 		29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC4272B435100E67AAE /* SearchViewController.swift */; };
 		29C22FC8272B435100E67AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C22FC6272B435100E67AAE /* Main.storyboard */; };
 		29C22FCB272B435100E67AAE /* setScheduleTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C22FC9272B435100E67AAE /* setScheduleTest.xcdatamodeld */; };
@@ -182,6 +183,7 @@
 		29C0334A2732DB1A00597B66 /* MockSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchRepository.swift; sourceTree = "<group>"; };
 		29C0334C2732E68300597B66 /* MockSearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchUsecase.swift; sourceTree = "<group>"; };
 		29C033512732E8A800597B66 /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTest.swift; sourceTree = "<group>"; };
+		29C03353273300A600597B66 /* StubbedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubbedResponse.swift; sourceTree = "<group>"; };
 		29C22FBD272B435100E67AAE /* setScheduleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setScheduleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C22FC4272B435100E67AAE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		29C22FC7272B435100E67AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				29C23005272B45D000E67AAE /* StubResponseProvider.swift */,
+				29C03353273300A600597B66 /* StubbedResponse.swift */,
 			);
 			path = Stubbing;
 			sourceTree = "<group>";
@@ -1394,6 +1397,7 @@
 				29C032FE272D3B0500597B66 /* GenericCellComponents.swift in Sources */,
 				29C22FC5272B435100E67AAE /* SearchViewController.swift in Sources */,
 				29C03314272FF79400597B66 /* DetailsViewController.swift in Sources */,
+				29C03354273300A600597B66 /* StubbedResponse.swift in Sources */,
 				29C0330C272F141200597B66 /* ConfigComponents.swift in Sources */,
 				29C23138272B46D800E67AAE /* Swizzling.swift in Sources */,
 				29C032F2272CA6AF00597B66 /* SearchUsecase.swift in Sources */,
