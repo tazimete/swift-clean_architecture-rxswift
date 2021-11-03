@@ -5,7 +5,6 @@
 //  Created by JMC on 2/11/21.
 //
 
-import Foundation
 import XCTest
 @testable import setScheduleTest
 import RxSwift
@@ -15,7 +14,7 @@ class ApiClientTest: XCTestCase {
     private var disposeBag: DisposeBag!
 
     override func setUp() {
-        apiClient = APIClient.shared
+        apiClient = APIClient(session: MockURLSession(configuration: URLSessionConfigHolder.config))
         disposeBag = DisposeBag() 
     }
     
@@ -25,8 +24,8 @@ class ApiClientTest: XCTestCase {
     }
     
     func testApiClient() {
-        apiClient.send(session: MockURLSession(), apiRequest: SearchApiRequest.searchMovie(params: MoviewSearchParams(query: "the", year: 2000)), type: SearchApiRequest.ResponseType.self).subscribe(onNext: {
-            response in
+        apiClient.send(apiRequest: SearchApiRequest.searchMovie(params: MoviewSearchParams(query: "the", year: 2000)), type: SearchApiRequest.ResponseType.self)
+            .subscribe(onNext: { [weak self] response in
             
             XCTAssertEqual(response.results?.count ?? 0, 10)
             XCTAssertNotNil(response)
@@ -43,7 +42,7 @@ class ApiClientTest: XCTestCase {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
-            apiClient.send(session: MockURLSession(), apiRequest: SearchApiRequest.searchMovie(params: MoviewSearchParams(query: "the", year: 2000)), type: SearchApiRequest.ResponseType.self).subscribe(onNext: {
+            apiClient.send(apiRequest: SearchApiRequest.searchMovie(params: MoviewSearchParams(query: "the", year: 2000)), type: SearchApiRequest.ResponseType.self).subscribe(onNext: {
                 response in
                 
                 XCTAssertEqual(response.results?.count ?? 0, 10)

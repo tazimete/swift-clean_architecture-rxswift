@@ -1,59 +1,21 @@
 //
-//  ApiClient.swift
-//  tawktestios
+//  MockApiClient.swift
+//  setScheduleTestTests
 //
-//  Created by JMC on 24/7/21.
+//  Created by JMC on 3/11/21.
 //
 
+import XCTest
+@testable import setScheduleTest
 import RxSwift
-import RxCocoa
 
-public enum NetworkError: Error {
-    case serverError(code: Int, message: String)
-    case decodingError(code: Int, message: String)
-    case wrongMimeTypeError(code: Int, message: String)
-    case noDataError(code: Int, message: String)
-    case none
-    
-    public var errorMessage: String {
-        switch self {
-        case .serverError(_, let message):
-            return message
-        case .decodingError(_, let message):
-            return message
-        case .wrongMimeTypeError(_, let message):
-            return message
-        case .noDataError(_, let message):
-            return message
-        case .none:
-            return ""
-        }
-    }
-    
-    public var errorCode: Int {
-        switch self {
-        case .serverError(let code, _):
-            return code
-        case .decodingError(let code, _):
-            return code
-        case .wrongMimeTypeError(let code, _):
-            return code
-        case .noDataError(let code, _):
-            return code
-        case .none: 
-            return 0
-        }
-    }
-}
-
-
-class APIClient: AbstractApiClient{
-    public static let shared = APIClient()
+class MockApiClient: AbstractApiClient {
+    public static let shared = MockApiClient()
     public var session: AbstractURLSession
     public var queueManager: QueueManager
 
     
-    public init(session: AbstractURLSession = URLSession(config: URLSessionConfigHolder.config), withQueueManager queueManager: QueueManager = QueueManager()) {
+    public init(session: AbstractURLSession = MockURLSession(configuration: URLSessionConfigHolder.config), withQueueManager queueManager: QueueManager = QueueManager()) {
         self.session = session
         self.queueManager = queueManager
     }
