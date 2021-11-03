@@ -24,16 +24,6 @@ class MockURLSession: AbstractURLSession {
         
         return URLSession.shared.dataTask(with: request.url!)
     }
-    
-    private func getType<T: Codable>(type: T.Type) -> T.Type {
-        var result: T.Type!
-        
-        if type is SearchResponse<Movie>.Type {
-            result = SearchResponse<Movie>() as! T.Type
-        }
-        
-        return result
-    }
 }
 
 public func getStubbResponse<T: Codable>(type: T.Type, completionHandler: @escaping (NetworkCompletionHandler<T>)){

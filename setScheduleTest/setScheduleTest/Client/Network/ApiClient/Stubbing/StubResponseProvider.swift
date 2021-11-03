@@ -37,6 +37,7 @@ public class StubResponseProvider{
     }
     
     public static func getData<T: Codable>(type: T.Type) -> Data?{
+        var response: [String : Any] = [String:Any]()
         var data: Data? = nil
         
         if T.self is SearchResponse<Movie>.Type {
@@ -241,16 +242,40 @@ public class StubResponseProvider{
                 
             ] as [[String: Any]]
             
-            let response = [
+            response = [
                 "page": 1,
                 "results": itemsArray,
                 "total_pages": 500,
                 "total_results": 10000
             ] as [String : Any]
-            
-            data = try? JSONSerialization.data(withJSONObject: response, options: .fragmentsAllowed)
-//            debugPrint("StubResponseProvider -- get() -- response = \((try? JSONSerialization.jsonObject(with: data ?? Data([]), options: .allowFragments)) ?? NSDictionary())")
         }
+        
+        //if type is movie details
+        else  if T.self is Movie.Type {
+            response = [
+                "adult": false,
+                "backdrop_path": "/eBGKU0ZLJmxtVtzESTB1mfllX1J.jpg",
+                "genre_ids": [
+                    80,
+                    28,
+                    53
+                ],
+                "id": 630004,
+                "original_language": "en",
+                "original_title": "The Vault",
+                "overview": "When an engineer learns of a mysterious, impenetrable fortress hidden under The Bank of Spain, he joins a crew of master thieves who plan to steal the legendary lost treasure locked inside while the whole country is distracted by Spain's World Cup Final. With thousands of soccer fans cheering in the streets, and security forces closing in, the crew have just minutes to pull off the score of a lifetime.",
+                "popularity": 1683.349,
+                "poster_path": "/kWhXubAiIcHW0xn5GThflqaKZqh.jpg",
+                "release_date": "2021-03-03",
+                "title": "The Vault",
+                "video": false,
+                "vote_average": 7,
+                "vote_count": 376
+            ]
+        }
+        
+        data = try? JSONSerialization.data(withJSONObject: response, options: .fragmentsAllowed)
+//            debugPrint("StubResponseProvider -- get() -- response = \((try? JSONSerialization.jsonObject(with: data ?? Data([]), options: .allowFragments)) ?? NSDictionary())")
         
         return data
     }
