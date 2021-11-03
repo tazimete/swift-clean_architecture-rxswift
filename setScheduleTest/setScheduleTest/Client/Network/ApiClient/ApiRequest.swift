@@ -17,7 +17,7 @@ public protocol APIRequest {
     var method: RequestType { get }
     var path: String { get }
     var parameters: [String: Any] { get }
-    var headers: [String: Any] {get}
+    var headers: [String: String] {get}
 }
 
 extension APIRequest {
@@ -37,6 +37,8 @@ extension APIRequest {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.allHTTPHeaderFields = (headers as? [String: String]) ?? [String: String]()
         return request
     }
 }

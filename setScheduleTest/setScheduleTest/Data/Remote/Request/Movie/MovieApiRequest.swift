@@ -43,8 +43,8 @@ extension MovieApiRequest: APIRequest {
         return parameter
     }
     
-    public var headers: [String: Any] {
-        return [String: Any]()
+    public var headers: [String: String] {
+        return [String: String]()
     }
 }
 
