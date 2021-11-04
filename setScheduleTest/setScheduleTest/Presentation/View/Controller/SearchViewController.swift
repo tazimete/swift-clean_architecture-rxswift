@@ -65,16 +65,21 @@ class SearchViewController: BaseViewController {
         //populate table view
         searchOutput.searchItems
             .bind(to: tableView.rx.items) { tableView, row, model in
+                let item = ShimmerItemCellConfig.init(item: SearchCellViewModel())
+                let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId, for: IndexPath(row: row, section: 0))
+                item.configure(cell: cell)
+                
+                return cell
                 // Assume Movie title cant be nil after receiving response from api call, its for shimmer cell first time
-                if model.id == nil {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: ShimmerItemCellConfig.reuseId, for: IndexPath(row: row, section: 0)) as! SearchShimmerCell
-                    cell.startShimmering()
-                    return cell
-                }else {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: SearchItemCellConfig.reuseId, for: IndexPath(row: row, section: 0)) as! SearchItemCell
-                    cell.bind(model: model)
-                    return cell
-                }
+//                if model.id == nil {
+//                    let cell = tableView.dequeueReusableCell(withIdentifier: ShimmerItemCellConfig.reuseId, for: IndexPath(row: row, section: 0)) as! SearchShimmerCell
+//                    cell.startShimmering()
+//                    return cell
+//                }else {
+//                    let cell = tableView.dequeueReusableCell(withIdentifier: SearchItemCellConfig.reuseId, for: IndexPath(row: row, section: 0)) as! SearchItemCell
+//                    cell.bind(model: model)
+//                    return cell
+//                }
             }.disposed(by: disposeBag)
         
         // detect error

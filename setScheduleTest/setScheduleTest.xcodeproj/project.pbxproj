@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		003F35F0EEFE52FC89A3C17E /* Pods_setScheduleTest_setScheduleTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FC2E37ED5474F4AA4EEC25 /* Pods_setScheduleTest_setScheduleTestUITests.framework */; };
 		168D0E9E271CA5F9347BF2B5 /* Pods_setScheduleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E842BCE35B501C401445756D /* Pods_setScheduleTest.framework */; };
+		2900031C2733CF68009CB4E5 /* SearchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2900031B2733CF68009CB4E5 /* SearchCellViewModel.swift */; };
 		29C032DE272C299200597B66 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032DD272C299200597B66 /* BaseViewController.swift */; };
 		29C032E0272C8F4E00597B66 /* AbstractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032DF272C8F4E00597B66 /* AbstractViewModel.swift */; };
 		29C032E3272C9B2D00597B66 /* SerachViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C032E2272C9B2D00597B66 /* SerachViewModel.swift */; };
@@ -152,6 +153,7 @@
 /* Begin PBXFileReference section */
 		10416E3B6DF1904F0E5BAB1D /* Pods_setScheduleTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_setScheduleTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2161461E633BC0F3142E5000 /* Pods-setScheduleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-setScheduleTest.debug.xcconfig"; path = "Target Support Files/Pods-setScheduleTest/Pods-setScheduleTest.debug.xcconfig"; sourceTree = "<group>"; };
+		2900031B2733CF68009CB4E5 /* SearchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellViewModel.swift; sourceTree = "<group>"; };
 		29C032DD272C299200597B66 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		29C032DF272C8F4E00597B66 /* AbstractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewModel.swift; sourceTree = "<group>"; };
 		29C032E2272C9B2D00597B66 /* SerachViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerachViewModel.swift; sourceTree = "<group>"; };
@@ -324,6 +326,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		2900031A2733CF4B009CB4E5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2900031B2733CF68009CB4E5 /* SearchCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		29C032DC272C297D00597B66 /* Abstraction */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +386,7 @@
 		29C032F6272D39DD00597B66 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				2900031A2733CF4B009CB4E5 /* ViewModel */,
 				29C032FF272D3E6200597B66 /* Abstraction */,
 				290003192733C8AB009CB4E5 /* Search */,
 			);
@@ -1383,6 +1394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C2302A272B45D000E67AAE /* AbstractApiClient.swift in Sources */,
+				2900031C2733CF68009CB4E5 /* SearchCellViewModel.swift in Sources */,
 				29C23127272B46D800E67AAE /* UILabel+Multiline.swift in Sources */,
 				29C23120272B46D800E67AAE /* ProcessInfo+XCTest.swift in Sources */,
 				29C23119272B46D800E67AAE /* SubviewsSkeletonables.swift in Sources */,

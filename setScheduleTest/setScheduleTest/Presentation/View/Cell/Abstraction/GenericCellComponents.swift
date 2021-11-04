@@ -7,18 +7,11 @@
 
 import UIKit
 
-public protocol AbstractSearchCell: AnyObject{
+protocol AbstractSearchCell: AnyObject{
     var viewModel: AbstractCellViewModel? {get}
     static var cellReuseIdentifier: String {set get}
     
     func configure(viewModel: AbstractCellViewModel)
-}
-
-public protocol AbstractCellViewModel: AnyObject {
-    var id: Int? {set get}
-    var thumbnail: String? {set get}
-    var title: String? {set get}
-    var overview: String? {set get}
 }
 
 protocol ConfigurableCell {
