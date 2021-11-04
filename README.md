@@ -2,6 +2,13 @@
 
 ### A sample project demonstartes the Clean Architecture with MVVM and Repository pattern using RxSwift. It also uses Coordinator pattern for navigation. 
 
+# Demonstration :  
+- All are reusable, modular and testable Codebase /Components including unit test 
+- Used Clean Architecture with MVVM, Repository Pattern and RxSwift. Also used Coordinator pattern for navigating one screen to another screen. 
+- Made modular, reusable and testable  custom ApiClient
+- Made modular, reusable and testable  custom Downloader to load resources like- Image, Video, Files. 
+- Did Unit test and Mocking  of all the core components of the project including ApiClient and ApiRequest 
+
 # Setup : 
 
 1. Install latest version of xcode 
