@@ -1023,7 +1023,7 @@
 				29C23036272B464A00E67AAE /* Model */,
 				29C23169272B514900E67AAE /* Usecase */,
 				29C23166272B512200E67AAE /* Repository */,
-				29C2316A272B549400E67AAE /* Remote */,
+				29C23014272B45D000E67AAE /* Request */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1103,14 +1103,6 @@
 				29C0331F27305E0A00597B66 /* Movie */,
 			);
 			path = Usecase;
-			sourceTree = "<group>";
-		};
-		29C2316A272B549400E67AAE /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				29C23014272B45D000E67AAE /* Request */,
-			);
-			path = Remote;
 			sourceTree = "<group>";
 		};
 		29C2316B272B54E200E67AAE /* Client */ = {
