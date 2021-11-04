@@ -10,9 +10,12 @@ import RxSwift
 import RxCocoa
 
 class SearchViewController: BaseViewController {
+    // MARK: Non UI Proeprties
     public var searchViewModel: AbstractSearchViewModel!
     private let disposeBag = DisposeBag()
     private let searchTrigger = PublishSubject<SearchViewModel.SearchInputModel>()
+    
+    // MARK: UI Proeprties
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,6 +30,7 @@ class SearchViewController: BaseViewController {
         return tableView
     }()
 
+    // MARK: Constructors
     init(viewModel: AbstractSearchViewModel) {
         super.init(viewModel: viewModel)
         self.viewModel = viewModel
@@ -40,6 +44,7 @@ class SearchViewController: BaseViewController {
         super.viewDidLoad()
     }
 
+    // MARK: Overrriden Methods
     override func initView() {
         super.initView()
         //setup tableview
@@ -50,24 +55,25 @@ class SearchViewController: BaseViewController {
         onTapTableviewCell()
     }
     
-    // MARK: DARK THEME
     //when theme change, we can also define dark mode color option in color asse
     override public func applyDarkTheme() {
         navigationController?.navigationBar.backgroundColor = .lightGray
         tableView.backgroundColor = .black
         self.navigationItem.rightBarButtonItem?.tintColor = .lightGray
+        tableView.reloadData()
     }
     
     override public func applyNormalTheme() {
         navigationController?.navigationBar.backgroundColor = .white
         tableView.backgroundColor = .white
         self.navigationItem.rightBarButtonItem?.tintColor = .black
+        tableView.reloadData()
     }
     
     override func initNavigationBar() {
         self.navigationItem.title = "Search"
         let btnSearch = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearchButton))
-        btnSearch.tintColor = .lightGray
+        btnSearch.tintColor = .gray
         self.navigationItem.rightBarButtonItem = btnSearch
     }
     
@@ -104,6 +110,15 @@ class SearchViewController: BaseViewController {
         }).disposed(by: disposeBag)
     }
     
+    private func searchMovie(name: String, year: Int) {
+        searchTrigger.onNext(SearchViewModel.SearchInputModel(query: name, year: year))
+    }
+    
+    private func navigateToDetailsController(with movie: Movie) {
+        (view.window?.windowScene?.delegate as! SceneDelegate).rootCoordinator.showDetailsController(movie: movie)
+    }
+    
+    // MARK: Actions 
     private func onTapTableviewCell() {
         Observable
             .zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Movie.self))
@@ -152,14 +167,6 @@ class SearchViewController: BaseViewController {
         alertController.addAction(cancelAction)
         
         self.present(alertController, animated: true, completion: nil)
-    }
-    
-    private func searchMovie(name: String, year: Int) {
-        searchTrigger.onNext(SearchViewModel.SearchInputModel(query: name, year: year))
-    }
-    
-    private func navigateToDetailsController(with movie: Movie) {
-        (view.window?.windowScene?.delegate as! SceneDelegate).rootCoordinator.showDetailsController(movie: movie)
     }
 }
 
