@@ -50,10 +50,24 @@ class SearchViewController: BaseViewController {
         onTapTableviewCell()
     }
     
+    // MARK: DARK THEME
+    //when theme change, we can also define dark mode color option in color asse
+    override public func applyDarkTheme() {
+        navigationController?.navigationBar.backgroundColor = .lightGray
+        tableView.backgroundColor = .black
+        self.navigationItem.rightBarButtonItem?.tintColor = .lightGray
+    }
+    
+    override public func applyNormalTheme() {
+        navigationController?.navigationBar.backgroundColor = .white
+        tableView.backgroundColor = .white
+        self.navigationItem.rightBarButtonItem?.tintColor = .black
+    }
+    
     override func initNavigationBar() {
         self.navigationItem.title = "Search"
         let btnSearch = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearchButton))
-        btnSearch.tintColor = .black
+        btnSearch.tintColor = .lightGray
         self.navigationItem.rightBarButtonItem = btnSearch
     }
     
@@ -63,7 +77,7 @@ class SearchViewController: BaseViewController {
         let searchOutput = searchViewModel.getSearchOutput(input: searchInput)
         
         //populate table view
-        searchOutput.searchItems
+        searchOutput.searchItems.observe(on: MainScheduler.asyncInstance)
             .bind(to: tableView.rx.items) { tableView, row, model in
                 var item: CellConfigurator = ShimmerItemCellConfig.init(item: SearchCellViewModel())
                 
@@ -79,7 +93,7 @@ class SearchViewController: BaseViewController {
             }.disposed(by: disposeBag)
         
         // detect error
-        searchOutput.errorTracker.subscribe(onNext: {
+        searchOutput.errorTracker.observe(on: MainScheduler.asyncInstance).subscribe(onNext: {
             [weak self] error in
             
             guard let weakSelf = self, let error = error else {
@@ -149,36 +163,3 @@ class SearchViewController: BaseViewController {
     }
 }
 
-
-// MARK: DARK THEME
-extension SearchViewController {
-    //when theme change, we can also define dark mode color option in color asset
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        
-        switch (traitCollection.userInterfaceStyle) {
-            case .dark:
-                applyDarkTheme()
-                break
-                
-            case .light:
-                applyNormalTheme()
-                break
-                
-            default:
-                break
-        }
-        
-        tableView.reloadData()
-    }
-    
-    public func applyDarkTheme() {
-        navigationController?.navigationBar.backgroundColor = .black
-        tableView.backgroundColor = .black
-    }
-    
-    public func applyNormalTheme() {
-        navigationController?.navigationBar.backgroundColor = .white
-        tableView.backgroundColor = .white
-    }
-}

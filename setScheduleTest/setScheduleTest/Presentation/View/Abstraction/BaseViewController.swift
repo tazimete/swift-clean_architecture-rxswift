@@ -56,23 +56,31 @@ public class BaseViewController: UIViewController, UIScrollViewDelegate, Storybo
     }
     
     //when theme change, we can also define dark mode color option in color asset
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
         switch (traitCollection.userInterfaceStyle) {
             case .dark:
-                navigationController?.navigationBar.backgroundColor = .black
-                view.backgroundColor = .black
+                self.applyDarkTheme()
                 break
                 
             case .light:
-                navigationController?.navigationBar.backgroundColor = .white
-                view.backgroundColor = .white
+                self.applyNormalTheme()
                 break
                 
             default:
                 break
         }
+    }
+    
+    public func applyDarkTheme() {
+        navigationController?.navigationBar.backgroundColor = .lightGray
+        view.backgroundColor = .black
+    }
+    
+    public func applyNormalTheme() {
+        navigationController?.navigationBar.backgroundColor = .white
+        view.backgroundColor = .white
     }
     
     //disbale keyboard
