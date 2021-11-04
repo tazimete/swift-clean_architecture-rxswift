@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Movie: Codable {
+struct Movie: Codable {
     public let id: Int?
     public let originalTitle: String?
     public let overview: String?
@@ -18,7 +18,7 @@ public struct Movie: Codable {
     public let voteAverage: Float?
     public let voteCount: Int?
     
-    public init(id: Int? = nil, originalTitle: String? = nil, overview: String? = nil, popularity: Float? = nil, posterPath: String? = nil, releaseDate: String? = nil, title: String? = nil, voteAverage: Float? = nil, voteCount: Int? = nil) {
+    init(id: Int? = nil, originalTitle: String? = nil, overview: String? = nil, popularity: Float? = nil, posterPath: String? = nil, releaseDate: String? = nil, title: String? = nil, voteAverage: Float? = nil, voteCount: Int? = nil) {
         self.id = id
         self.originalTitle = originalTitle
         self.overview = overview
@@ -30,7 +30,7 @@ public struct Movie: Codable {
         self.voteCount = voteCount
     }
     
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id = "id"
         case originalTitle = "original_title"
         case overview = "overview"
@@ -40,6 +40,10 @@ public struct Movie: Codable {
         case title = "title"
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
+    }
+    
+    public var asCellViewModel: AbstractCellViewModel {
+        return SearchCellViewModel(id: id, thumbnail: posterPath, title: title, overview: overview)
     }
 }
 

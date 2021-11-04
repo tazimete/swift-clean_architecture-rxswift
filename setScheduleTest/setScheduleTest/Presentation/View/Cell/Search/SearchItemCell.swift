@@ -82,34 +82,10 @@ class SearchItemCell : UITableViewCell, ConfigurableCell {
 
     public func configure(data: DataType) {
         ShimmerHelper.startShimmerAnimation(view: ivPoster)
-        
-        imageUrlAtCurrentIndex = data.thumbnail
         lblTitle.text = data.title
         lblOverview.text = data.overview
         
-        ivPoster.loadImage(from: data.thumbnail ?? "", completionHandler: {
-            [weak self] url, image, isCache in
-
-            guard let weakSelf = self else {
-                return
-            }
-
-            if (url).elementsEqual(weakSelf.imageUrlAtCurrentIndex ?? ""){
-                weakSelf.ivPoster.image = image
-                ShimmerHelper.stopShimmerAnimation(view: weakSelf.ivPoster)
-            }
-        })
-        
-        //apply  change theme
-        applyTheme()
-    }
-    
-    public func bind(model: Movie) {
-        ShimmerHelper.startShimmerAnimation(view: ivPoster)
-        lblTitle.text = model.title
-        lblOverview.text = model.overview
-        
-        let posterUrl = "\(AppConfig.shared.getServerConfig().getMediaBaseUrl())/\(model.posterPath ?? "" )"
+        let posterUrl = "\(AppConfig.shared.getServerConfig().getMediaBaseUrl())/\(data.thumbnail ?? "" )"
         imageUrlAtCurrentIndex = posterUrl
         ivPoster.loadImage(from: posterUrl, completionHandler: { [weak self] url,image,isFinished  in
             guard let weakSelf = self else {
@@ -119,6 +95,9 @@ class SearchItemCell : UITableViewCell, ConfigurableCell {
             weakSelf.ivPoster.image = image
             ShimmerHelper.stopShimmerAnimation(view: weakSelf.ivPoster)
         })
+        
+        //apply  change theme
+        applyTheme()
     }
     
     // when theme change

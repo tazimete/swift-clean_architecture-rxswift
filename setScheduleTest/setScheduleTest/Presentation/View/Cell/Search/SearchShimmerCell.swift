@@ -8,6 +8,8 @@
 import UIKit
 
 class SearchShimmerCell: SearchItemCell {
+    typealias DataType = AbstractCellViewModel
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -16,15 +18,7 @@ class SearchShimmerCell: SearchItemCell {
         super.init(coder: aDecoder)
     }
     
-    override func configure(data: SearchShimmerCell.DataType) {
-        containerView.layer.borderWidth = 0
-        containerView.layer.borderColor = UIColor.clear.cgColor
-        
-        //shmmer skeleton animation
-        ShimmerHelper.startShimmerAnimation(viewlist: [lblTitle, lblOverview, ivPoster])
-    }
-    
-    func startShimmering() {
+    override func configure(data: DataType) {
         containerView.layer.borderWidth = 0
         containerView.layer.borderColor = UIColor.clear.cgColor
         

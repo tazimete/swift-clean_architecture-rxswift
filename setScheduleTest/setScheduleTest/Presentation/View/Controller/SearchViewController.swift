@@ -65,7 +65,13 @@ class SearchViewController: BaseViewController {
         //populate table view
         searchOutput.searchItems
             .bind(to: tableView.rx.items) { tableView, row, model in
-                let item = ShimmerItemCellConfig.init(item: SearchCellViewModel())
+                var item: CellConfigurator = ShimmerItemCellConfig.init(item: SearchCellViewModel())
+                
+                // check actual data exists or not, to hide shimmer cell
+                if model.id != nil {
+                    item = SearchItemCellConfig.init(item: SearchCellViewModel())
+                }
+                
                 let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId, for: IndexPath(row: row, section: 0))
                 item.configure(cell: cell)
                 
