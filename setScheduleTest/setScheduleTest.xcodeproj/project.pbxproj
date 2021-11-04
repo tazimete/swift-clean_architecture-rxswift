@@ -376,8 +376,8 @@
 		29C032F6272D39DD00597B66 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				290003192733C8AB009CB4E5 /* Search */,
 				29C032FF272D3E6200597B66 /* Abstraction */,
+				290003192733C8AB009CB4E5 /* Search */,
 			);
 			path = Cell;
 			sourceTree = "<group>";

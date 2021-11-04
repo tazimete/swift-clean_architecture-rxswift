@@ -105,13 +105,19 @@ class SearchItemCell : UITableViewCell, ConfigurableCell {
     }
     
     public func bind(model: Movie) {
+        ShimmerHelper.startShimmerAnimation(view: ivPoster)
         lblTitle.text = model.title
         lblOverview.text = model.overview
         
         let posterUrl = "\(AppConfig.shared.getServerConfig().getMediaBaseUrl())/\(model.posterPath ?? "" )"
         imageUrlAtCurrentIndex = posterUrl
         ivPoster.loadImage(from: posterUrl, completionHandler: { [weak self] url,image,isFinished  in
-            self?.ivPoster.image = image
+            guard let weakSelf = self else {
+                return
+            }
+            
+            weakSelf.ivPoster.image = image
+            ShimmerHelper.stopShimmerAnimation(view: weakSelf.ivPoster)
         })
     }
     
