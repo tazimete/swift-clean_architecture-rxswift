@@ -69,23 +69,13 @@ class SearchViewController: BaseViewController {
                 
                 // check actual data exists or not, to hide shimmer cell
                 if model.id != nil {
-                    item = SearchItemCellConfig.init(item: SearchCellViewModel())
+                    item = SearchItemCellConfig.init(item:model.asCellViewModel)
                 }
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId, for: IndexPath(row: row, section: 0))
                 item.configure(cell: cell)
                 
                 return cell
-                // Assume Movie title cant be nil after receiving response from api call, its for shimmer cell first time
-//                if model.id == nil {
-//                    let cell = tableView.dequeueReusableCell(withIdentifier: ShimmerItemCellConfig.reuseId, for: IndexPath(row: row, section: 0)) as! SearchShimmerCell
-//                    cell.startShimmering()
-//                    return cell
-//                }else {
-//                    let cell = tableView.dequeueReusableCell(withIdentifier: SearchItemCellConfig.reuseId, for: IndexPath(row: row, section: 0)) as! SearchItemCell
-//                    cell.bind(model: model)
-//                    return cell
-//                }
             }.disposed(by: disposeBag)
         
         // detect error

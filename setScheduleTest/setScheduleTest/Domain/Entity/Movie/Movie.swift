@@ -43,7 +43,7 @@ struct Movie: Codable {
     }
     
     public var asCellViewModel: AbstractCellViewModel {
-        return SearchCellViewModel(id: id, thumbnail: posterPath, title: title, overview: overview)
+        return SearchCellViewModel(id: id, thumbnail: "\(AppConfig.shared.getServerConfig().getMediaBaseUrl())/\(posterPath ?? "" )", title: title, overview: overview)
     }
 }
 
