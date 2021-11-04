@@ -315,6 +315,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		290003192733C8AB009CB4E5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				29C032F7272D39ED00597B66 /* SearchItemCell.swift */,
+				29C032F9272D3A4D00597B66 /* SearchShimmerCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		29C032DC272C297D00597B66 /* Abstraction */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,9 +376,8 @@
 		29C032F6272D39DD00597B66 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				290003192733C8AB009CB4E5 /* Search */,
 				29C032FF272D3E6200597B66 /* Abstraction */,
-				29C032F7272D39ED00597B66 /* SearchItemCell.swift */,
-				29C032F9272D3A4D00597B66 /* SearchShimmerCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
