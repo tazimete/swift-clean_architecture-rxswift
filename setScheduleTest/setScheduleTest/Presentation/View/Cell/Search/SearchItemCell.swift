@@ -100,7 +100,7 @@ class SearchItemCell : UITableViewCell, ConfigurableCell {
         applyTheme()
     }
     
-    // when theme change
+    // when theme change (dark or normal)
     public func applyTheme() {
         switch (traitCollection.userInterfaceStyle) {
             case .dark:

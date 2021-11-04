@@ -149,3 +149,36 @@ class SearchViewController: BaseViewController {
     }
 }
 
+
+// MARK: DARK THEME
+extension SearchViewController {
+    //when theme change, we can also define dark mode color option in color asset
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        switch (traitCollection.userInterfaceStyle) {
+            case .dark:
+                applyDarkTheme()
+                break
+                
+            case .light:
+                applyNormalTheme()
+                break
+                
+            default:
+                break
+        }
+        
+        tableView.reloadData()
+    }
+    
+    public func applyDarkTheme() {
+        navigationController?.navigationBar.backgroundColor = .black
+        tableView.backgroundColor = .black
+    }
+    
+    public func applyNormalTheme() {
+        navigationController?.navigationBar.backgroundColor = .white
+        tableView.backgroundColor = .white
+    }
+}
