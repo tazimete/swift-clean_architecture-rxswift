@@ -88,7 +88,7 @@ class SearchViewModelTest: XCTestCase {
         let expectation = self.expectation(description: "Wait for searchViewModel searchData to load.")
         
         searchViewModel.searchData(query: query, year: year)
-            .observe(on: MainScheduler.instance) 
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { response in
                 result = response.results
                 expectation.fulfill()
