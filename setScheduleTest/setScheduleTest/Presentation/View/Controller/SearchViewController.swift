@@ -84,18 +84,12 @@ class SearchViewController: BaseViewController {
         
         //populate table view
         searchOutput.searchItems.observe(on: MainScheduler.instance)
-            .bind(to: tableView.rx.items) { tableView, row, model in
-                var item: CellConfigurator = ShimmerItemCellConfig.init(item: SearchCellViewModel())
-                
-                // check actual data exists or not, to hide shimmer cell
-                if model.id != nil {
-                    item = SearchItemCellConfig.init(item:model.asCellViewModel)
+            .bind(to: tableView.rx.items) { [weak self] tableView, row, model in
+                guard let weakSelf = self else {
+                    return UITableViewCell()
                 }
                 
-                let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId, for: IndexPath(row: row, section: 0))
-                item.configure(cell: cell)
-                
-                return cell
+                return weakSelf.populateTableViewCell(viewModel: model.asCellViewModel, indexPath: IndexPath(row: row, section: 0), tableView: tableView)
             }.disposed(by: disposeBag)
         
         // detect error
@@ -111,12 +105,27 @@ class SearchViewController: BaseViewController {
         }).disposed(by: disposeBag)
     }
     
-    private func searchMovie(name: String, year: Int) {
+    public func searchMovie(name: String, year: Int) {
         searchTrigger.onNext(SearchViewModel.SearchInputModel(query: name, year: year))
     }
     
     private func navigateToDetailsController(with movie: Movie) {
         (view.window?.windowScene?.delegate as! SceneDelegate).rootCoordinator.showDetailsController(movie: movie)
+    }
+    
+    //populate table view cell
+    private func populateTableViewCell(viewModel: AbstractCellViewModel, indexPath: IndexPath, tableView: UITableView) -> UITableViewCell {
+        var item: CellConfigurator = ShimmerItemCellConfig.init(item: SearchCellViewModel())
+        
+        // check actual data exists or not, to hide shimmer cell
+        if viewModel.id != nil {
+            item = SearchItemCellConfig.init(item: viewModel)
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId, for: indexPath)
+        item.configure(cell: cell)
+        
+        return cell
     }
     
     // MARK: Actions
