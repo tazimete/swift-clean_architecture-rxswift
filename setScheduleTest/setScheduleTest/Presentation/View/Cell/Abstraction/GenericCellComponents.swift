@@ -12,6 +12,7 @@ protocol AbstractSearchCell: AnyObject{
     static var cellReuseIdentifier: String {set get}
     
     func configure(viewModel: AbstractCellViewModel)
+    func applyTheme()
 }
 
 protocol ConfigurableCell {
