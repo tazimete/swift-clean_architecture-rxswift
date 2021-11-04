@@ -33,6 +33,7 @@ class ApiClientTest: XCTestCase {
         var networkError: NetworkError?
         
         apiClient.send(apiRequest: request, type: SearchApiRequest.ResponseType.self)
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] response in
                 result = response
                 expectation.fulfill()
@@ -65,6 +66,7 @@ class ApiClientTest: XCTestCase {
         var networkError: NetworkError?
         
         apiClient.send(apiRequest: request, type: MovieApiRequest.ResponseType.self)
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] response in
                 result = response
                 expectation.fulfill()
@@ -100,6 +102,7 @@ class ApiClientTest: XCTestCase {
             var networkError: NetworkError?
             
             apiClient.send(apiRequest: request, type: SearchApiRequest.ResponseType.self)
+                .observe(on: MainScheduler.instance)
                 .subscribe(onNext: { [weak self] response in
                     result = response
                     expectation.fulfill()

@@ -41,6 +41,7 @@ class MovieRepositoryTest: XCTestCase {
         let expectation = self.expectation(description: "Wait for movieRepository to load moview details")
         
         movieRepository.get(movieId: movieId)
+            .observe(on: MainScheduler.instance) 
             .subscribe(onNext: { response in
                 result = response
                 expectation.fulfill()

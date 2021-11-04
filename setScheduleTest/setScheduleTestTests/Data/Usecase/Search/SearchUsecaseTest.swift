@@ -39,6 +39,7 @@ class SearchUsecaseTest: XCTestCase {
         let year = 2000
         
         searchUsecase.search(query: query, year: year)
+            .observe(on: MainScheduler.instance) 
             .subscribe(onNext: { [weak self] response in
                 result = response
                 expectation.fulfill()

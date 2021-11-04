@@ -41,6 +41,7 @@ class SearchRepositoryTest: XCTestCase {
         let year = 2000
         
         searchRepository.get(query: query, year: year)
+            .observe(on: MainScheduler.instance) 
             .subscribe(onNext: { [weak self] response in
                 result = response
                 expectation.fulfill()

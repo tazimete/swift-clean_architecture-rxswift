@@ -43,18 +43,21 @@ class MovieViewModelTest: XCTestCase {
         let movieOutput = movieViewModel.getMovieOutput(input: movieInput)
         
         //receive response data
-        movieOutput.movieDetails.subscribe(onNext: { response in
-            result = response
-            expectationSuccess.fulfill()
-        }, onError: { error in
-            networkError = error as! NetworkError
-            expectationSuccess.fulfill()
-        }).disposed(by: disposeBag)
+        movieOutput.movieDetails
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { response in
+                result = response
+                expectationSuccess.fulfill()
+            }, onError: { error in
+                networkError = error as! NetworkError
+                expectationSuccess.fulfill()
+            }).disposed(by: disposeBag)
         
         let expectationError = self.expectation(description: "Wait for movieViewModel to get error")
         
         // detect error
         movieOutput.errorTracker
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { error in
                 expectationError.fulfill()
             }).disposed(by: disposeBag)
@@ -85,6 +88,7 @@ class MovieViewModelTest: XCTestCase {
         let expectation = self.expectation(description: "Wait for searchViewModel searchData to load.")
         
         movieViewModel.getMovieDetails(movieId: movieId)
+            .observe(on: MainScheduler.instance) 
             .subscribe(onNext: { response in
                 result = response
                 expectation.fulfill()

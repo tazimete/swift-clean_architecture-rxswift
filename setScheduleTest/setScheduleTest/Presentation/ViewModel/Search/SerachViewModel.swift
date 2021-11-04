@@ -32,7 +32,7 @@ class SearchViewModel: AbstractSearchViewModel {
     
     public func getSearchOutput(input: SearchInput) -> SearchOutput {
         let searchListResponse = BehaviorRelay<[SearchApiRequest.ItemType]>(value: [])
-        let errorResponse = BehaviorRelay<NetworkError?>(value: nil)
+        let errorResponse = BehaviorRelay<NetworkError?>(value: nil) 
         
         input.searchItemListTrigger.flatMapLatest({ [weak self] (inputModel) -> Observable<SearchApiRequest.ResponseType> in
             guard let weakSelf = self else {

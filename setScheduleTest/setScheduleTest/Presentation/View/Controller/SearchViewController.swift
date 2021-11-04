@@ -83,7 +83,7 @@ class SearchViewController: BaseViewController {
         let searchOutput = searchViewModel.getSearchOutput(input: searchInput)
         
         //populate table view
-        searchOutput.searchItems.observe(on: MainScheduler.asyncInstance)
+        searchOutput.searchItems.observe(on: MainScheduler.instance)
             .bind(to: tableView.rx.items) { tableView, row, model in
                 var item: CellConfigurator = ShimmerItemCellConfig.init(item: SearchCellViewModel())
                 
@@ -99,12 +99,13 @@ class SearchViewController: BaseViewController {
             }.disposed(by: disposeBag)
         
         // detect error
-        searchOutput.errorTracker.observe(on: MainScheduler.asyncInstance).subscribe(onNext: {
-            [weak self] error in
-            
-            guard let weakSelf = self, let error = error else {
-                return 
-            }
+        searchOutput.errorTracker.observe(on: MainScheduler.instance)
+            .subscribe(onNext: {
+                [weak self] error in
+                
+                guard let weakSelf = self, let error = error else {
+                    return
+                }
             
             print("\(String(describing: weakSelf.TAG)) -- bindViewModel() -- error  -- code = \(error.errorCode), message = \(error.errorMessage)")
         }).disposed(by: disposeBag)
@@ -118,7 +119,7 @@ class SearchViewController: BaseViewController {
         (view.window?.windowScene?.delegate as! SceneDelegate).rootCoordinator.showDetailsController(movie: movie)
     }
     
-    // MARK: Actions 
+    // MARK: Actions
     private func onTapTableviewCell() {
         Observable
             .zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Movie.self))

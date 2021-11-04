@@ -39,6 +39,7 @@ class MovieUsecaseTest: XCTestCase {
         let expectation = self.expectation(description: "Wait for movieUsecase to get movie details")
         
         movieUsecase.getMovieDetails(movieId: movieId)
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { response in
                 result = response
                 expectation.fulfill()

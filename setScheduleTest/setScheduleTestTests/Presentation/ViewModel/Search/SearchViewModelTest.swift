@@ -44,18 +44,21 @@ class SearchViewModelTest: XCTestCase {
         let searchOutput = searchViewModel.getSearchOutput(input: searchInput)
         
         //populate table view
-        searchOutput.searchItems.subscribe(onNext: { response in
-            result = response
-            expectationSuccess.fulfill()
-        }, onError: { error in
-            networkError = error as! NetworkError
-            expectationSuccess.fulfill()
-        }).disposed(by: disposeBag)
+        searchOutput.searchItems
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { response in
+                result = response
+                expectationSuccess.fulfill()
+            }, onError: { error in
+                networkError = error as! NetworkError
+                expectationSuccess.fulfill()
+            }).disposed(by: disposeBag)
         
         let expectationError = self.expectation(description: "Wait for searchViewModel to load error")
         
         // detect error
         searchOutput.errorTracker
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { error in
                 networkError = error 
                 expectationError.fulfill()
@@ -85,6 +88,7 @@ class SearchViewModelTest: XCTestCase {
         let expectation = self.expectation(description: "Wait for searchViewModel searchData to load.")
         
         searchViewModel.searchData(query: query, year: year)
+            .observe(on: MainScheduler.instance) 
             .subscribe(onNext: { response in
                 result = response.results
                 expectation.fulfill()

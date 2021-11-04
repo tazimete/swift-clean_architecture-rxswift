@@ -51,7 +51,7 @@ class DetailsViewController: BaseViewController {
         
         //receive response and populate UI
         movieOutput.movieDetails
-            .observe(on: MainScheduler.asyncInstance)
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] response in
                 guard let weakSelf = self, let response = response else {
                     return
@@ -62,7 +62,9 @@ class DetailsViewController: BaseViewController {
             }).disposed(by: disposeBag)
         
         // detect error and show error message
-        movieOutput.errorTracker.subscribe(onNext: {
+        movieOutput.errorTracker
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: {
             [weak self] error in
             
             guard let weakSelf = self, let error = error else {
