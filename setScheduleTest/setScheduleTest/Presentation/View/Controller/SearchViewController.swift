@@ -32,7 +32,7 @@ class SearchViewController: BaseViewController {
     
     let lblNoData: UILabel = {
         let label = UILabel()
-        label.text = "No data to Show, Plz search by tapping on search button in top bar."
+        label.text = "No data to show, Plz search by tapping on search button in top bar."
         label.textColor = .darkGray
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textAlignment = .center
@@ -123,8 +123,12 @@ class SearchViewController: BaseViewController {
     }
     
     public func searchMovie(name: String, year: Int) {
-        lblNoData.isHidden = true
+        hideNoDataMessageView()
         searchTrigger.onNext(SearchViewModel.SearchInputModel(query: name, year: year))
+    }
+    
+    private func hideNoDataMessageView() {
+        lblNoData.isHidden = true
     }
     
     private func navigateToDetailsController(with movie: Movie) {
