@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 
+/* This is Movie repository class implementation from AbstractMovieRepository. Which will be used to get mvoie related from api client/server response*/
 class MovieRepository: AbstractMovieRepository {
     var apiClient: AbstractApiClient
     

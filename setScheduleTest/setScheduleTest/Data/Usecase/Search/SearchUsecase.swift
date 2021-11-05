@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 
+/* This is Search usecase class implentation from AbstractSearchUsecase. Which will be used to get search related data from search repository*/
 class SearchUsecase: AbstractSearchUsecase {
     var repository: AbstractRepository
     

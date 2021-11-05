@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 
+/* This is Movie usecase class implementation from AbstractMovieUsecase. Which will be used to get movie related data from movie repository*/
 class MovieUsecase: AbstractMovieUsecase {
     var repository: AbstractRepository
     
