@@ -11,15 +11,18 @@ import RxCocoa
 
 /* This is Search viewmodel class implementation of AbstractSearchViewModel. Which will be used to get search related data by search usecase*/
 class SearchViewModel: AbstractSearchViewModel {
+    // This struct will be used get input from viewcontroller
     public struct SearchInputModel {
         let query: String
         let year: Int
     }
     
+    // This struct will be used get event with data from viewcontroller
     public struct SearchInput {
         let searchItemListTrigger: Observable<SearchInputModel>
     }
     
+    // This struct will be used send event with data/response to viewcontroller 
     public struct SearchOutput {
         let searchItems: BehaviorRelay<[SearchApiRequest.ItemType]>
         let errorTracker: BehaviorRelay<NetworkError?>
