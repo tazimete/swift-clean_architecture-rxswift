@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+/* This is Search viewmodel class implementation of AbstractSearchViewModel. Which will be used to get search related data by search usecase*/
 class SearchViewModel: AbstractSearchViewModel {
     public struct SearchInputModel {
         let query: String

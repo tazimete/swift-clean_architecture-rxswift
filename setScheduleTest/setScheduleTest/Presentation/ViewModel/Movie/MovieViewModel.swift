@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+/* This is Movie viewmodel implementation  of AbstractMovieViewModel. Which will be used to get movie related data by movie usecase*/
 class MovieViewModel: AbstractMovieViewModel {
     public struct MovieInput {
         let movieDetailsTrigger: Observable<Int>

@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+/* Abstraction of tableview cell will contain cellViewModel and reuseIdentifier property will cell data, also configure function to bind data to ui */
 protocol AbstractSearchCell: AnyObject{
     var viewModel: AbstractCellViewModel? {get}
     static var cellReuseIdentifier: String {set get}
