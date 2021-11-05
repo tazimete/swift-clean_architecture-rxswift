@@ -29,6 +29,19 @@ class SearchViewController: BaseViewController {
         tableView.register(SearchShimmerCell.self, forCellReuseIdentifier: ShimmerItemCellConfig.reuseId)
         return tableView
     }()
+    
+    let lblNoData: UILabel = {
+        let label = UILabel()
+        label.text = "No data to Show, Plz search by tapping on search button in top bar."
+        label.textColor = .darkGray
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.isSkeletonable = false
+        label.skeletonLineSpacing = 10
+        label.multilineSpacing = 10
+        return label
+    }()
 
     // MARK: Constructors
     init(viewModel: AbstractSearchViewModel) {
@@ -49,7 +62,11 @@ class SearchViewController: BaseViewController {
         super.initView()
         //setup tableview
         view.addSubview(tableView)
+        view.addSubview(lblNoData)
+        
+        //set anchor
         tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 0, enableInsets: true)
+        lblNoData.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 0, enableInsets: true)
         
         //table view
         onTapTableviewCell()
@@ -106,6 +123,7 @@ class SearchViewController: BaseViewController {
     }
     
     public func searchMovie(name: String, year: Int) {
+        lblNoData.isHidden = true
         searchTrigger.onNext(SearchViewModel.SearchInputModel(query: name, year: year))
     }
     
