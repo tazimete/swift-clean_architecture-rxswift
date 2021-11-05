@@ -11,10 +11,13 @@ import RxCocoa
 
 /* This is Movie viewmodel implementation  of AbstractMovieViewModel. Which will be used to get movie related data by movie usecase*/
 class MovieViewModel: AbstractMovieViewModel {
+    
+    // This struct will be used get event with data from viewcontroller
     public struct MovieInput {
         let movieDetailsTrigger: Observable<Int>
     }
     
+    // This struct will be used send event with observable data/response to viewcontroller
     public struct MovieOutput {
         let movieDetails: BehaviorRelay<MovieApiRequest.ResponseType?>
         let errorTracker: BehaviorRelay<NetworkError?>
