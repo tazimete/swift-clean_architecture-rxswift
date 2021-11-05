@@ -7,6 +7,7 @@
 
 import Foundation
 
+/* Movie entity of search response */
 struct Movie: Codable {
     public let id: Int?
     public let originalTitle: String?

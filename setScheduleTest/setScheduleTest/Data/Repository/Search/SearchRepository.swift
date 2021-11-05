@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 
+/* This is Search repository class implementation from AbstractSearchRepository. Which will be used to get search related from api client/server response*/
 class SearchRepository: AbstractSearchRepository {
     var apiClient: AbstractApiClient
     

@@ -1040,9 +1040,9 @@
 			isa = PBXGroup;
 			children = (
 				29C23036272B464A00E67AAE /* Model */,
+				29C23014272B45D000E67AAE /* Request */,
 				29C23169272B514900E67AAE /* Usecase */,
 				29C23166272B512200E67AAE /* Repository */,
-				29C23014272B45D000E67AAE /* Request */,
 			);
 			path = Data;
 			sourceTree = "<group>";
