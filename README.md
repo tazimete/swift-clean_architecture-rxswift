@@ -1,6 +1,6 @@
 # swift-clean_architecture-rxswift
 
-### A sample project demonstartes the Clean Architecture with MVVM and Repository pattern using RxSwift. It also uses Coordinator pattern for navigation. 
+### A sample project demonstartes the Clean Architecture with MVVM and Repository pattern using RxSwift including Unit Test. It also uses Coordinator pattern for navigation. 
 
 # Demonstration :  
 - All are reusable, modular and testable Codebase /Components including unit test 
