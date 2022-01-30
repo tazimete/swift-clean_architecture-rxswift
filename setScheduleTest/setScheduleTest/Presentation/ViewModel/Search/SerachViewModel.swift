@@ -49,6 +49,11 @@ class SearchViewModel: AbstractSearchViewModel {
             
             //fetch movie list
             return weakSelf.searchData(query: inputModel.query, year: inputModel.year)
+                   .catch({ error in
+                       errorResponse.accept(error as? NetworkError)
+                    
+                       return Observable.just(SearchApiRequest.ResponseType())
+                    })
         }).subscribe(onNext: {
             response in
             
