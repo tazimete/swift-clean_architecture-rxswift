@@ -40,6 +40,11 @@ class MovieViewModel: AbstractMovieViewModel {
             debugPrint("MovieViewModel -- getMovieOutput() -- movieDetailsTrigger -- movieId = \(movieId)")
             //fetch movie details
             return weakSelf.getMovieDetails(movieId: movieId)
+                  .catch({ error in
+                      errorResponse.accept(error as? NetworkError)
+                    
+                      return Observable.just(MovieApiRequest.ResponseType())
+                   })
         }).subscribe(onNext: {
             response in
             
